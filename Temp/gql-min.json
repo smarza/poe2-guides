@@ -1,0 +1,1 @@
+{"query":"query Q($input: Poe2UserGeneratedDocumentInputById!) { poe2 { documents { userGeneratedDocumentById(input: $input) { error data { id } } } } } }","variables":{"input":{"id":"8520fdce-220e-4906-a6e5-3207c709cd8f"}}}

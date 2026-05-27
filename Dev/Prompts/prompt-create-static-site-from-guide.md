@@ -27,7 +27,8 @@ Optional source links section:
 Optional Mobalytics build export (for interactive gameplay checklists):
 - JSON export: @Dev/Exports/<mobalytics-slug>/<mobalytics-slug>.json
 - Generate with: `pwsh -File Dev/Scripts/Export-MobalyticsBuild.ps1 -Url "<PLANNER URL>" -Format json`
-- Expected shape: `acts[]` with `equipment[]`, `skillGems[]`, `passiveTree[]` grouped by act label (`Act 1`, `Act 2`, `Act 3`, `Act 4`, `Interludes`, etc.)
+- Expected shape: `acts[]` with `act` (Mobalytics variant title), `variantId`, `equipment[]`, `skillGems[]`, `passiveTree[]`
+- Variant titles come from Mobalytics (`childrenVariants[].title` via GraphQL, or HTML tabs when SSR); do not hardcode `Act 1`, `Act 2`, etc. in the export script
 
 Landing page index: @index.html
 Update index.html if this is a new guide.
@@ -254,7 +255,7 @@ Store a compact JSON object, for example:
 ```json
 {
   "equipment": {
-    "Act 1": {
+    "default-variant": {
       "weapon-fourquarterstaff3": { "self": true, "children": { "mod-0": true, "mod-1": false } }
     }
   },
@@ -264,6 +265,7 @@ Store a compact JSON object, for example:
 ```
 
 Rules:
+- Group saved state by `variantId` (stable), not by display label `act` (tabs show `act`, storage uses `variantId`)
 - Generate stable item IDs from JSON (`slug` when available; fallback to normalized `name`)
 - Generate stable child IDs from modifier/support text hash or index (`mod-0`, `support-1`, etc.)
 - Load saved state on `DOMContentLoaded` before rendering interactions

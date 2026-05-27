@@ -1,0 +1,1115 @@
+{
+  "sourceUrl": "https://mobalytics.gg/poe-2/profile/bright-gun-0gguoz/builds/8520fdce-220e-4906-a6e5-3207c709cd8f",
+  "buildName": "Ice Shot Deadeye",
+  "author": "bright-gun-0gguoz",
+  "slug": "8520fdce-220e-4906-a6e5-3207c709cd8f",
+  "acts": [
+    {
+      "act": "Early",
+      "variantId": "default-variant",
+      "equipment": [
+        {
+          "name": "Obliterator Bow",
+          "slot": "mainHand",
+          "slug": "weapon-fourbow9endgame",
+          "modifiers": [
+            "Adds 24 to 42 Physical Damage",
+            "Adds 53 to 80 Cold Damage",
+            "154% increased Physical Damage",
+            "+3 to Level of all Projectile Skills"
+          ]
+        },
+        {
+          "name": "Volant Quiver",
+          "slot": "offHand",
+          "slug": "quiver-fourquiver10",
+          "modifiers": [
+            "Adds 20 to 31 Cold damage to Attacks",
+            "+1 to Level of all Projectile Skills",
+            "16% increased Attack Speed",
+            "46% increased Projectile Speed",
+            "50% increased Damage with Bow Skills"
+          ]
+        },
+        {
+          "name": "Prismatic Ring",
+          "slot": "leftRing",
+          "slug": "ring-fourring9",
+          "modifiers": [
+            "+149 to maximum Life",
+            "Adds 15 to 26 Physical Damage to Attacks",
+            "Adds 20 to 31 Cold damage to Attacks"
+          ]
+        },
+        {
+          "name": "Prismatic Ring",
+          "slot": "rightRing",
+          "slug": "ring-fourring9",
+          "modifiers": [
+            "+149 to maximum Life",
+            "Adds 15 to 26 Physical Damage to Attacks",
+            "Adds 20 to 31 Cold damage to Attacks"
+          ]
+        },
+        {
+          "name": "Stellar Amulet",
+          "slot": "amulet",
+          "slug": "amulet-fouramulet8",
+          "modifiers": [
+            "+3 to Level of all Projectile Skills",
+            "+33 to Spirit"
+          ]
+        },
+        {
+          "name": "Corsair Coat",
+          "slot": "body",
+          "slug": "armour-fourbodydex10endgame",
+          "modifiers": [
+            "+330 to Evasion Rating",
+            "152% increased Evasion Rating",
+            "Gain Deflection Rating equal to 23% of Evasion Rating"
+          ]
+        },
+        {
+          "name": "Grand Bracers",
+          "slot": "gloves",
+          "slug": "armour-fourglovesdex4endgame",
+          "modifiers": [
+            "+149 to maximum Life",
+            "Adds 11 to 20 Physical Damage to Attacks",
+            "Adds 15 to 24 Cold damage to Attacks",
+            "16% increased Attack Speed"
+          ]
+        },
+        {
+          "name": "Desert Cap",
+          "slot": "helmet",
+          "slug": "armour-fourhelmetdex4endgame",
+          "modifiers": [
+            "+149 to maximum Life",
+            "22% increased Rarity of Items found"
+          ]
+        },
+        {
+          "name": "Rawhide Belt",
+          "slot": "belt",
+          "slug": "armour-fourbelt1",
+          "modifiers": [
+            "+33 to Strength",
+            "+174 to maximum Life"
+          ]
+        },
+        {
+          "name": "Cavalry Boots",
+          "slot": "boots",
+          "slug": "armour-fourbootsdex4endgame",
+          "modifiers": [
+            "+149 to maximum Life",
+            "35% increased Movement Speed",
+            "Gain Deflection Rating equal to 23% of Evasion Rating"
+          ]
+        }
+      ],
+      "skillGems": [
+        {
+          "name": "Ice Shot",
+          "slug": "iceshotplayer",
+          "supports": [
+            "Elemental Armament II",
+            "Ice Bite II",
+            "Rapid Attacks II",
+            "Fork"
+          ]
+        },
+        {
+          "name": "Snipe",
+          "slug": "snipeplayer",
+          "supports": [
+            "Elemental Armament II",
+            "Concentrated Area",
+            "Elemental Focus",
+            "Window of Opportunity II",
+            "Close Combat II"
+          ]
+        },
+        {
+          "name": "Tornado Shot",
+          "slug": "tornadoshotplayer",
+          "supports": [
+            "Prolonged Duration II",
+            "Overabundance II",
+            "Durability"
+          ]
+        },
+        {
+          "name": "Ice-Tipped Arrows",
+          "slug": "icetippedarrowsplayer",
+          "supports": [
+            "Magnified Area II",
+            "Elemental Armament II",
+            "Short Fuse I",
+            "Longshot II"
+          ]
+        },
+        {
+          "name": "Freezing Mark",
+          "slug": "freezingmarkplayer",
+          "supports": [
+            "Mark of Siphoning II",
+            "Charged Mark",
+            "Eternal Mark",
+            "Eternal Mark"
+          ]
+        },
+        {
+          "name": "Barrage",
+          "slug": "barrageplayer",
+          "supports": [
+            "Cooldown Recovery II",
+            "Perpetual Charge",
+            "Rapid Casting II"
+          ]
+        },
+        {
+          "name": "Herald of Ice",
+          "slug": "heraldoficeplayer",
+          "supports": [
+            "Magnified Area II",
+            "Elemental Armament II",
+            "Longshot II",
+            "Cold Attunement"
+          ]
+        },
+        {
+          "name": "Combat Frenzy",
+          "slug": "combatfrenzyplayer",
+          "supports": [
+            "Charge Profusion II"
+          ]
+        },
+        {
+          "name": "Mirage Archer",
+          "slug": "metamiragearcherplayer",
+          "supports": [
+            "Ice Shot",
+            "Elemental Armament II",
+            "Deliberation",
+            "Rapid Attacks II"
+          ]
+        },
+        {
+          "name": "Mirage Deadeye",
+          "slug": "metamiragedeadeyeplayer",
+          "supports": [
+            "Ice Shot",
+            "Elemental Armament II",
+            "Deliberation",
+            "Rapid Attacks II"
+          ]
+        }
+      ],
+      "passiveTree": [
+        {
+          "name": "Honed Instincts",
+          "slug": "node-28992",
+          "tree": "main"
+        },
+        {
+          "name": "Clean Shot",
+          "slug": "node-42781",
+          "tree": "main"
+        },
+        {
+          "name": "Harness the Elements",
+          "slug": "node-12611",
+          "tree": "main"
+        },
+        {
+          "name": "Agile Succession",
+          "slug": "node-56493",
+          "tree": "main"
+        },
+        {
+          "name": "Essence of the Mountain",
+          "slug": "node-32683",
+          "tree": "main"
+        },
+        {
+          "name": "Step Like Mist",
+          "slug": "node-48198",
+          "tree": "main"
+        },
+        {
+          "name": "Mindful Awareness",
+          "slug": "node-62984",
+          "tree": "main"
+        },
+        {
+          "name": "Flow Like Water",
+          "slug": "node-49220",
+          "tree": "main"
+        },
+        {
+          "name": "Flow State",
+          "slug": "node-34233",
+          "tree": "main"
+        },
+        {
+          "name": "Escape Velocity",
+          "slug": "node-17854",
+          "tree": "main"
+        },
+        {
+          "name": "Catalysis",
+          "slug": "node-31433",
+          "tree": "main"
+        },
+        {
+          "name": "The Wild Cat",
+          "slug": "node-22811",
+          "tree": "main"
+        },
+        {
+          "name": "Acceleration",
+          "slug": "node-43082",
+          "tree": "main"
+        },
+        {
+          "name": "Beastial Skin",
+          "slug": "node-59720",
+          "tree": "main"
+        },
+        {
+          "name": "Enhanced Reflexes",
+          "slug": "node-51707",
+          "tree": "main"
+        },
+        {
+          "name": "Deep Freeze",
+          "slug": "node-16142",
+          "tree": "main"
+        },
+        {
+          "name": "Concussive Attack",
+          "slug": "node-36931",
+          "tree": "main"
+        },
+        {
+          "name": "Blinding Strike",
+          "slug": "node-20916",
+          "tree": "main"
+        },
+        {
+          "name": "Snowpiercer",
+          "slug": "node-9421",
+          "tree": "main"
+        },
+        {
+          "name": "Maiming Strike",
+          "slug": "node-41580",
+          "tree": "main"
+        },
+        {
+          "name": "Coming Calamity",
+          "slug": "node-28044",
+          "tree": "main"
+        },
+        {
+          "name": "Quick Fingers",
+          "slug": "node-33542",
+          "tree": "main"
+        },
+        {
+          "name": "Marked for Sickness",
+          "slug": "node-63830",
+          "tree": "main"
+        },
+        {
+          "name": "Marked Agility",
+          "slug": "node-44756",
+          "tree": "main"
+        },
+        {
+          "name": "Frazzled",
+          "slug": "node-32301",
+          "tree": "main"
+        },
+        {
+          "name": "Hail",
+          "slug": "node-44974",
+          "tree": "main"
+        },
+        {
+          "name": "The Noble Wolf",
+          "slug": "node-2745",
+          "tree": "main"
+        },
+        {
+          "name": "Primal Sundering",
+          "slug": "node-50884",
+          "tree": "main"
+        }
+      ]
+    },
+    {
+      "act": "non-crit Midgame",
+      "variantId": "1",
+      "equipment": [
+        {
+          "name": "Obliterator Bow",
+          "slot": "mainHand",
+          "slug": "weapon-fourbow9endgame",
+          "modifiers": [
+            "Adds 24 to 42 Physical Damage",
+            "Adds 53 to 80 Cold Damage",
+            "154% increased Physical Damage",
+            "+3 to Level of all Projectile Skills"
+          ]
+        },
+        {
+          "name": "Volant Quiver",
+          "slot": "offHand",
+          "slug": "quiver-fourquiver10",
+          "modifiers": [
+            "Adds 20 to 31 Cold damage to Attacks",
+            "+1 to Level of all Projectile Skills",
+            "16% increased Attack Speed",
+            "46% increased Projectile Speed",
+            "50% increased Damage with Bow Skills"
+          ]
+        },
+        {
+          "name": "Prismatic Ring",
+          "slot": "leftRing",
+          "slug": "ring-fourring9",
+          "modifiers": [
+            "+149 to maximum Life",
+            "Adds 15 to 26 Physical Damage to Attacks",
+            "Adds 20 to 31 Cold damage to Attacks"
+          ]
+        },
+        {
+          "name": "Prismatic Ring",
+          "slot": "rightRing",
+          "slug": "ring-fourring9",
+          "modifiers": [
+            "+149 to maximum Life",
+            "Adds 15 to 26 Physical Damage to Attacks",
+            "Adds 20 to 31 Cold damage to Attacks"
+          ]
+        },
+        {
+          "name": "Stellar Amulet",
+          "slot": "amulet",
+          "slug": "amulet-fouramulet8",
+          "modifiers": [
+            "+3 to Level of all Projectile Skills",
+            "+33 to Spirit"
+          ]
+        },
+        {
+          "name": "Corsair Coat",
+          "slot": "body",
+          "slug": "armour-fourbodydex10endgame",
+          "modifiers": [
+            "+330 to Evasion Rating",
+            "152% increased Evasion Rating",
+            "Gain Deflection Rating equal to 23% of Evasion Rating"
+          ]
+        },
+        {
+          "name": "Desert Cap",
+          "slot": "helmet",
+          "slug": "armour-fourhelmetdex4endgame",
+          "modifiers": [
+            "+149 to maximum Life",
+            "22% increased Rarity of Items found"
+          ]
+        },
+        {
+          "name": "Grand Bracers",
+          "slot": "gloves",
+          "slug": "armour-fourglovesdex4endgame",
+          "modifiers": [
+            "+149 to maximum Life",
+            "Adds 11 to 20 Physical Damage to Attacks",
+            "Adds 15 to 24 Cold damage to Attacks",
+            "16% increased Attack Speed"
+          ]
+        },
+        {
+          "name": "Rawhide Belt",
+          "slot": "belt",
+          "slug": "armour-fourbelt1",
+          "modifiers": [
+            "+33 to Strength",
+            "+174 to maximum Life"
+          ]
+        },
+        {
+          "name": "Cavalry Boots",
+          "slot": "boots",
+          "slug": "armour-fourbootsdex4endgame",
+          "modifiers": [
+            "+149 to maximum Life",
+            "35% increased Movement Speed",
+            "Gain Deflection Rating equal to 23% of Evasion Rating"
+          ]
+        }
+      ],
+      "skillGems": [
+        {
+          "name": "Ice Shot",
+          "slug": "iceshotplayer",
+          "supports": [
+            "Elemental Armament II",
+            "Ice Bite II",
+            "Rapid Attacks II",
+            "Fork",
+            "Cold Attunement"
+          ]
+        },
+        {
+          "name": "Snipe",
+          "slug": "snipeplayer",
+          "supports": [
+            "Elemental Armament II",
+            "Concentrated Area",
+            "Elemental Focus",
+            "Window of Opportunity II",
+            "Close Combat II"
+          ]
+        },
+        {
+          "name": "Tornado Shot",
+          "slug": "tornadoshotplayer",
+          "supports": [
+            "Prolonged Duration II",
+            "Overabundance II",
+            "Durability",
+            "Blind II"
+          ]
+        },
+        {
+          "name": "Ice-Tipped Arrows",
+          "slug": "icetippedarrowsplayer",
+          "supports": [
+            "Magnified Area II",
+            "Elemental Armament II",
+            "Short Fuse I",
+            "Longshot II"
+          ]
+        },
+        {
+          "name": "Freezing Mark",
+          "slug": "freezingmarkplayer",
+          "supports": [
+            "Mark of Siphoning II",
+            "Charged Mark",
+            "Eternal Mark",
+            "Eternal Mark"
+          ]
+        },
+        {
+          "name": "Barrage",
+          "slug": "barrageplayer",
+          "supports": [
+            "Cooldown Recovery II",
+            "Perpetual Charge",
+            "Rapid Casting II"
+          ]
+        },
+        {
+          "name": "Herald of Ice",
+          "slug": "heraldoficeplayer",
+          "supports": [
+            "Magnified Area II",
+            "Elemental Armament II",
+            "Longshot II",
+            "Cold Attunement",
+            "Elemental Focus"
+          ]
+        },
+        {
+          "name": "Combat Frenzy",
+          "slug": "combatfrenzyplayer",
+          "supports": [
+            "Charge Profusion II"
+          ]
+        },
+        {
+          "name": "Mirage Archer",
+          "slug": "metamiragearcherplayer",
+          "supports": [
+            "Ice Shot",
+            "Elemental Armament II",
+            "Deliberation",
+            "Rapid Attacks II"
+          ]
+        },
+        {
+          "name": "Mirage Deadeye",
+          "slug": "metamiragedeadeyeplayer",
+          "supports": [
+            "Ice Shot",
+            "Elemental Armament II",
+            "Rapid Attacks II",
+            "Deliberation",
+            "Cooldown Recovery II"
+          ]
+        }
+      ],
+      "passiveTree": [
+        {
+          "name": "Honed Instincts",
+          "slug": "node-28992",
+          "tree": "main"
+        },
+        {
+          "name": "Clean Shot",
+          "slug": "node-42781",
+          "tree": "main"
+        },
+        {
+          "name": "Harness the Elements",
+          "slug": "node-12611",
+          "tree": "main"
+        },
+        {
+          "name": "Agile Succession",
+          "slug": "node-56493",
+          "tree": "main"
+        },
+        {
+          "name": "Essence of the Mountain",
+          "slug": "node-32683",
+          "tree": "main"
+        },
+        {
+          "name": "Step Like Mist",
+          "slug": "node-48198",
+          "tree": "main"
+        },
+        {
+          "name": "Mindful Awareness",
+          "slug": "node-62984",
+          "tree": "main"
+        },
+        {
+          "name": "Flow Like Water",
+          "slug": "node-49220",
+          "tree": "main"
+        },
+        {
+          "name": "Flow State",
+          "slug": "node-34233",
+          "tree": "main"
+        },
+        {
+          "name": "Escape Velocity",
+          "slug": "node-17854",
+          "tree": "main"
+        },
+        {
+          "name": "Catalysis",
+          "slug": "node-31433",
+          "tree": "main"
+        },
+        {
+          "name": "The Wild Cat",
+          "slug": "node-22811",
+          "tree": "main"
+        },
+        {
+          "name": "Acceleration",
+          "slug": "node-43082",
+          "tree": "main"
+        },
+        {
+          "name": "Trained Deflection",
+          "slug": "node-52180",
+          "tree": "main"
+        },
+        {
+          "name": "Beastial Skin",
+          "slug": "node-59720",
+          "tree": "main"
+        },
+        {
+          "name": "Enhanced Reflexes",
+          "slug": "node-51707",
+          "tree": "main"
+        },
+        {
+          "name": "Deep Freeze",
+          "slug": "node-16142",
+          "tree": "main"
+        },
+        {
+          "name": "Concussive Attack",
+          "slug": "node-36931",
+          "tree": "main"
+        },
+        {
+          "name": "Blinding Strike",
+          "slug": "node-20916",
+          "tree": "main"
+        },
+        {
+          "name": "Snowpiercer",
+          "slug": "node-9421",
+          "tree": "main"
+        },
+        {
+          "name": "Maiming Strike",
+          "slug": "node-41580",
+          "tree": "main"
+        },
+        {
+          "name": "Coming Calamity",
+          "slug": "node-28044",
+          "tree": "main"
+        },
+        {
+          "name": "Quick Fingers",
+          "slug": "node-33542",
+          "tree": "main"
+        },
+        {
+          "name": "Marked for Sickness",
+          "slug": "node-63830",
+          "tree": "main"
+        },
+        {
+          "name": "Marked Agility",
+          "slug": "node-44756",
+          "tree": "main"
+        },
+        {
+          "name": "Frazzled",
+          "slug": "node-32301",
+          "tree": "main"
+        },
+        {
+          "name": "Vile Wounds",
+          "slug": "node-30695",
+          "tree": "main"
+        },
+        {
+          "name": "Imbibed Power",
+          "slug": "node-50912",
+          "tree": "main"
+        },
+        {
+          "name": "Disorientation",
+          "slug": "node-38459",
+          "tree": "main"
+        },
+        {
+          "name": "Master Fletching",
+          "slug": "node-30341",
+          "tree": "main"
+        },
+        {
+          "name": "Hail",
+          "slug": "node-44974",
+          "tree": "main"
+        },
+        {
+          "name": "Primal Sundering",
+          "slug": "node-50884",
+          "tree": "main"
+        },
+        {
+          "name": "The Noble Wolf",
+          "slug": "node-2745",
+          "tree": "main"
+        }
+      ]
+    },
+    {
+      "act": "non-crit Hybrid swap",
+      "variantId": "2",
+      "equipment": [
+        {
+          "name": "Obliterator Bow",
+          "slot": "mainHand",
+          "slug": "weapon-fourbow9endgame",
+          "modifiers": [
+            "Adds 24 to 42 Physical Damage",
+            "Adds 53 to 80 Cold Damage",
+            "154% increased Physical Damage",
+            "+3 to Level of all Projectile Skills"
+          ]
+        },
+        {
+          "name": "Volant Quiver",
+          "slot": "offHand",
+          "slug": "quiver-fourquiver10",
+          "modifiers": [
+            "Adds 20 to 31 Cold damage to Attacks",
+            "+1 to Level of all Projectile Skills",
+            "16% increased Attack Speed",
+            "46% increased Projectile Speed",
+            "50% increased Damage with Bow Skills"
+          ]
+        },
+        {
+          "name": "Ancestral Tiara",
+          "slot": "helmet",
+          "slug": "armour-fourhelmetint8endgame",
+          "modifiers": [
+            "+10 to maximum Life",
+            "+60 to maximum Energy Shield",
+            "100% increased Energy Shield",
+            "13% increased Evasion and Energy Shield"
+          ]
+        },
+        {
+          "name": "Prismatic Ring",
+          "slot": "leftRing",
+          "slug": "ring-fourring9",
+          "modifiers": [
+            "+149 to maximum Life",
+            "Adds 15 to 26 Physical Damage to Attacks",
+            "Adds 20 to 31 Cold damage to Attacks"
+          ]
+        },
+        {
+          "name": "Prismatic Ring",
+          "slot": "rightRing",
+          "slug": "ring-fourring9",
+          "modifiers": [
+            "+149 to maximum Life",
+            "Adds 15 to 26 Physical Damage to Attacks",
+            "Adds 20 to 31 Cold damage to Attacks"
+          ]
+        },
+        {
+          "name": "Stellar Amulet",
+          "slot": "amulet",
+          "slug": "amulet-fouramulet8",
+          "modifiers": [
+            "+3 to Level of all Projectile Skills",
+            "+33 to Spirit"
+          ]
+        },
+        {
+          "name": "Corsair Coat",
+          "slot": "body",
+          "slug": "armour-fourbodydex10endgame",
+          "modifiers": [
+            "+330 to Evasion Rating",
+            "152% increased Evasion Rating",
+            "Gain Deflection Rating equal to 23% of Evasion Rating"
+          ]
+        },
+        {
+          "name": "Grand Bracers",
+          "slot": "gloves",
+          "slug": "armour-fourglovesdex4endgame",
+          "modifiers": [
+            "+149 to maximum Life",
+            "Adds 11 to 20 Physical Damage to Attacks",
+            "Adds 15 to 24 Cold damage to Attacks",
+            "16% increased Attack Speed"
+          ]
+        },
+        {
+          "name": "Rawhide Belt",
+          "slot": "belt",
+          "slug": "armour-fourbelt1",
+          "modifiers": [
+            "+33 to Strength",
+            "+174 to maximum Life"
+          ]
+        },
+        {
+          "name": "Bladed Shoes",
+          "slot": "boots",
+          "slug": "armour-fourbootsdexint6",
+          "modifiers": [
+            "100% increased Evasion and Energy Shield",
+            "35% increased Movement Speed",
+            "Gain Deflection Rating equal to 23% of Evasion Rating"
+          ]
+        }
+      ],
+      "skillGems": [
+        {
+          "name": "Ice Shot",
+          "slug": "iceshotplayer",
+          "supports": [
+            "Elemental Armament II",
+            "Ice Bite II",
+            "Rapid Attacks II",
+            "Fork",
+            "Cold Attunement"
+          ]
+        },
+        {
+          "name": "Snipe",
+          "slug": "snipeplayer",
+          "supports": [
+            "Elemental Armament II",
+            "Concentrated Area",
+            "Elemental Focus",
+            "Window of Opportunity II",
+            "Close Combat II"
+          ]
+        },
+        {
+          "name": "Tornado Shot",
+          "slug": "tornadoshotplayer",
+          "supports": [
+            "Prolonged Duration II",
+            "Overabundance II",
+            "Durability",
+            "Blind II"
+          ]
+        },
+        {
+          "name": "Ice-Tipped Arrows",
+          "slug": "icetippedarrowsplayer",
+          "supports": [
+            "Magnified Area II",
+            "Elemental Armament II",
+            "Short Fuse I",
+            "Longshot II"
+          ]
+        },
+        {
+          "name": "Freezing Mark",
+          "slug": "freezingmarkplayer",
+          "supports": [
+            "Mark of Siphoning II",
+            "Charged Mark",
+            "Eternal Mark",
+            "Eternal Mark"
+          ]
+        },
+        {
+          "name": "Barrage",
+          "slug": "barrageplayer",
+          "supports": [
+            "Cooldown Recovery II",
+            "Perpetual Charge",
+            "Rapid Casting II"
+          ]
+        },
+        {
+          "name": "Herald of Ice",
+          "slug": "heraldoficeplayer",
+          "supports": [
+            "Magnified Area II",
+            "Elemental Armament II",
+            "Longshot II",
+            "Cold Attunement",
+            "Elemental Focus"
+          ]
+        },
+        {
+          "name": "Ghost Dance",
+          "slug": "ghostdanceplayer",
+          "supports": [
+            "Cooldown Recovery II"
+          ]
+        },
+        {
+          "name": "Mirage Archer",
+          "slug": "metamiragearcherplayer",
+          "supports": [
+            "Ice Shot",
+            "Elemental Armament II",
+            "Deliberation",
+            "Rapid Attacks II",
+            "Cooldown Recovery II"
+          ]
+        },
+        {
+          "name": "Mirage Deadeye",
+          "slug": "metamiragedeadeyeplayer",
+          "supports": [
+            "Ice Shot",
+            "Elemental Armament II",
+            "Rapid Attacks II",
+            "Deliberation",
+            "Cooldown Recovery II"
+          ]
+        }
+      ],
+      "passiveTree": [
+        {
+          "name": "Honed Instincts",
+          "slug": "node-28992",
+          "tree": "main"
+        },
+        {
+          "name": "Clean Shot",
+          "slug": "node-42781",
+          "tree": "main"
+        },
+        {
+          "name": "Harness the Elements",
+          "slug": "node-12611",
+          "tree": "main"
+        },
+        {
+          "name": "Agile Succession",
+          "slug": "node-56493",
+          "tree": "main"
+        },
+        {
+          "name": "Essence of the Mountain",
+          "slug": "node-32683",
+          "tree": "main"
+        },
+        {
+          "name": "Step Like Mist",
+          "slug": "node-48198",
+          "tree": "main"
+        },
+        {
+          "name": "Mindful Awareness",
+          "slug": "node-62984",
+          "tree": "main"
+        },
+        {
+          "name": "Flow Like Water",
+          "slug": "node-49220",
+          "tree": "main"
+        },
+        {
+          "name": "Flow State",
+          "slug": "node-34233",
+          "tree": "main"
+        },
+        {
+          "name": "Escape Velocity",
+          "slug": "node-17854",
+          "tree": "main"
+        },
+        {
+          "name": "Catalysis",
+          "slug": "node-31433",
+          "tree": "main"
+        },
+        {
+          "name": "The Wild Cat",
+          "slug": "node-22811",
+          "tree": "main"
+        },
+        {
+          "name": "Acceleration",
+          "slug": "node-43082",
+          "tree": "main"
+        },
+        {
+          "name": "Beastial Skin",
+          "slug": "node-59720",
+          "tree": "main"
+        },
+        {
+          "name": "Deep Freeze",
+          "slug": "node-16142",
+          "tree": "main"
+        },
+        {
+          "name": "Concussive Attack",
+          "slug": "node-36931",
+          "tree": "main"
+        },
+        {
+          "name": "Blinding Strike",
+          "slug": "node-20916",
+          "tree": "main"
+        },
+        {
+          "name": "Snowpiercer",
+          "slug": "node-9421",
+          "tree": "main"
+        },
+        {
+          "name": "Maiming Strike",
+          "slug": "node-41580",
+          "tree": "main"
+        },
+        {
+          "name": "Coming Calamity",
+          "slug": "node-28044",
+          "tree": "main"
+        },
+        {
+          "name": "Quick Fingers",
+          "slug": "node-33542",
+          "tree": "main"
+        },
+        {
+          "name": "Marked for Sickness",
+          "slug": "node-63830",
+          "tree": "main"
+        },
+        {
+          "name": "Marked Agility",
+          "slug": "node-44756",
+          "tree": "main"
+        },
+        {
+          "name": "Frazzled",
+          "slug": "node-32301",
+          "tree": "main"
+        },
+        {
+          "name": "Imbibed Power",
+          "slug": "node-50912",
+          "tree": "main"
+        },
+        {
+          "name": "Disorientation",
+          "slug": "node-38459",
+          "tree": "main"
+        },
+        {
+          "name": "Master Fletching",
+          "slug": "node-30341",
+          "tree": "main"
+        },
+        {
+          "name": "Hail",
+          "slug": "node-44974",
+          "tree": "main"
+        },
+        {
+          "name": "Shimmering",
+          "slug": "node-53941",
+          "tree": "main"
+        },
+        {
+          "name": "Immaterial",
+          "slug": "node-19156",
+          "tree": "main"
+        },
+        {
+          "name": "Killer Instinct",
+          "slug": "node-56453",
+          "tree": "main"
+        },
+        {
+          "name": "Subterfuge Mask",
+          "slug": "node-55193",
+          "tree": "main"
+        },
+        {
+          "name": "Primal Sundering",
+          "slug": "node-50884",
+          "tree": "main"
+        },
+        {
+          "name": "The Noble Wolf",
+          "slug": "node-2745",
+          "tree": "main"
+        }
+      ]
+    }
+  ]
+}

@@ -1593,7 +1593,7 @@
                 { key: 'passiveTree', label: 'Passive Tree', childPrefix: null, childField: null, showSlot: false }
             ];
 
-            let activeAct = buildData.acts[0]?.act || 'Act 1';
+            let activeActKey = buildData.acts[0] ? getActStorageKey(buildData.acts[0]) : 'act-1';
             let activeCategory = 'equipment';
             let trackerState = loadTrackerState();
             let saveTimer = null;
@@ -1623,6 +1623,28 @@
                 return `${prefix}-${index}`;
             }
 
+            function getActStorageKey(act) {
+                if (act.variantId) {
+                    return act.variantId;
+                }
+
+                return act.act;
+            }
+
+            function findActByStorageKey(storageKey) {
+                return buildData.acts.find(entry => getActStorageKey(entry) === storageKey);
+            }
+
+            function getActDisplayLabel(storageKey) {
+                const act = findActByStorageKey(storageKey);
+
+                if (act) {
+                    return act.act;
+                }
+
+                return storageKey;
+            }
+
             function loadTrackerState() {
                 try {
                     const raw = localStorage.getItem(storageKey);
@@ -1648,9 +1670,10 @@
                 };
 
                 for (const act of buildData.acts) {
-                    state.equipment[act.act] = {};
-                    state.skillGems[act.act] = {};
-                    state.passiveTree[act.act] = {};
+                    const actKey = getActStorageKey(act);
+                    state.equipment[actKey] = {};
+                    state.skillGems[actKey] = {};
+                    state.passiveTree[actKey] = {};
                 }
 
                 return state;
@@ -1661,10 +1684,10 @@
 
                 for (const category of categories) {
                     for (const act of buildData.acts) {
-                        const actLabel = act.act;
-                        const savedAct = saved?.[category.key]?.[actLabel] || {};
+                        const actKey = getActStorageKey(act);
+                        const savedAct = saved?.[category.key]?.[actKey] || {};
 
-                        state[category.key][actLabel] = { ...savedAct };
+                        state[category.key][actKey] = { ...savedAct };
                     }
                 }
 
@@ -1699,8 +1722,8 @@
                 return act[category.key] || [];
             }
 
-            function countProgress(actLabel, category) {
-                const act = buildData.acts.find(entry => entry.act === actLabel);
+            function countProgress(actKey, category) {
+                const act = findActByStorageKey(actKey);
 
                 if (!act) {
                     return { done: 0, total: 0 };
@@ -1715,7 +1738,7 @@
                     const item = items[index];
                     const itemId = getItemId(item, index, category.key);
                     const children = category.childField ? (item[category.childField] || []) : [];
-                    const itemState = trackerState[category.key][actLabel][itemId] || { self: false, children: {} };
+                    const itemState = trackerState[category.key][actKey][itemId] || { self: false, children: {} };
 
                     total += 1 + children.length;
 
@@ -1758,12 +1781,13 @@
 
                 for (const act of buildData.acts) {
                     const button = document.createElement('button');
-                    const equipmentProgress = countProgress(act.act, categories[0]);
-                    const gemsProgress = countProgress(act.act, categories[1]);
-                    const passivesProgress = countProgress(act.act, categories[2]);
+                    const actKey = getActStorageKey(act);
+                    const equipmentProgress = countProgress(actKey, categories[0]);
+                    const gemsProgress = countProgress(actKey, categories[1]);
+                    const passivesProgress = countProgress(actKey, categories[2]);
                     const totalDone = equipmentProgress.done + gemsProgress.done + passivesProgress.done;
                     const totalItems = equipmentProgress.total + gemsProgress.total + passivesProgress.total;
-                    const isActive = act.act === activeAct;
+                    const isActive = actKey === activeActKey;
 
                     button.type = 'button';
                     button.className = `tracker-act-tab${isActive ? ' active' : ''}`;
@@ -1772,7 +1796,7 @@
                     button.textContent = `${act.act} (${totalDone}/${totalItems})`;
 
                     button.addEventListener('click', () => {
-                        activeAct = act.act;
+                        activeActKey = actKey;
                         renderActTabs();
                         renderCategoryTabs();
                         renderActiveCategory();
@@ -1798,7 +1822,7 @@
                 categoryTabsRoot.innerHTML = '';
 
                 for (const category of categories) {
-                    const progress = countProgress(activeAct, category);
+                    const progress = countProgress(activeActKey, category);
                     const isActive = category.key === activeCategory;
                     const button = document.createElement('button');
 
@@ -1833,7 +1857,7 @@
                     return;
                 }
 
-                const act = buildData.acts.find(entry => entry.act === activeAct);
+                const act = findActByStorageKey(activeActKey);
 
                 if (!act) {
                     return;
@@ -1864,7 +1888,7 @@
                 for (let index = 0; index < items.length; index++) {
                         const item = items[index];
                         const itemId = getItemId(item, index, category.key);
-                        const itemState = ensureItemState(category.key, activeAct, itemId);
+                        const itemState = ensureItemState(category.key, activeActKey, itemId);
                         const children = category.childField ? (item[category.childField] || []) : [];
                         const group = document.createElement('div');
                         group.className = 'tracker-group tracker-panel';
@@ -2010,10 +2034,10 @@
             }
 
             resetActButton.addEventListener('click', () => {
-                const confirmed = confirm(`Reset all checklist progress for ${activeAct}?`);
+                const confirmed = confirm(`Reset all checklist progress for ${getActDisplayLabel(activeActKey)}?`);
 
                 if (confirmed) {
-                    resetAct(activeAct);
+                    resetAct(activeActKey);
                 }
             });
 

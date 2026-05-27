@@ -1,0 +1,1 @@
+{"errors":[{"message":"parsing error: syntax error: expected a StringValue, Name or OperationDefinition","locations":[{"line":1,"column":156}],"extensions":{"code":"PARSING_ERROR"}}]}

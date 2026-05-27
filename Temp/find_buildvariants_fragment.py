@@ -1,0 +1,10 @@
+import re
+from pathlib import Path
+
+main = Path(r"F:\Repositories\Personal\poe2-guides\Temp\chunks\main.87e55fa0.js").read_text(encoding="utf-8", errors="ignore")
+for match in re.finditer(r'body:"((?:\\n|[^"])*)"', main):
+    body = match.group(1).replace("\\n", "\n")
+    if "buildVariants" in body and "values" in body:
+        if "fragment" in body or "query" in body:
+            print(body[:3500])
+            print("---\n")

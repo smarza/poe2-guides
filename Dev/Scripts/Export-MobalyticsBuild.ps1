@@ -74,10 +74,6 @@ function Get-MobalyticsBuildPageHtml {
             throw "Pagina bloqueada pelo Cloudflare. Tente novamente ou abra a URL no navegador e salve o HTML localmente."
         }
 
-        if (-not $hasBuildData) {
-            throw "Dados do build nao encontrados na pagina baixada."
-        }
-
         return $htmlContent
     }
     finally {
@@ -153,7 +149,7 @@ function Get-MobalyticsActVariantMapping {
     )
 
     $mapping = [ordered]@{}
-    $pattern = 'id="react-aria[^"]*-tab-([0-9a-f-]{36})"[^>]*>.*?x1psj106">([^<]+)<'
+    $pattern = 'id="react-aria[^"]*-tab-([^"]+)"[^>]*>.*?x1psj106">([^<]+)<'
     $matches = [regex]::Matches($HtmlContent, $pattern)
 
     foreach ($match in $matches) {
@@ -349,6 +345,122 @@ function Get-MobalyticsSupportGemNameMap {
     return $nameBySlug
 }
 
+function Test-MobalyticsHtmlHasBuildData {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string] $HtmlContent
+    )
+
+    return $HtmlContent -match '"buildVariants"'
+}
+
+function Get-MobalyticsVariantLabelsFromHtml {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string] $HtmlContent
+    )
+
+    $labels = @{}
+    $pattern = '\{"id":"([^"]+)","title":"([^"]+)"'
+    $matches = [regex]::Matches($HtmlContent, $pattern)
+
+    foreach ($match in $matches) {
+        $variantId = $match.Groups[1].Value
+        $variantTitle = $match.Groups[2].Value.Trim()
+
+        if (-not $labels.ContainsKey($variantId)) {
+            $labels[$variantId] = $variantTitle
+        }
+    }
+
+    return $labels
+}
+
+function Get-MobalyticsVariantActMapping {
+    param(
+        [Parameter(Mandatory = $true)]
+        $BuildVariantValues,
+
+        [hashtable] $VariantLabelsById = @{},
+
+        [hashtable] $HtmlActMapping = @{},
+
+        [hashtable] $HtmlVariantLabels = @{}
+    )
+
+    $actMapping = @{}
+
+    foreach ($variant in $BuildVariantValues) {
+        $variantId = $variant.id
+        $actLabel = $null
+
+        if ($HtmlActMapping.ContainsKey($variantId)) {
+            $actLabel = $HtmlActMapping[$variantId]
+        }
+
+        if ([string]::IsNullOrWhiteSpace($actLabel) -and $VariantLabelsById.ContainsKey($variantId)) {
+            $actLabel = $VariantLabelsById[$variantId]
+        }
+
+        if ([string]::IsNullOrWhiteSpace($actLabel) -and $HtmlVariantLabels.ContainsKey($variantId)) {
+            $actLabel = $HtmlVariantLabels[$variantId]
+        }
+
+        if ([string]::IsNullOrWhiteSpace($actLabel)) {
+            $actLabel = "Variant $variantId"
+        }
+
+        $actMapping[$variantId] = $actLabel
+    }
+
+    return $actMapping
+}
+
+function Invoke-MobalyticsBuildGraphqlFetch {
+    param(
+        [Parameter(Mandatory = $true)]
+        [hashtable] $UrlParts,
+
+        [Parameter(Mandatory = $true)]
+        [string] $BuildUrl
+    )
+
+    $pythonScriptPath = Join-Path $PSScriptRoot "Fetch-MobalyticsBuildGraphql.py"
+
+    if (-not (Test-Path $pythonScriptPath)) {
+        throw "Script GraphQL nao encontrado: $pythonScriptPath"
+    }
+
+    $isBuildUuid = $UrlParts.SlugifiedName -match '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'
+
+    $pythonArguments = @(
+        $pythonScriptPath,
+        "--author", $UrlParts.AuthorProfileName,
+        "--referer", $BuildUrl
+    )
+
+    if ($isBuildUuid) {
+        $pythonArguments += @("--build-id", $UrlParts.SlugifiedName)
+    }
+    else {
+        $pythonArguments += @("--slug", $UrlParts.SlugifiedName)
+    }
+
+    $pythonOutput = & python @pythonArguments 2>&1
+
+    if ($LASTEXITCODE -ne 0) {
+        $errorMessage = ($pythonOutput | Out-String).Trim()
+
+        if ([string]::IsNullOrWhiteSpace($errorMessage)) {
+            $errorMessage = "python exit code $LASTEXITCODE"
+        }
+
+        throw "Falha ao buscar build via GraphQL: $errorMessage"
+    }
+
+    return ($pythonOutput | Out-String).Trim() | ConvertFrom-Json -Depth 100
+}
+
 function Get-MobalyticsSupportGemName {
     param(
         $SubSkillObject,
@@ -364,24 +476,27 @@ function Get-MobalyticsSupportGemName {
     return $gemSlug
 }
 
-function Get-MobalyticsBuildExport {
+function Get-MobalyticsBuildExportFromVariants {
     param(
         [Parameter(Mandatory = $true)]
-        [string] $HtmlContent,
+        $BuildVariants,
+
+        [Parameter(Mandatory = $true)]
+        [hashtable] $ActMapping,
+
+        [Parameter(Mandatory = $true)]
+        [string] $BuildTitle,
+
+        [Parameter(Mandatory = $true)]
+        [hashtable] $UrlParts,
 
         [Parameter(Mandatory = $true)]
         [string] $BuildUrl
     )
 
-    $buildVariantsJson = Get-MobalyticsJsonBlock -HtmlContent $HtmlContent -PropertyName "buildVariants"
-    $buildVariants = ConvertFrom-MobalyticsEscapedJson -JsonText $buildVariantsJson
-    $actMapping = Get-MobalyticsActVariantMapping -HtmlContent $HtmlContent
-    $buildTitle = Get-MobalyticsBuildTitle -HtmlContent $HtmlContent
-    $urlParts = Get-MobalyticsBuildUrlParts -BuildUrl $BuildUrl
-
     $acts = [System.Collections.Generic.List[object]]::new()
 
-    foreach ($variant in $buildVariants.values) {
+    foreach ($variant in $BuildVariants.values) {
         $variantId = $variant.id
         $actLabel = $actMapping[$variantId]
 
@@ -472,11 +587,69 @@ function Get-MobalyticsBuildExport {
 
     return [ordered]@{
         sourceUrl = $BuildUrl
-        buildName = $buildTitle
-        author    = $urlParts.AuthorProfileName
-        slug      = $urlParts.SlugifiedName
+        buildName = $BuildTitle
+        author    = $UrlParts.AuthorProfileName
+        slug      = $UrlParts.SlugifiedName
         acts      = @($acts)
     }
+}
+
+function Get-MobalyticsBuildExport {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string] $HtmlContent,
+
+        [Parameter(Mandatory = $true)]
+        [string] $BuildUrl
+    )
+
+    $buildVariantsJson = Get-MobalyticsJsonBlock -HtmlContent $HtmlContent -PropertyName "buildVariants"
+    $buildVariants = ConvertFrom-MobalyticsEscapedJson -JsonText $buildVariantsJson
+    $htmlActMapping = Get-MobalyticsActVariantMapping -HtmlContent $HtmlContent
+    $htmlVariantLabels = Get-MobalyticsVariantLabelsFromHtml -HtmlContent $HtmlContent
+    $actMapping = Get-MobalyticsVariantActMapping `
+        -BuildVariantValues $buildVariants.values `
+        -HtmlActMapping $htmlActMapping `
+        -HtmlVariantLabels $htmlVariantLabels
+    $buildTitle = Get-MobalyticsBuildTitle -HtmlContent $HtmlContent
+    $urlParts = Get-MobalyticsBuildUrlParts -BuildUrl $BuildUrl
+
+    return Get-MobalyticsBuildExportFromVariants `
+        -BuildVariants $buildVariants `
+        -ActMapping $actMapping `
+        -BuildTitle $buildTitle `
+        -UrlParts $urlParts `
+        -BuildUrl $BuildUrl
+}
+
+function Get-MobalyticsBuildExportFromGraphql {
+    param(
+        [Parameter(Mandatory = $true)]
+        [hashtable] $UrlParts,
+
+        [Parameter(Mandatory = $true)]
+        [string] $BuildUrl
+    )
+
+    $graphqlResult = Invoke-MobalyticsBuildGraphqlFetch -UrlParts $UrlParts -BuildUrl $BuildUrl
+    $variantLabelsById = @{}
+
+    if ($null -ne $graphqlResult.variantLabelsById) {
+        foreach ($property in $graphqlResult.variantLabelsById.PSObject.Properties) {
+            $variantLabelsById[$property.Name] = $property.Value
+        }
+    }
+
+    $actMapping = Get-MobalyticsVariantActMapping `
+        -BuildVariantValues $graphqlResult.buildVariants.values `
+        -VariantLabelsById $variantLabelsById
+
+    return Get-MobalyticsBuildExportFromVariants `
+        -BuildVariants $graphqlResult.buildVariants `
+        -ActMapping $actMapping `
+        -BuildTitle $graphqlResult.buildName `
+        -UrlParts $UrlParts `
+        -BuildUrl $BuildUrl
 }
 
 function ConvertTo-MobalyticsBuildMarkdown {
@@ -572,6 +745,9 @@ else {
     }
 }
 
+$htmlContent = $null
+$useGraphqlFallback = $false
+
 if (-not [string]::IsNullOrWhiteSpace($HtmlPath)) {
     $resolvedHtmlPath = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($HtmlPath)
 
@@ -581,14 +757,22 @@ if (-not [string]::IsNullOrWhiteSpace($HtmlPath)) {
 
     Write-Host "Carregando HTML local: $resolvedHtmlPath"
     $htmlContent = Get-Content -Path $resolvedHtmlPath -Raw -Encoding UTF8
+    $useGraphqlFallback = -not (Test-MobalyticsHtmlHasBuildData -HtmlContent $htmlContent)
 }
 else {
     Write-Host "Baixando build de Mobalytics..."
     $htmlContent = Get-MobalyticsBuildPageHtml -BuildUrl $Url
+    $useGraphqlFallback = -not (Test-MobalyticsHtmlHasBuildData -HtmlContent $htmlContent)
 }
 
-Write-Host "Extraindo dados do build..."
-$buildExport = Get-MobalyticsBuildExport -HtmlContent $htmlContent -BuildUrl $Url
+if ($useGraphqlFallback) {
+    Write-Host "SSR sem buildVariants; buscando via GraphQL API..."
+    $buildExport = Get-MobalyticsBuildExportFromGraphql -UrlParts $urlParts -BuildUrl $Url
+}
+else {
+    Write-Host "Extraindo dados do build (HTML SSR)..."
+    $buildExport = Get-MobalyticsBuildExport -HtmlContent $htmlContent -BuildUrl $Url
+}
 
 $jsonOutputPath = $OutputPath
 $markdownOutputPath = $OutputPath
