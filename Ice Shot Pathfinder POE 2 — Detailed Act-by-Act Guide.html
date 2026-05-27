@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://rbasniak.github.io/poe2-guides/deadeye -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ice Shot Pathfinder POE 2 — Detailed Act-by-Act Guide</title>
+    <style>
+        :root {
+            --bg: #07101f;
+            --bg2: #0d1730;
+            --panel: rgba(255,255,255,.075);
+            --panel2: rgba(255,255,255,.105);
+            --border: rgba(255,255,255,.15);
+            --text: #eef7ff;
+            --muted: #aebbd2;
+            --muted2: #7f8fa9;
+            --ice: #67e8f9;
+            --blue: #60a5fa;
+            --violet: #a78bfa;
+            --amber: #fbbf24;
+            --green: #34d399;
+            --red: #fb7185;
+            --danger: #f43f5e;
+            --shadow: 0 24px 80px rgba(0,0,0,.38);
+            --radius: 24px;
+            --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            font-family: var(--sans);
+            line-height: 1.55;
+            background: radial-gradient(circle at 10% -10%, rgba(103,232,249,.22), transparent 30rem), radial-gradient(circle at 90% 0%, rgba(167,139,250,.2), transparent 34rem), radial-gradient(circle at 55% 25%, rgba(96,165,250,.13), transparent 34rem), linear-gradient(180deg, var(--bg), #050814 70%, #03050d);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 290px minmax(0, 1fr);
+            min-height: 100vh;
+        }
+
+        aside {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 28px 22px;
+            border-right: 1px solid var(--border);
+            background: rgba(3,7,18,.68);
+            backdrop-filter: blur(20px);
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 17px;
+            color: #04101e;
+            font-weight: 950;
+            background: linear-gradient(135deg, var(--ice), var(--violet));
+            box-shadow: 0 12px 34px rgba(103,232,249,.28);
+        }
+
+        .brand h1 {
+            font-size: 15px;
+            line-height: 1.1;
+            margin: 0;
+            letter-spacing: -.01em;
+        }
+
+        .brand p {
+            margin: 5px 0 0;
+            color: var(--muted2);
+            font-size: 12px;
+        }
+
+        nav {
+            display: grid;
+            gap: 4px;
+        }
+
+            nav a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 12px;
+                border-radius: 13px;
+                color: var(--muted);
+                text-decoration: none;
+                font-size: 14px;
+                transition: .16s ease;
+            }
+
+                nav a::before {
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 99px;
+                    background: var(--ice);
+                    opacity: .65;
+                }
+
+                nav a:hover, nav a.active {
+                    background: var(--panel);
+                    color: var(--text);
+                    transform: translateX(2px);
+                }
+
+        .side-note {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 18px;
+            background: rgba(255,255,255,.06);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        main {
+            padding: 42px clamp(22px,4vw,62px) 88px;
+            max-width: 1540px;
+        }
+
+        .hero {
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--border);
+            border-radius: 34px;
+            padding: clamp(30px,5vw,62px);
+            background: linear-gradient(135deg, rgba(103,232,249,.16), rgba(167,139,250,.12)), rgba(255,255,255,.055);
+            box-shadow: var(--shadow);
+        }
+
+            .hero::after {
+                content: "";
+                position: absolute;
+                width: 460px;
+                height: 460px;
+                right: -210px;
+                top: -170px;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(103,232,249,.34), transparent 68%);
+                pointer-events: none;
+            }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            border-radius: 99px;
+            border: 1px solid rgba(103,232,249,.34);
+            background: rgba(103,232,249,.07);
+            color: var(--ice);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .02em;
+        }
+
+        .hero h1 {
+            margin: 18px 0 18px;
+            max-width: 1020px;
+            font-size: clamp(40px,6.4vw,82px);
+            line-height: .94;
+            letter-spacing: -.06em;
+        }
+
+        .gradient {
+            background: linear-gradient(90deg, var(--ice), var(--violet), var(--amber));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        p {
+            color: var(--muted);
+            margin: 0 0 14px;
+        }
+
+        .hero p {
+            max-width: 960px;
+            font-size: 18px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0,1fr));
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .stat {
+            padding: 17px;
+            border: 1px solid var(--border);
+            border-radius: 19px;
+            background: rgba(0,0,0,.18);
+        }
+
+            .stat strong {
+                display: block;
+                font-size: 22px;
+                line-height: 1.05;
+            }
+
+            .stat span {
+                color: var(--muted2);
+                font-size: 12px;
+            }
+
+        .section {
+            margin-top: 34px;
+            scroll-margin-top: 24px;
+        }
+
+        .section-head {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            margin: 48px 0 18px;
+        }
+
+        .section-kicker {
+            flex: 0 0 auto;
+            min-width: 78px;
+            text-align: center;
+            padding: 10px 12px;
+            border-radius: 16px;
+            font-weight: 950;
+            letter-spacing: -.02em;
+            background: rgba(103,232,249,.1);
+            color: var(--ice);
+            border: 1px solid rgba(103,232,249,.24);
+        }
+
+        h2 {
+            margin: 0 0 8px;
+            font-size: clamp(28px,3.2vw,46px);
+            line-height: 1.04;
+            letter-spacing: -.035em;
+        }
+
+        h3 {
+            margin: 0 0 12px;
+            font-size: 20px;
+            letter-spacing: -.015em;
+        }
+
+        h4 {
+            margin: 18px 0 8px;
+            font-size: 15px;
+            color: var(--text);
+        }
+
+        .route-grid {
+            display: grid;
+            grid-template-columns: minmax(320px, 0.88fr) minmax(0, 1.52fr);
+            gap: 18px;
+            align-items: start;
+        }
+
+        .timeline-panel {
+            position: sticky;
+            top: 24px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: rgba(255,255,255,.063);
+            box-shadow: 0 18px 60px rgba(0,0,0,.22);
+            overflow: hidden;
+        }
+
+        .timeline-title {
+            padding: 15px 16px;
+            font-weight: 900;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(90deg, rgba(103,232,249,.15), transparent);
+        }
+
+        .timeline-table, .compact-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            color: var(--muted2);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            text-align: left;
+        }
+
+        .timeline-table th, .timeline-table td, .compact-table th, .compact-table td {
+            padding: 11px 12px;
+            border-bottom: 1px solid rgba(255,255,255,.09);
+            vertical-align: top;
+        }
+
+        .timeline-table tr:last-child td, .compact-table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .timeline-table tbody tr:hover, .compact-table tbody tr:hover {
+            background: rgba(255,255,255,.045);
+        }
+
+        .time-cell {
+            font-family: var(--mono);
+            color: var(--ice);
+            white-space: nowrap;
+            font-weight: 800;
+            font-size: 12px;
+        }
+
+        .level-cell {
+            width: 62px;
+        }
+
+        .level-chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            padding: 4px 7px;
+            border-radius: 99px;
+            background: rgba(251,191,36,.12);
+            color: #fde68a;
+            border: 1px solid rgba(251,191,36,.24);
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        .tiny {
+            color: var(--muted2);
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        .cards-stack {
+            display: grid;
+            gap: 14px;
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: rgba(255,255,255,.073);
+            padding: 20px;
+            box-shadow: 0 16px 54px rgba(0,0,0,.17);
+        }
+
+            .card.highlight {
+                border-color: rgba(103,232,249,.36);
+                background: linear-gradient(135deg, rgba(103,232,249,.12), rgba(255,255,255,.065));
+            }
+
+            .card.warn {
+                border-color: rgba(251,191,36,.38);
+                background: linear-gradient(135deg, rgba(251,191,36,.11), rgba(255,255,255,.06));
+            }
+
+            .card.danger {
+                border-color: rgba(251,113,133,.42);
+                background: linear-gradient(135deg, rgba(251,113,133,.12), rgba(255,255,255,.06));
+            }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--muted);
+        }
+
+        li {
+            margin: 7px 0;
+        }
+
+        strong {
+            color: var(--text);
+        }
+
+        .compact-table {
+            overflow: hidden;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,.09);
+        }
+
+            .compact-table th {
+                background: rgba(255,255,255,.055);
+            }
+
+            .compact-table td {
+                color: var(--muted);
+            }
+
+                .compact-table td:first-child {
+                    color: var(--text);
+                    font-weight: 800;
+                }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(255,255,255,.12);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+            .pill::before {
+                content: "";
+                width: 7px;
+                height: 7px;
+                border-radius: 99px;
+                background: var(--ice);
+            }
+
+        .callout {
+            margin-top: 16px;
+            padding: 18px 20px;
+            border-radius: 22px;
+            border: 1px solid rgba(103,232,249,.28);
+            background: linear-gradient(135deg, rgba(103,232,249,.12), rgba(167,139,250,.08));
+            color: var(--muted);
+        }
+
+        .rotation {
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0,1fr));
+            gap: 10px;
+            counter-reset: step;
+        }
+
+        .step {
+            position: relative;
+            padding: 16px;
+            min-height: 130px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(255,255,255,.07);
+        }
+
+            .step::before {
+                counter-increment: step;
+                content: counter(step);
+                display: grid;
+                place-items: center;
+                width: 28px;
+                height: 28px;
+                border-radius: 10px;
+                background: linear-gradient(135deg, var(--ice), var(--violet));
+                color: #06101f;
+                font-weight: 950;
+                margin-bottom: 12px;
+            }
+
+            .step strong {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .step span {
+                color: var(--muted2);
+                font-size: 13px;
+            }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .footer {
+            margin-top: 52px;
+            color: var(--muted2);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .searchbox {
+            width: 100%;
+            margin: 18px 0 0;
+            padding: 13px 14px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: rgba(0,0,0,.2);
+            color: var(--text);
+            outline: none;
+        }
+
+            .searchbox::placeholder {
+                color: var(--muted2);
+            }
+
+        .hidden-by-search {
+            display: none !important;
+        }
+
+        .violet .section-kicker, .violet .timeline-title {
+            color: var(--violet);
+            border-color: rgba(167,139,250,.25);
+            background: linear-gradient(90deg, rgba(167,139,250,.14), transparent);
+        }
+
+        .blue .section-kicker, .blue .timeline-title {
+            color: var(--blue);
+            border-color: rgba(96,165,250,.25);
+            background: linear-gradient(90deg, rgba(96,165,250,.14), transparent);
+        }
+
+        .amber .section-kicker, .amber .timeline-title {
+            color: var(--amber);
+            border-color: rgba(251,191,36,.25);
+            background: linear-gradient(90deg, rgba(251,191,36,.13), transparent);
+        }
+
+        .green .section-kicker, .green .timeline-title {
+            color: var(--green);
+            border-color: rgba(52,211,153,.25);
+            background: linear-gradient(90deg, rgba(52,211,153,.13), transparent);
+        }
+
+        .red .section-kicker, .red .timeline-title {
+            color: var(--red);
+            border-color: rgba(251,113,133,.25);
+            background: linear-gradient(90deg, rgba(251,113,133,.13), transparent);
+        }
+
+        @media (max-width: 1180px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                position: relative;
+                height: auto;
+            }
+
+            nav {
+                grid-template-columns: repeat(2, minmax(0,1fr));
+            }
+
+            main {
+                padding-top: 28px;
+            }
+
+            .timeline-panel {
+                position: relative;
+                top: 0;
+            }
+
+            .route-grid, .overview-grid, .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid {
+                grid-template-columns: repeat(2, minmax(0,1fr));
+            }
+
+            .rotation {
+                grid-template-columns: repeat(2, minmax(0,1fr));
+            }
+        }
+
+        @media (max-width: 680px) {
+            .hero-grid, nav, .rotation {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 26px 20px;
+            }
+
+            main {
+                padding-inline: 16px;
+            }
+
+            .section-head {
+                flex-direction: column;
+            }
+
+            .timeline-table th:nth-child(2), .timeline-table td:nth-child(2) {
+                display: none;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: #111827;
+            }
+
+            aside, .searchbox {
+                display: none;
+            }
+
+            .layout {
+                display: block;
+            }
+
+            main {
+                padding: 0;
+                max-width: none;
+            }
+
+            .hero, .card, .timeline-panel {
+                box-shadow: none;
+                background: white;
+                color: #111827;
+                border-color: #d1d5db;
+            }
+
+            p, ul, .compact-table td, .tiny {
+                color: #374151;
+            }
+
+            .route-grid {
+                grid-template-columns: .9fr 1.5fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside>
+            <div class="brand">
+                <div class="logo">IS</div>
+                <div>
+                    <h1>Ice Shot Pathfinder<br>Level 1 → T15</h1>
+                    <p>POE 2 route guide</p>
+                </div>
+            </div>
+            <nav><a href="https://rbasniak.github.io/poe2-guides/deadeye#overview" class="active">Overview</a><a href="https://rbasniak.github.io/poe2-guides/deadeye#act1" class="">Act 1</a><a href="https://rbasniak.github.io/poe2-guides/deadeye#act2" class="">Act 2</a><a href="https://rbasniak.github.io/poe2-guides/deadeye#act3" class="">Act 3</a><a href="https://rbasniak.github.io/poe2-guides/deadeye#act4" class="">Act 4</a><a href="https://rbasniak.github.io/poe2-guides/deadeye#interlude" class="">Interlude</a><a href="https://rbasniak.github.io/poe2-guides/deadeye#mapping" class="">Mapping</a><a href="https://rbasniak.github.io/poe2-guides/deadeye#rotation" class="">Boss Rotation</a><a href="https://rbasniak.github.io/poe2-guides/deadeye#checklists" class="">Checklists</a><a href="https://rbasniak.github.io/poe2-guides/deadeye#timesaves">Time Saves</a></nav>
+            <div class="side-note">
+                <strong>Timestamp rule:</strong><br>
+                Times use the VTT/video timeline. Spoken run timers are called out when they differ because of splices or pauses.
+            </div>
+            <input class="searchbox" id="search" placeholder="Filter visible cards/timelines…">
+        </aside>
+
+        <main>
+            <header class="hero" id="overview">
+                <span class="eyebrow">Static route guide · act-by-act timelines</span>
+                <h1><span class="gradient">Ice Shot Pathfinder</span><br>from Level 1 to first T15</h1>
+                <p>This version restores the detailed route notes and moves the timestamped timeline into each act-style section. Interlude and Mapping are treated as full sections so the guide is easier to follow while playing.</p>
+                <div class="hero-grid">
+                    <div class="stat"><strong>3-phase build</strong><span>Lightning → Snipe → Ice Shot</span></div>
+                    <div class="stat"><strong>Lvl 31</strong><span>Ice Shot online</span></div>
+                    <div class="stat"><strong>Lvl 41</strong><span>major stat wall</span></div>
+                    <div class="stat"><strong>T15</strong><span>boss killed at 08:31:51 video time</span></div>
+                </div>
+            </header>
+
+            <section class="section">
+                <div class="overview-grid">
+                    <article class="card"><h3>Core route identity</h3><p>The run is not “Ice Shot from level 1.” It is a staged bow campaign route:</p><div class="pill-row"><span class="pill">Act 1 → early Act 2: Lightning Arrow + Lightning Rod</span><span class="pill">Act 2 bossing: Snipe + Frost Bomb</span><span class="pill">Act 3 onward: Ice Shot clear + Snipe bosses</span><span class="pill">Maps: Ice Shot clear, Snipe burst, Frost Bomb when usable</span></div></article>
+                    <article class="card highlight"><h3>What makes or breaks the time</h3><p>The build is strong, but the run depends on four recurring constraints: <strong>attribute planning</strong>, the <strong>chill-magnitude quiver</strong>, <strong>Frost Bomb staying usable</strong>, and avoiding excessive gear inspection.</p><div class="callout"><strong>Most important correction:</strong> do not copy the time losses. Copy the route, not every detour.</div></article>
+                </div>
+                <div class="two-col" style="margin-top:14px;">
+                    <article class="card"><h3>Skill progression summary</h3><table class="compact-table"><thead><tr><th>Stage</th><th>Clear</th><th>Bossing</th><th>Utility / notes</th></tr></thead><tbody><tr><td>Act 1</td><td><strong>Lightning Arrow</strong></td><td>Lightning Rod + Frost Bomb</td><td>Elemental Armament; rush rather than full-clear.</td></tr><tr><td>Early Act 2</td><td>Lightning Arrow</td><td><strong>Snipe begins replacing Lightning Rod</strong></td><td>Escape Shot, Barrage, Hourglass, Window of Opportunity.</td></tr><tr><td>Late Act 2</td><td>Lightning Arrow / transitional ice utility</td><td><strong>Snipe + Frost Bomb</strong></td><td>Freeze/chill timing becomes decisive.</td></tr><tr><td>Act 3</td><td><strong>Ice Shot</strong></td><td>Snipe + Frost Bomb</td><td>Ice Bite, mark, Escape Shot.</td></tr><tr><td>Act 4</td><td>Ice Shot</td><td>Snipe</td><td>Weapon-set passives for Dex/Int split.</td></tr><tr><td>Interlude</td><td>Ice Shot</td><td>Snipe</td><td>Wind Dancer or charge setup.</td></tr><tr><td>Maps</td><td>Ice Shot</td><td>Snipe + Frost Bomb when usable</td><td>Combat Frenzy/charge setup when functional.</td></tr></tbody></table></article>
+                    <article class="card "><h3>Target / observed splits</h3><table class="compact-table"><thead><tr><th>Split</th><th>Target / observed</th></tr></thead><tbody><tr><td>Act 1 final</td><td>~00:50–00:55 video time; observed 00:53:10 / spoken ~52 min.</td></tr><tr><td>Act 2 final</td><td>~02:10–02:15; observed 02:13:52 / spoken ~2h13.</td></tr><tr><td>Ice Shot online</td><td>~02:15; observed 02:15:45 at level 31.</td></tr><tr><td>Act 3 final</td><td>~03:35–03:45; observed 03:36:43.</td></tr><tr><td>Act 4 final</td><td>~05:10; observed 05:14:12 / spoken ~5h09.</td></tr><tr><td>Campaign done</td><td>~06:15; observed 06:23:42 / spoken ~6h18.</td></tr><tr><td>Tier 15 boss killed</td><td>Observed 08:31:51 video time / spoken final ~9h43.</td></tr></tbody></table></article>
+                </div>
+            </section>
+
+
+            <section id="act1" class="section route-section ice">
+                <div class="section-head">
+                    <div class="section-kicker">Act 1</div>
+                    <div>
+                        <h2>Act 1 — Lightning Arrow / Lightning Rod rush</h2>
+                        <p>Get Frost Bomb, keep moving, and survive bad bow RNG without overcorrecting.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">00:00:14</a></td>
+                                    <td class="level-cell"><span class="level-chip">1</span></td>
+                                    <td><strong>Run goal stated</strong><div class="tiny">Level 1 → Tier 15 Ice Shot Pathfinder.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">00:01:22</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Build progression explained</strong><div class="tiny">Lightning Arrow + Lightning Rod → Snipe → Ice Shot.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">00:02:30</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Lightning Rod taken</strong><div class="tiny">Sell junk and keep moving.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">00:02:45</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>First uncut gem</strong><div class="tiny">Pick the level 1 uncut gem from abandoned camp.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">00:03:15–00:03:50</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Frost Bomb acquired</strong><div class="tiny">Use it immediately on the first boss.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">00:05:26</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Elemental Armament</strong><div class="tiny">First important support for the early bow setup.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">00:08:28</a></td>
+                                    <td class="level-cell"><span class="level-chip">5 target</span></td>
+                                    <td><strong>Level 5 target</strong><div class="tiny">Kill only enough mobs to reach the breakpoint.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">00:10:00–00:13:00</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Bad bow detour</strong><div class="tiny">Run loses time trying to solve weapon RNG.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">00:53:10</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Act 1 final killed</strong><div class="tiny">Spoken timer around 52 minutes; slow but recoverable.</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack"><article class="card"><h3>Primary objective</h3><p>Rush the early campaign without full-clearing. Your only real objectives are to unlock the early bow package, get Frost Bomb, reach the minimum level breakpoints, and avoid a catastrophic weapon start.</p></article><article class="card"><h3>Do this</h3><ul><li><strong>Start Lightning Arrow</strong> and pick <strong>Lightning Rod</strong> immediately when available.</li><li>Pick the <strong>level 1 uncut gem</strong> in the abandoned camp and take <strong>Frost Bomb</strong>.</li><li>Use Frost Bomb on early bosses: cast it, count roughly <strong>1–5</strong>, then recast as the window expires.</li><li>Take <strong>Elemental Armament</strong> as the first support power spike.</li><li>Kill only enough monsters to reach the next requirement; do not full-clear low-value zones.</li></ul></article><article class="card"><h3>Early gear priorities</h3><table class="compact-table"><thead><tr><th>Priority</th><th>What to look for</th></tr></thead><tbody><tr><td>1</td><td><strong>Any usable bow</strong>: short bow or flat elemental damage roll.</td></tr><tr><td>2</td><td><strong>Movement speed boots</strong>: ID boots early; MS saves minutes over the run.</td></tr><tr><td>3</td><td><strong>Transmute/Augment orbs</strong>: enough to make the bow usable.</td></tr><tr><td>4</td><td><strong>Flat fire/lightning/cold damage</strong>: any flat damage carries early.</td></tr><tr><td>5</td><td><strong>Basic quiver</strong>: damage or accuracy; the god-tier quiver comes later.</td></tr></tbody></table></article><article class="card warn"><h3>Failure point to avoid</h3><p>The transcript loses several minutes because no good bow drops. The correct play is not endless reset-fishing: buy or craft something mediocre-but-functional, then keep moving. Act 1 can still be recovered even if it ends around 52–55 minutes.</p></article></div>
+                </div>
+            </section>
+            <section id="act2" class="section route-section violet">
+                <div class="section-head">
+                    <div class="section-kicker">Act 2</div>
+                    <div>
+                        <h2>Act 2 — Snipe bossing comes online</h2>
+                        <p>Solve attributes, transition away from Lightning Rod, and leverage the quiver power spike.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">00:54:51</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Act 2 shopping</strong><div class="tiny">Check for level 16 bow, rings, amulet, MS boots.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">01:01:44</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>31 Dex pressure</strong><div class="tiny">First clear attribute wall.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">01:09:56</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Balbala decision</strong><div class="tiny">Do it if you need power/spirit progression.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">01:11:00</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Balbala killed</strong><div class="tiny">Fight was smoother than expected.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">01:13:54</a></td>
+                                    <td class="level-cell"><span class="level-chip">19</span></td>
+                                    <td><strong>Level 19 reached</strong><div class="tiny">Take Escape Shot, Barrage, and Snipe pieces.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">01:17:57</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Snipe testing starts</strong><div class="tiny">Hourglass + Window of Opportunity.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">01:19:00</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Lightning Rod dropped</strong><div class="tiny">Snipe becomes the bossing engine.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">01:20:43</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Frost Bomb boss prep</strong><div class="tiny">Check stat requirements before Jamanra-type bosses.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">01:37:01</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Huge quiver spike</strong><div class="tiny">Chill-magnitude damage quiver/mod carries the run.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">01:45:50</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Ascendancy decision</strong><div class="tiny">Ascend after the quiver power spike.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">02:13:52</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Act 2 final killed</strong><div class="tiny">Spoken timer around 2h13.</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack"><article class="card"><h3>Primary objective</h3><p>Transition from the Act 1 Lightning Arrow/Lightning Rod setup into <strong>Snipe bossing</strong>. Act 2 is where the build starts becoming powerful, but also where attribute pressure begins.</p></article><article class="card"><h3>Vendor check at Act 2 start</h3><table class="compact-table"><thead><tr><th>Slot</th><th>Desired stats</th></tr></thead><tbody><tr><td>Bow</td><td><strong>Level 16 bow</strong>, flat elemental damage, good phys/ele roll.</td></tr><tr><td>Amulet</td><td><strong>Dex / Int / Strength</strong>. This slot can save the run.</td></tr><tr><td>Rings</td><td>Resistances, flat damage, attributes.</td></tr><tr><td>Boots</td><td>15%+ movement speed, resist if possible.</td></tr><tr><td>Quiver</td><td>Damage, accuracy, or ideally chill-scaling later.</td></tr></tbody></table></article><article class="card"><h3>Skill transition</h3><ul><li>Keep clearing with <strong>Lightning Arrow</strong> until the Snipe package is available.</li><li>At level 19, take <strong>Escape Shot</strong>, <strong>Barrage</strong>, and the pieces needed for Snipe.</li><li>Test <strong>Snipe + Hourglass + Window of Opportunity</strong> on bosses.</li><li>Once Snipe starts deleting bosses, stop relying on Lightning Rod.</li></ul></article><article class="card"><h3>Bossing logic</h3><p>The Act 2 bossing package is about creating a freeze/chill damage window, then releasing a fully charged Snipe into that window. Failed one-shots in the run are usually caused by bad Frost Bomb timing, the boss moving/phasing, or releasing Snipe outside the damage window.</p></article><article class="card highlight"><h3>The quiver spike</h3><p>The chill-magnitude damage quiver/mod found around <strong>01:37:01</strong> is one of the biggest reasons the run succeeds. It makes chilled enemies take increased damage based on chill magnitude. Without that quiver or a comparable substitute, expect slower boss kills.</p></article><article class="card"><h3>Balbala and ascendancy</h3><p>Balbala is done even though Lightning Arrow feels awkward against moving bosses. After the quiver spike, the player chooses to ascend because the build has enough damage and control to make the trial safer.</p></article></div>
+                </div>
+            </section>
+            <section id="act3" class="section route-section blue">
+                <div class="section-head">
+                    <div class="section-kicker">Act 3</div>
+                    <div>
+                        <h2>Act 3 — Ice Shot conversion</h2>
+                        <p>Switch to Ice Shot at level 31 while preserving Snipe as the boss nuke.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">02:15:03</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Act 3 starts</strong><div class="tiny">Prepare for full Ice Shot conversion.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">02:15:45</a></td>
+                                    <td class="level-cell"><span class="level-chip">31</span></td>
+                                    <td><strong>Ice Shot online</strong><div class="tiny">Main campaign clear skill from now on.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">02:24:04</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Ice Shot + Snipe confirmed</strong><div class="tiny">Works even with level 16 bow if the rolls are right.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">02:25:08</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Ice Shot links shown</strong><div class="tiny">Ice Bite, Rapid Attack, Elemental Armament, Deliberation.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">02:26:00–02:36:00</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Herald of Ice detour</strong><div class="tiny">Good if natural; skip if it costs backtracking.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">03:27:41</a></td>
+                                    <td class="level-cell"><span class="level-chip">41 target</span></td>
+                                    <td><strong>Stat wall appears</strong><div class="tiny">Frost Bomb and Snipe upgrades strain Int/Dex.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">03:32:51</a></td>
+                                    <td class="level-cell"><span class="level-chip">41</span></td>
+                                    <td><strong>Level 41 confirmed</strong><div class="tiny">Upgrade Frost Bomb and Snipe to level 11, then fix attributes.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">03:36:43</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Act 3 final killed</strong><div class="tiny">Build is explicitly called stat-intensive.</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack"><article class="card"><h3>Primary objective</h3><p>Convert into the real Ice Shot build. From level 31 onward, <strong>Ice Shot</strong> becomes the main clear skill while <strong>Snipe</strong> stays as the boss nuke.</p></article><article class="card"><h3>Ice Shot links</h3><table class="compact-table"><thead><tr><th>Skill</th><th>Supports / role</th></tr></thead><tbody><tr><td>Ice Shot</td><td><strong>Ice Bite</strong>: enables the pack-melting behavior once active.</td></tr><tr><td>Ice Shot</td><td><strong>Rapid Attack</strong>: smoother clearing.</td></tr><tr><td>Ice Shot</td><td><strong>Elemental Armament</strong>: generic elemental damage boost.</td></tr><tr><td>Ice Shot</td><td><strong>Deliberation</strong>: part of the shown setup.</td></tr><tr><td>Bossing</td><td><strong>Snipe + Frost Bomb + mark/freeze setup</strong>.</td></tr></tbody></table></article><article class="card warn"><h3>Herald of Ice rule</h3><p>Herald of Ice is useful, but the transcript spends time looking for the spirit gem and does not get clean value from the detour. Take it if it naturally appears; otherwise keep progressing. Ice Shot already clears well at this stage.</p></article><article class="card"><h3>Act 3 route goals</h3><ul><li>Take <strong>Ice Shot at level 31</strong>.</li><li>Keep Snipe for bosses; do not try to make Ice Shot do every boss job alone.</li><li>Grab easy value like the free rare belt, but avoid side detours after the objective is done.</li><li>Save correct gem levels for Frost Bomb; do not accidentally create a stat/level mismatch.</li><li>Prepare for the level 41 stat wall before the Act 3 final boss.</li></ul></article><article class="card danger"><h3>Level 41 stat wall</h3><p>Around level 41, the player upgrades Frost Bomb and Snipe to level 11, then temporarily breaks the setup because of missing Dex/Int. This is the first major “build knowledge” check: do not enter the boss arena with Snipe or Frost Bomb disabled.</p></article><article class="card"><h3>Pre-final checklist</h3><table class="compact-table"><thead><tr><th>Check</th><th>Required state</th></tr></thead><tbody><tr><td>Snipe</td><td>Usable. This is mandatory.</td></tr><tr><td>Frost Bomb</td><td>Usable if possible; major boss damage/exposure tool.</td></tr><tr><td>Ice Shot</td><td>Main clear skill.</td></tr><tr><td>Dex</td><td>Enough for bow/Snipe.</td></tr><tr><td>Int</td><td>Enough for Frost Bomb.</td></tr><tr><td>Strength</td><td>Enough for supports/utility if equipped.</td></tr><tr><td>Resists</td><td>Not perfect, but not awful.</td></tr></tbody></table></article></div>
+                </div>
+            </section>
+            <section id="act4" class="section route-section amber">
+                <div class="section-head">
+                    <div class="section-kicker">Act 4</div>
+                    <div>
+                        <h2>Act 4 — Stabilize and craft the mapping bow</h2>
+                        <p>Use Ice Shot to clear, craft one strong bow, and avoid wasting minutes on tiny upgrades.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">03:39:39</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Act 4 starts</strong><div class="tiny">Enter King’s March / Act 4.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">03:40:00–03:45:00</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Weapon-set passives fixed</strong><div class="tiny">Dex/bow on one set, Int/Frost Bomb on the other.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">04:18:30</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Major bow upgrade</strong><div class="tiny">Quality/craft a bow good enough for at least Tier 10 mapping.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">04:20:00–05:10:00</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Bosses become trivial</strong><div class="tiny">Several bosses are nearly or fully one-shot.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">05:14:12</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Act 4 final killed</strong><div class="tiny">Spoken timer around 5h09; too much gear checking.</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack"><article class="card"><h3>Primary objective</h3><p>Stabilize the build and craft one strong bow that carries into early mapping. Act 4 is not mechanically complex for this build; the main danger is wasting time checking too much gear.</p></article><article class="card highlight"><h3>Weapon-set passive setup</h3><p>Set passives so weapon set 1 supports <strong>Dex / bow skills / Ice Shot / Snipe</strong>, while weapon set 2 supports <strong>Int / Frost Bomb</strong>. This prevents the build from breaking every time you upgrade gems.</p></article><article class="card"><h3>Gear rule for Act 4</h3><table class="compact-table"><thead><tr><th>Keep checking for</th><th>Ignore unless huge</th></tr></thead><tbody><tr><td>High flat elemental bow or good phys/ele base</td><td>Tiny bow upgrades</td></tr><tr><td>Movement speed boots with resist</td><td>Boots that lose movement speed</td></tr><tr><td>Resist + life rings</td><td>Damage rings that break resists</td></tr><tr><td>Attribute amulet</td><td>Amulet without stats when requirements are tight</td></tr><tr><td>Accuracy if missing attacks</td><td>Random rarity/loot luxury pieces</td></tr></tbody></table></article><article class="card"><h3>Major bow upgrade</h3><p>At around <strong>04:18:30</strong>, the creator quality/crafts a bow and says it can carry into at least <strong>Tier 10 mapping</strong>. This is the practical benchmark: once you have a bow in that range, stop shopping every vendor for marginal replacements.</p></article><article class="card"><h3>Act 4 gameplay</h3><ul><li>Ice Shot clears packs and keeps the run fast.</li><li>Snipe remains the boss burst skill.</li><li>Use Frost Bomb only when it is actually usable and worth the setup time.</li><li>Fix fire/cold/lightning resistance as you go; do not enter mapping with completely broken defenses.</li></ul></article><article class="card warn"><h3>Time loss note</h3><p>Act 4 ends around video timestamp <strong>05:14:12</strong>, with spoken timer around <strong>5h09</strong>. The creator explicitly notes that too much time was spent looking at equipment. A cleaner run saves time here.</p></article></div>
+                </div>
+            </section>
+            <section id="interlude" class="section route-section green">
+                <div class="section-head">
+                    <div class="section-kicker">Interlude</div>
+                    <div>
+                        <h2>Interlude — Campaign cleanup as its own act</h2>
+                        <p>Transition into charge/defense setup and prepare for mapping without stalling.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">05:16:42</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Interlude starts</strong><div class="tiny">Plan Combat Frenzy + charge setup.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">05:27:30</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Wind Dancer chosen</strong><div class="tiny">Fallback because charge setup is not fully ready.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">05:42:17</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Level 64 noted as future requirement</strong><div class="tiny">Planning anchor, not current level at this moment.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">06:00:00–06:20:00</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Late campaign cleanup</strong><div class="tiny">Fix resists, upgrade gems, avoid unnecessary shopping.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">06:23:42</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Campaign completed</strong><div class="tiny">Spoken timer around 6h18.</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack"><article class="card"><h3>Primary objective</h3><p>Treat Interlude as its own act: finish campaign cleanup, transition into the charge/defense package, and prepare for mapping without stalling for perfect gems.</p></article><article class="card"><h3>Charge setup plan</h3><table class="compact-table"><thead><tr><th>Option</th><th>Use when</th></tr></thead><tbody><tr><td>Combat Frenzy</td><td>Use when charge generation is available and stable.</td></tr><tr><td>Charge Profusion / Charge Infusion</td><td>Use when gem requirements allow and it improves damage/flow.</td></tr><tr><td>Charge Regulation</td><td>Do not force it if the gem level/setup is not ready.</td></tr><tr><td>Wind Dancer</td><td>Use as the practical fallback when the charge package is blocked.</td></tr></tbody></table></article><article class="card highlight"><h3>Correct decision pattern</h3><p>The run does not wait for the perfect charge configuration. It uses <strong>Wind Dancer</strong> when the charge setup is not ready. That is the right mindset for a timed run: use the best functional setup now, not the theoretically best setup later.</p></article><article class="card"><h3>Campaign finish prep</h3><ul><li>Fix resistances before mapping.</li><li>Upgrade Ice Shot and Snipe when requirements allow.</li><li>Keep Frost Bomb aligned with character level and Int requirements.</li><li>Avoid long vendor loops; only stop for clear upgrades.</li><li>Enter maps with enough waystone momentum and a bow that can carry early tiers.</li></ul></article><article class="card"><h3>Campaign completion</h3><p>The campaign completes at video timestamp <strong>06:23:42</strong>. The spoken timer is around <strong>6h18</strong>. The creator says this could be cleaner with less looting and gear inspection.</p></article></div>
+                </div>
+            </section>
+            <section id="mapping" class="section route-section red">
+                <div class="section-head">
+                    <div class="section-kicker">Mapping</div>
+                    <div>
+                        <h2>Mapping — Waystones to first Tier 15</h2>
+                        <p>Push tiers carefully: gem level, resists, accuracy, and map mods matter as much as damage.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">06:27:00</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Mapping starts</strong><div class="tiny">Waystone progression begins.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">06:46:54</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Jumped too high</strong><div class="tiny">Needs lower-tier gems; damage alone is not the issue.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">06:54:59</a></td>
+                                    <td class="level-cell"><span class="level-chip">64 target</span></td>
+                                    <td><strong>Frost Bomb breakpoint</strong><div class="tiny">Push level so Frost Bomb becomes usable again.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">07:05:30</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Yellow maps viable</strong><div class="tiny">Comfortable after resists are fixed.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">07:43:30</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Tier 9 maps</strong><div class="tiny">Mapping progression anchor.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">08:13:17</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Tier 14 / area-level issue</strong><div class="tiny">Frost Bomb usefulness drops again.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">08:25:23</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Tier 15 acquired</strong><div class="tiny">Prepare safe first completion.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">08:27:03</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Blue T15 started</strong><div class="tiny">No terrible mods; correct choice.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">08:31:51</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>T15 boss killed</strong><div class="tiny">Final gameplay milestone.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell"><a href="https://rbasniak.github.io/poe2-guides/deadeye#" title="Video timestamp">08:32:33</a></td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Final spoken timer</strong><div class="tiny">Creator states about 9h43 total; VTT/video time around 8h32.</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack"><article class="card"><h3>Primary objective</h3><p>Push from first maps to a safe Tier 15 completion. The bottleneck shifts from raw damage to <strong>gem level, character level, waystone sustain, resistances, accuracy, and safe map selection</strong>.</p></article><article class="card warn"><h3>Early mapping rule</h3><p>Do not jump tiers faster than your gems and character level can support. Around <strong>06:46:54</strong>, the creator realizes he has pushed too high and needs lower-tier gems. If Frost Bomb or Snipe requirements break, farm lower maps instead of brute-forcing.</p></article><article class="card"><h3>Mapping priorities</h3><table class="compact-table"><thead><tr><th>Priority</th><th>Reason</th></tr></thead><tbody><tr><td>Character level / gem level</td><td>Frost Bomb and other skills repeatedly become unusable or ineffective.</td></tr><tr><td>Waystone sustain</td><td>You need enough map pool to continue pushing tiers.</td></tr><tr><td>Resistances</td><td>Yellow/red maps punish bad resists quickly.</td></tr><tr><td>Accuracy</td><td>Missing Snipe/Ice Shot wastes boss windows.</td></tr><tr><td>Safe modifiers</td><td>First T15 should be completion-focused, not ego-focused.</td></tr></tbody></table></article><article class="card"><h3>Tier pushing plan</h3><ul><li><strong>T1–T4:</strong> build waystone pool and patch gems.</li><li><strong>Level 64 target:</strong> make Frost Bomb functional again if possible.</li><li><strong>Yellow maps:</strong> fix resists before pushing dangerous mods.</li><li><strong>T9:</strong> continue sustain; do not force bad bosses.</li><li><strong>T14:</strong> area-level problems can make Frost Bomb weak/useless again.</li><li><strong>T15:</strong> run a safe blue map first and avoid bad modifiers.</li></ul></article><article class="card danger"><h3>Mods to avoid for first T15</h3><ul><li>Dual bosses or boss modifiers that make the Snipe window unreliable.</li><li>Heavy elemental resistance mods when your damage depends on chill/freeze scaling.</li><li>Dangerous extra damage combinations.</li><li>Bad layouts if you have alternatives.</li><li>Anything that makes the first clear risky when a blue T15 is available.</li></ul></article><article class="card highlight"><h3>Final result</h3><p>At <strong>08:31:51</strong> video time, the T15 boss dies. At <strong>08:32:33</strong>, the creator states the final spoken timer as about <strong>9h43</strong>. Use VTT/video timestamps for navigation and the spoken timer for run-comparison context.</p></article></div>
+                </div>
+            </section>
+
+            <section id="rotation" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Rotation</div>
+                    <div><h2>Boss rotation</h2><p>Use this sequence for campaign bosses and map bosses. Most failed one-shots in the transcript are timing failures, not damage failures.</p></div>
+                </div>
+                <div class="rotation">
+                    <div class="step"><strong>Position first</strong><span>Do not charge Snipe while the boss is phasing or moving out.</span></div>
+                    <div class="step"><strong>Frost Bomb</strong><span>Use it if level/stat requirements allow and the boss will stay in the window.</span></div>
+                    <div class="step"><strong>Apply mark</strong><span>Use Freezing Mark or relevant mark setup when available.</span></div>
+                    <div class="step"><strong>Chill / freeze</strong><span>Use Ice Shot or Escape Shot to create the damage window.</span></div>
+                    <div class="step"><strong>Charge Snipe</strong><span>Commit only when the boss is stable.</span></div>
+                    <div class="step"><strong>Release</strong><span>Fire during the freeze/chill/Frost Bomb window.</span></div>
+                    <div class="step"><strong>Reset if needed</strong><span>If the boss survives or phases, repeat cleanly instead of panic-spamming.</span></div>
+                </div>
+            </section>
+
+            <section id="checklists" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Checks</div>
+                    <div><h2>Practical checklists</h2><p>Use these before major transitions so the build does not break at the next boss or tier jump.</p></div>
+                </div>
+                <div class="two-col">
+                    <article class="card danger"><h3>Before Act 3 final</h3><table class="compact-table"><thead><tr><th>Check</th><th>Required state</th></tr></thead><tbody><tr><td>Snipe</td><td>Usable; do not enter with it disabled.</td></tr><tr><td>Frost Bomb</td><td>Usable if possible; check Int and gem level.</td></tr><tr><td>Ice Shot</td><td>Main clear skill online.</td></tr><tr><td>Dex / Int / Str</td><td>Solved through amulet, rings, and weapon-set passives.</td></tr><tr><td>Resists</td><td>Not perfect, but not awful.</td></tr></tbody></table></article>
+                    <article class="card highlight"><h3>Before first T15</h3><table class="compact-table"><thead><tr><th>Check</th><th>Required state</th></tr></thead><tbody><tr><td>Map mods</td><td>Safe blue T15 preferred.</td></tr><tr><td>Damage</td><td>Ice Shot clears; Snipe kills bosses.</td></tr><tr><td>Frost Bomb</td><td>Use if functional; do not rely on it if area-level/gem issues block it.</td></tr><tr><td>Defenses</td><td>Resists patched; enough life to avoid random deaths.</td></tr><tr><td>Waystones</td><td>Enough sustain to continue if first attempt fails.</td></tr></tbody></table></article>
+                </div>
+            </section>
+
+            <section id="timesaves" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Save time</div>
+                    <div><h2>Corrections to beat the video pace</h2><p>These are the cleanest ways to match or improve the run without changing the build identity.</p></div>
+                </div>
+                <article class="card warn"><h3>Biggest time-save corrections</h3><table class="compact-table"><thead><tr><th>Problem in run</th><th>Correction</th></tr></thead><tbody><tr><td>Bad Act 1 bow</td><td>Craft/buy a mediocre bow quickly; do not spend several minutes fishing.</td></tr><tr><td>Too much vendor checking</td><td>Stop only for bow, movement speed boots, attribute amulet, resist rings, strong quiver.</td></tr><tr><td>Herald of Ice detour</td><td>Take it naturally; skip if it requires backtracking.</td></tr><tr><td>Attribute failures</td><td>Plan Dex/Int/Strength on amulet, rings, and weapon-set passives.</td></tr><tr><td>Frost Bomb mismatch</td><td>Keep gem level aligned with character level and Int requirement.</td></tr><tr><td>Charge setup not ready</td><td>Use Wind Dancer temporarily.</td></tr><tr><td>Mapping too high too early</td><td>Farm lower maps until gem levels and Frost Bomb work.</td></tr><tr><td>Risky first T15</td><td>Run a safe blue T15 before testing hard mods.</td></tr></tbody></table></article>
+            </section>
+
+            <div class="footer">
+                Built as a static single-file HTML guide. No external assets, frameworks, or network calls.
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const links = Array.from(document.querySelectorAll('nav a'));
+        const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+        const onScroll = () => {
+            let current = sections[0];
+            for (const section of sections) {
+                if (section.getBoundingClientRect().top < 140) current = section;
+            }
+            links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current.id));
+        };
+        document.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        const search = document.getElementById('search');
+        const searchable = Array.from(document.querySelectorAll('.card, .timeline-panel'));
+        search.addEventListener('input', () => {
+            const q = search.value.trim().toLowerCase();
+            searchable.forEach(el => {
+                el.classList.toggle('hidden-by-search', q && !el.innerText.toLowerCase().includes(q));
+            });
+        });
+    </script>
+
+</body></html>

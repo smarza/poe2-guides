@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Monk Leveling POE 2 — Detailed Act-by-Act Guide</title>
+    <style>
+        :root {
+            --bg: #07101f;
+            --bg2: #0d1730;
+            --panel: rgba(255,255,255,.075);
+            --panel2: rgba(255,255,255,.105);
+            --border: rgba(255,255,255,.15);
+            --text: #eef7ff;
+            --muted: #aebbd2;
+            --muted2: #7f8fa9;
+            --lightning: #fbbf24;
+            --blue: #60a5fa;
+            --violet: #a78bfa;
+            --amber: #fbbf24;
+            --green: #34d399;
+            --red: #fb7185;
+            --danger: #f43f5e;
+            --shadow: 0 24px 80px rgba(0,0,0,.38);
+            --radius: 24px;
+            --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            font-family: var(--sans);
+            line-height: 1.55;
+            background: radial-gradient(circle at 10% -10%, rgba(251,191,36,.2), transparent 30rem), radial-gradient(circle at 90% 0%, rgba(167,139,250,.18), transparent 34rem), radial-gradient(circle at 55% 25%, rgba(96,165,250,.12), transparent 34rem), linear-gradient(180deg, var(--bg), #050814 70%, #03050d);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 290px minmax(0, 1fr);
+            min-height: 100vh;
+        }
+
+        aside {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 28px 22px;
+            border-right: 1px solid var(--border);
+            background: rgba(3,7,18,.68);
+            backdrop-filter: blur(20px);
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 17px;
+            color: #1a1000;
+            font-weight: 950;
+            background: linear-gradient(135deg, var(--lightning), var(--violet));
+            box-shadow: 0 12px 34px rgba(251,191,36,.26);
+        }
+
+        .brand h1 {
+            font-size: 15px;
+            line-height: 1.1;
+            margin: 0;
+            letter-spacing: -.01em;
+        }
+
+        .brand p {
+            margin: 5px 0 0;
+            color: var(--muted2);
+            font-size: 12px;
+        }
+
+        nav {
+            display: grid;
+            gap: 4px;
+        }
+
+            nav a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 12px;
+                border-radius: 13px;
+                color: var(--muted);
+                text-decoration: none;
+                font-size: 14px;
+                transition: .16s ease;
+            }
+
+                nav a::before {
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 99px;
+                    background: var(--lightning);
+                    opacity: .65;
+                }
+
+                nav a:hover, nav a.active {
+                    background: var(--panel);
+                    color: var(--text);
+                    transform: translateX(2px);
+                }
+
+        .side-note {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 18px;
+            background: rgba(255,255,255,.06);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        main {
+            padding: 42px clamp(22px,4vw,62px) 88px;
+            max-width: 1540px;
+        }
+
+        .hero {
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--border);
+            border-radius: 34px;
+            padding: clamp(30px,5vw,62px);
+            background: linear-gradient(135deg, rgba(251,191,36,.14), rgba(167,139,250,.1)), rgba(255,255,255,.055);
+            box-shadow: var(--shadow);
+        }
+
+            .hero::after {
+                content: "";
+                position: absolute;
+                width: 460px;
+                height: 460px;
+                right: -210px;
+                top: -170px;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(251,191,36,.28), transparent 68%);
+                pointer-events: none;
+            }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            border-radius: 99px;
+            border: 1px solid rgba(251,191,36,.34);
+            background: rgba(251,191,36,.07);
+            color: var(--lightning);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .02em;
+        }
+
+        .hero h1 {
+            margin: 18px 0 18px;
+            max-width: 1020px;
+            font-size: clamp(40px,6.4vw,82px);
+            line-height: .94;
+            letter-spacing: -.06em;
+        }
+
+        .gradient {
+            background: linear-gradient(90deg, var(--lightning), var(--violet), var(--blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        p {
+            color: var(--muted);
+            margin: 0 0 14px;
+        }
+
+        .hero p {
+            max-width: 960px;
+            font-size: 18px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0,1fr));
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .stat {
+            padding: 17px;
+            border: 1px solid var(--border);
+            border-radius: 19px;
+            background: rgba(0,0,0,.18);
+        }
+
+            .stat strong {
+                display: block;
+                font-size: 22px;
+                line-height: 1.05;
+            }
+
+            .stat span {
+                color: var(--muted2);
+                font-size: 12px;
+            }
+
+        .section {
+            margin-top: 34px;
+            scroll-margin-top: 24px;
+        }
+
+        .section-head {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            margin: 48px 0 18px;
+        }
+
+        .section-kicker {
+            flex: 0 0 auto;
+            min-width: 78px;
+            text-align: center;
+            padding: 10px 12px;
+            border-radius: 16px;
+            font-weight: 950;
+            letter-spacing: -.02em;
+            background: rgba(251,191,36,.1);
+            color: var(--lightning);
+            border: 1px solid rgba(251,191,36,.24);
+        }
+
+        h2 {
+            margin: 0 0 8px;
+            font-size: clamp(28px,3.2vw,46px);
+            line-height: 1.04;
+            letter-spacing: -.035em;
+        }
+
+        h3 {
+            margin: 0 0 12px;
+            font-size: 20px;
+            letter-spacing: -.015em;
+        }
+
+        h4 {
+            margin: 18px 0 8px;
+            font-size: 15px;
+            color: var(--text);
+        }
+
+        .route-grid {
+            display: grid;
+            grid-template-columns: minmax(320px, 0.88fr) minmax(0, 1.52fr);
+            gap: 18px;
+            align-items: start;
+        }
+
+        .timeline-panel {
+            position: sticky;
+            top: 24px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: rgba(255,255,255,.063);
+            box-shadow: 0 18px 60px rgba(0,0,0,.22);
+            overflow: hidden;
+        }
+
+        .timeline-title {
+            padding: 15px 16px;
+            font-weight: 900;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(90deg, rgba(251,191,36,.14), transparent);
+        }
+
+        .timeline-table, .compact-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            color: var(--muted2);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            text-align: left;
+        }
+
+        .timeline-table th, .timeline-table td, .compact-table th, .compact-table td {
+            padding: 11px 12px;
+            border-bottom: 1px solid rgba(255,255,255,.09);
+            vertical-align: top;
+        }
+
+        .timeline-table tr:last-child td, .compact-table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .timeline-table tbody tr:hover, .compact-table tbody tr:hover {
+            background: rgba(255,255,255,.045);
+        }
+
+        .time-cell {
+            font-family: var(--mono);
+            color: var(--lightning);
+            white-space: nowrap;
+            font-weight: 800;
+            font-size: 12px;
+        }
+
+        .level-cell {
+            width: 62px;
+        }
+
+        .level-chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            padding: 4px 7px;
+            border-radius: 99px;
+            background: rgba(251,191,36,.12);
+            color: #fde68a;
+            border: 1px solid rgba(251,191,36,.24);
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        .tiny {
+            color: var(--muted2);
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        .cards-stack {
+            display: grid;
+            gap: 14px;
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: rgba(255,255,255,.073);
+            padding: 20px;
+            box-shadow: 0 16px 54px rgba(0,0,0,.17);
+        }
+
+            .card.highlight {
+                border-color: rgba(251,191,36,.36);
+                background: linear-gradient(135deg, rgba(251,191,36,.12), rgba(255,255,255,.065));
+            }
+
+            .card.warn {
+                border-color: rgba(251,191,36,.38);
+                background: linear-gradient(135deg, rgba(251,191,36,.11), rgba(255,255,255,.06));
+            }
+
+            .card.danger {
+                border-color: rgba(251,113,133,.42);
+                background: linear-gradient(135deg, rgba(251,113,133,.12), rgba(255,255,255,.06));
+            }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--muted);
+        }
+
+        li {
+            margin: 7px 0;
+        }
+
+        strong {
+            color: var(--text);
+        }
+
+        .compact-table {
+            overflow: hidden;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,.09);
+        }
+
+            .compact-table th {
+                background: rgba(255,255,255,.055);
+            }
+
+            .compact-table td {
+                color: var(--muted);
+            }
+
+                .compact-table td:first-child {
+                    color: var(--text);
+                    font-weight: 800;
+                }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(255,255,255,.12);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+            .pill::before {
+                content: "";
+                width: 7px;
+                height: 7px;
+                border-radius: 99px;
+                background: var(--lightning);
+            }
+
+        .callout {
+            margin-top: 16px;
+            padding: 18px 20px;
+            border-radius: 22px;
+            border: 1px solid rgba(251,191,36,.28);
+            background: linear-gradient(135deg, rgba(251,191,36,.12), rgba(167,139,250,.08));
+            color: var(--muted);
+        }
+
+        .rotation {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0,1fr));
+            gap: 10px;
+            counter-reset: step;
+        }
+
+        .step {
+            position: relative;
+            padding: 16px;
+            min-height: 130px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(255,255,255,.07);
+        }
+
+            .step::before {
+                counter-increment: step;
+                content: counter(step);
+                display: grid;
+                place-items: center;
+                width: 28px;
+                height: 28px;
+                border-radius: 10px;
+                background: linear-gradient(135deg, var(--lightning), var(--violet));
+                color: #1a1000;
+                font-weight: 950;
+                margin-bottom: 12px;
+            }
+
+            .step strong {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .step span {
+                color: var(--muted2);
+                font-size: 13px;
+            }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .footer {
+            margin-top: 52px;
+            color: var(--muted2);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .searchbox {
+            width: 100%;
+            margin: 18px 0 0;
+            padding: 13px 14px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: rgba(0,0,0,.2);
+            color: var(--text);
+            outline: none;
+        }
+
+            .searchbox::placeholder {
+                color: var(--muted2);
+            }
+
+        .hidden-by-search {
+            display: none !important;
+        }
+
+        .violet .section-kicker, .violet .timeline-title {
+            color: var(--violet);
+            border-color: rgba(167,139,250,.25);
+            background: linear-gradient(90deg, rgba(167,139,250,.14), transparent);
+        }
+
+        .blue .section-kicker, .blue .timeline-title {
+            color: var(--blue);
+            border-color: rgba(96,165,250,.25);
+            background: linear-gradient(90deg, rgba(96,165,250,.14), transparent);
+        }
+
+        .amber .section-kicker, .amber .timeline-title {
+            color: var(--amber);
+            border-color: rgba(251,191,36,.25);
+            background: linear-gradient(90deg, rgba(251,191,36,.13), transparent);
+        }
+
+        .green .section-kicker, .green .timeline-title {
+            color: var(--green);
+            border-color: rgba(52,211,153,.25);
+            background: linear-gradient(90deg, rgba(52,211,153,.13), transparent);
+        }
+
+        .red .section-kicker, .red .timeline-title {
+            color: var(--red);
+            border-color: rgba(251,113,133,.25);
+            background: linear-gradient(90deg, rgba(251,113,133,.13), transparent);
+        }
+
+        @media (max-width: 1180px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                position: relative;
+                height: auto;
+            }
+
+            nav {
+                grid-template-columns: repeat(2, minmax(0,1fr));
+            }
+
+            main {
+                padding-top: 28px;
+            }
+
+            .timeline-panel {
+                position: relative;
+                top: 0;
+            }
+
+            .route-grid, .overview-grid, .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid {
+                grid-template-columns: repeat(2, minmax(0,1fr));
+            }
+
+            .rotation {
+                grid-template-columns: repeat(2, minmax(0,1fr));
+            }
+        }
+
+        @media (max-width: 680px) {
+            .hero-grid, nav, .rotation {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 26px 20px;
+            }
+
+            main {
+                padding-inline: 16px;
+            }
+
+            .section-head {
+                flex-direction: column;
+            }
+
+            .timeline-table th:nth-child(2), .timeline-table td:nth-child(2) {
+                display: none;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: #111827;
+            }
+
+            aside, .searchbox {
+                display: none;
+            }
+
+            .layout {
+                display: block;
+            }
+
+            main {
+                padding: 0;
+                max-width: none;
+            }
+
+            .hero, .card, .timeline-panel {
+                box-shadow: none;
+                background: white;
+                color: #111827;
+                border-color: #d1d5db;
+            }
+
+            p, ul, .compact-table td, .tiny {
+                color: #374151;
+            }
+
+            .route-grid {
+                grid-template-columns: .9fr 1.5fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside>
+            <div class="brand">
+                <div class="logo">MK</div>
+                <div>
+                    <h1>Monk Leveling<br>Level 1 → Campaign</h1>
+                    <p>POE 2 route guide</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#overview">Overview</a>
+                <a href="#act1">Act 1</a>
+                <a href="#act2">Act 2</a>
+                <a href="#act3">Act 3</a>
+                <a href="#act4">Act 4</a>
+                <a href="#interlude">Interlude</a>
+                <a href="#rotation">Boss Rotation</a>
+                <a href="#checklists">Checklists</a>
+                <a href="#timesaves">Time Saves</a>
+            </nav>
+            <div class="side-note">
+                <strong>Focus rule:</strong><br>
+                Hit the same power spikes, not every experimental button. Vendor quarterstaffs often. Simplify once Siphoning Strike is online.
+            </div>
+            <input class="searchbox" id="search" placeholder="Filter visible cards/timelines…">
+        </aside>
+
+        <main>
+            <header class="hero" id="overview">
+                <span class="eyebrow">Static route guide · act-by-act timelines</span>
+                <h1><span class="gradient">Monk Leveling</span><br>Power Charges → Siphoning Strike</h1>
+                <p>Fast-but-chill campaign Monk route. Early game is squishy; the run wins by hitting weapon upgrades, shock scaling, Invoker ascendancy, and the Siphoning Strike transition around Act 2 end.</p>
+                <div class="hero-grid">
+                    <div class="stat"><strong>3-phase build</strong><span>Power Charges → Tempest Bell bridge → Siphoning Strike</span></div>
+                    <div class="stat"><strong>Lvl 22</strong><span>Storm Wave + Trial of Sekhemas</span></div>
+                    <div class="stat"><strong>Act 2 end</strong><span>Siphoning Strike online</span></div>
+                    <div class="stat"><strong>Lvl 49+</strong><span>Tawakai minimum</span></div>
+                </div>
+            </header>
+
+            <section class="section">
+                <div class="overview-grid">
+                    <article class="card">
+                        <h3>Core route identity</h3>
+                        <p>The run is not Siphoning Strike from level 1. It is a staged quarterstaff campaign:</p>
+                        <div class="pill-row">
+                            <span class="pill">Act 1: Power Charge burst + Frozen Locus</span>
+                            <span class="pill">Late Act 1: Frost Bomb + Tempest Bell + lightning bridge</span>
+                            <span class="pill">Act 2: Invoker + Storm Wave + weapon shopping</span>
+                            <span class="pill">Act 2 end onward: Siphoning Strike shock/crit core</span>
+                        </div>
+                    </article>
+                    <article class="card highlight">
+                        <h3>What makes or breaks the run</h3>
+                        <p>The build is flexible, but the pace depends on four recurring constraints: <strong>quarterstaff upgrades</strong>, <strong>shock uptime</strong>, <strong>not overplaying clunky combos</strong>, and enough <strong>life/defense</strong> to survive before burst lands.</p>
+                        <div class="callout"><strong>Most important rule:</strong> check vendors for quarterstaffs every level or two. A good vendor staff can almost double DPS.</div>
+                    </article>
+                </div>
+                <div class="two-col" style="margin-top:14px;">
+                    <article class="card">
+                        <h3>Skill progression summary</h3>
+                        <table class="compact-table">
+                            <thead><tr><th>Stage</th><th>Clear</th><th>Bossing</th><th>Utility / notes</th></tr></thead>
+                            <tbody>
+                                <tr><td>Early Act 1</td><td><strong>Main attack + Power Charges</strong></td><td>Charge burst</td><td>Frozen Locus, Rage support.</td></tr>
+                                <tr><td>Late Act 1</td><td>Main attack + Herald of Thunder</td><td><strong>Frost Bomb + Tempest Bell</strong></td><td>Rapid Attacks, shock pathing, cheap talisman.</td></tr>
+                                <tr><td>Act 2</td><td>Same combo bridge</td><td>Tempest Bell / Ice Strike</td><td>Infernal Cry, Storm Wave, Invoker ascendancy.</td></tr>
+                                <tr><td>Act 2 end+</td><td><strong>Siphoning Strike</strong></td><td>Siphoning Strike burst</td><td>Elemental Armament, Pinpoint Critical.</td></tr>
+                                <tr><td>Act 3</td><td>Siphoning Strike</td><td>Sniper Mark + Infernal Cry</td><td>Drop clunky tools; Slicing Quarterstaff.</td></tr>
+                                <tr><td>Act 4</td><td>Siphoning Strike</td><td>Exposure Cry + crit scaling</td><td>Amulet instill, crit shrines.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    <article class="card">
+                        <h3>Target pace splits</h3>
+                        <table class="compact-table">
+                            <thead><tr><th>Split</th><th>Target</th></tr></thead>
+                            <tbody>
+                                <tr><td>Act 1 boss / lightning spike</td><td>~30–35 min</td></tr>
+                                <tr><td>Act 2 start</td><td>~55–65 min</td></tr>
+                                <tr><td>Invoker ascendancy</td><td>~85–95 min</td></tr>
+                                <tr><td>Siphoning Strike switch</td><td>~1h45–2h00</td></tr>
+                                <tr><td>Act 3 start / final build</td><td>~2h</td></tr>
+                                <tr><td>Trials of Chaos done</td><td>~2h40–2h55</td></tr>
+                                <tr><td>Act 4 start</td><td>~2h50–3h05</td></tr>
+                                <tr><td>Tawakai kill</td><td>~3h35–3h50</td></tr>
+                                <tr><td>Campaign demo complete</td><td>~4h15–4h30</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+            </section>
+
+            <section id="act1" class="section route-section amber">
+                <div class="section-head">
+                    <div class="section-kicker">Act 1</div>
+                    <div>
+                        <h2>Act 1 — Power Charge burst setup</h2>
+                        <p>Survive early squishiness, add defensive tools, and bridge into lightning scaling before Act 2.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td class="time-cell">00:02:43</td>
+                                    <td class="level-cell"><span class="level-chip">1</span></td>
+                                    <td><strong>Enter Clearfell</strong><div class="tiny">Basic attack, generate Power Charges, burst.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">00:03:56</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Frozen Locus</strong><div class="tiny">Defensive control vs wolves and melee packs.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">00:06:09</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Rage support</strong><div class="tiny">First support on main attack.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">00:09:02</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>First weapon upgrade</strong><div class="tiny">Wrapped Quarterstaff or better phys roll.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">00:12:38</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Frost Bomb</strong><div class="tiny">Exposure for clear and bosses.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">00:16:48</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Tempest Bell</strong><div class="tiny">Level 3 gem; hit bell with elemental damage.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">00:19:36</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Rapid Attacks</strong><div class="tiny">From mushroom boss support gem drop.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">00:25:07</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Chance to shock</strong><div class="tiny">Path passives toward shock scaling.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">00:30:37</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Major Act 1 boss killed</strong><div class="tiny">Lightning damage interaction active.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">00:30:57</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Cheap talisman</strong><div class="tiny">Buy offhand piece for lightning burst.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">00:42:21</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Herald of Thunder</strong><div class="tiny">Clear speed over Wind Dancer here.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">00:51:34</td>
+                                    <td class="level-cell"><span class="level-chip">14</span></td>
+                                    <td><strong>Ice Strike crafted</strong><div class="tiny">Level 5 skill; transition tool.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">00:58:38</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Act 1 complete</strong><div class="tiny">Move into Act 2.</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Do not face-tank packs. Isolate enemies, generate Power Charges, spend them for burst, and add Frozen Locus + Frost Bomb before relying on long combos. Finish Act 1 with shock pathing and the lightning/talisman bridge ready.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Do this session</h3>
+                            <ul>
+                                <li>Fight one-on-one when possible; Monk is fragile early.</li>
+                                <li>Craft <strong>Frozen Locus</strong> and use it to split dangerous packs.</li>
+                                <li>Add <strong>Rage</strong> to main attack, then <strong>Frost Bomb</strong> and <strong>Tempest Bell</strong>.</li>
+                                <li>Kill the <strong>mushroom boss</strong> for the support gem → <strong>Rapid Attacks</strong>.</li>
+                                <li>Path toward <strong>chance to shock</strong> even if it looks odd early.</li>
+                                <li>After the major boss, buy the <strong>cheap talisman</strong> and pick <strong>Herald of Thunder</strong>.</li>
+                            </ul>
+                        </article>
+                        <article class="card">
+                            <h3>Early gear priorities</h3>
+                            <table class="compact-table">
+                                <thead><tr><th>Priority</th><th>What to look for</th></tr></thead>
+                                <tbody>
+                                    <tr><td>1</td><td><strong>Quarterstaff upgrade</strong>: increased physical damage.</td></tr>
+                                    <tr><td>2</td><td><strong>Life</strong> on armor and accessories.</td></tr>
+                                    <tr><td>3</td><td><strong>Resistances</strong> when needed; do not ignore defense.</td></tr>
+                                    <tr><td>4</td><td><strong>Damage prefixes</strong> on weapons over bad suffixes.</td></tr>
+                                    <tr><td>5</td><td><strong>Cheap talisman/offhand</strong> after Act 1 boss for lightning spike.</td></tr>
+                                </tbody>
+                            </table>
+                        </article>
+                        <article class="card warn">
+                            <h3>Failure point to avoid</h3>
+                            <p>The lightning/talisman bridge is powerful but button-heavy. Do not get stuck perfecting every combo in Act 1 — it is a temporary phase until Siphoning Strike replaces it.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="act2" class="section route-section violet">
+                <div class="section-head">
+                    <div class="section-kicker">Act 2</div>
+                    <div>
+                        <h2>Act 2 — Weapon spike, Invoker, Siphoning Strike</h2>
+                        <p>Shop for quarterstaffs, complete Trial of Sekhemas, ascend Invoker, then switch to the real build.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td class="time-cell">01:01:53</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Infernal Cry</strong><div class="tiny">Craft now; socket when useful.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">01:02:17</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Act 2 weapon shopping</strong><div class="tiny">Sell yellows; buy strong quarterstaff bases.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">01:04:30</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Weapon doubles DPS</strong><div class="tiny">Major vendor/base upgrade lands.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">01:17:44</td>
+                                    <td class="level-cell"><span class="level-chip">22</span></td>
+                                    <td><strong>Storm Wave</strong><div class="tiny">Level 7 skill; go to Trial of Sekhemas.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">01:25:30</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Invoker ascendancy</strong><div class="tiny">Shock magnitude, extra lightning, shocked ground.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">01:30:06</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Elemental Armament</strong><div class="tiny">Tier 2 support gem choice.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">01:50:12</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Siphoning Strike</strong><div class="tiny">Level 8 gem — core build switch.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">01:58:22</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Act 3 begins</strong><div class="tiny">Final build concept active.</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Turn Act 2 into a weapon and ascendancy power spike. Complete Trial of Sekhemas, choose <strong>Invoker</strong>, then craft <strong>Siphoning Strike</strong> as soon as the level 8 gem drops.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Vendor check at Act 2 start</h3>
+                            <table class="compact-table">
+                                <thead><tr><th>Slot</th><th>Desired stats</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Quarterstaff</td><td><strong>Strong Act 2 base</strong>, phys damage prefixes, sockets if possible.</td></tr>
+                                    <tr><td>Armor</td><td>Life, armor/evasion, resistances.</td></tr>
+                                    <tr><td>Rings / amulet</td><td>Life, resists, crit or damage if affordable.</td></tr>
+                                    <tr><td>Crafting</td><td>Whetstones on good bases; farm quarry if needed.</td></tr>
+                                </tbody>
+                            </table>
+                        </article>
+                        <article class="card">
+                            <h3>Do this session</h3>
+                            <ul>
+                                <li>Check vendors every level; Act 2 staff upgrades can double damage.</li>
+                                <li>Craft <strong>Storm Wave</strong> at level 22 and complete <strong>Trial of Sekhemas</strong>.</li>
+                                <li>Choose <strong>Invoker</strong>: shock magnitude, 10% damage as extra lightning, shocked ground.</li>
+                                <li>When level 8 gem drops, craft <strong>Siphoning Strike</strong> with <strong>Elemental Armament</strong> + <strong>Pinpoint Critical</strong>.</li>
+                                <li>Drop Tempest Bell/talisman dependency once the new loop feels strong.</li>
+                            </ul>
+                        </article>
+                        <article class="card highlight">
+                            <h3>The Siphoning Strike switch</h3>
+                            <p>Around <strong>01:50:12</strong>, the run changes permanently. Shock enemy → Siphoning Strike consumes shock → shocked ground / repeated hits reapply shock → repeat. Invoker makes this spammable.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Ascendancy direction</h3>
+                            <p>Invoker shock scaling is why the final build works. Shocked ground keeps enemies shocked so Siphoning Strike can be used repeatedly without awkward charge juggling.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="act3" class="section route-section blue">
+                <div class="section-head">
+                    <div class="section-kicker">Act 3</div>
+                    <div>
+                        <h2>Act 3 — Final build refinement</h2>
+                        <p>Simplify rotation, upgrade to Slicing Quarterstaff, complete Trials of Chaos, and stack crit with enough defense.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td class="time-cell">01:58:22</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Act 3 starts</strong><div class="tiny">Siphoning Strike is main skill.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">02:03:36</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Stun threshold nodes</strong><div class="tiny">Defensive passive improvement.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">02:03:58</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Slicing Quarterstaff</strong><div class="tiny">Good Act 3 carry weapon base.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">02:05:57</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Infested Barrens</strong><div class="tiny">Prioritize book / extra spirit route.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">02:08:51</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Boss crit burst</strong><div class="tiny">Huge health bar deletion shown.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">02:35:59</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Trials of Chaos</strong><div class="tiny">Complete for ascendancy/passive power.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">02:51:42</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Act 4 begins</strong><div class="tiny">Act 3 complete.</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Run the simplified shock → Siphoning Strike loop. Add boss tools (<strong>Sniper Mark</strong>, <strong>Infernal Cry</strong>), upgrade weapon to <strong>Slicing Quarterstaff</strong>, and finish <strong>Trials of Chaos</strong>.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Do this session</h3>
+                            <ul>
+                                <li>Drop Ice Strike / Freezing Mark if they slow you down.</li>
+                                <li>Add <strong>Sniper Mark</strong> for crit scaling on bosses.</li>
+                                <li>Take the extra spirit/book route in Infested Barrens.</li>
+                                <li>Invest in crit chance, crit with Power Charges, and enough life/defense.</li>
+                                <li>Prefer <strong>Wind Dancer</strong> over Lingering Illusion if defense is shaky.</li>
+                                <li>Skip <strong>Mantra of Destruction</strong> — treated as unreliable in this route.</li>
+                            </ul>
+                        </article>
+                        <article class="card">
+                            <h3>Gear priorities</h3>
+                            <table class="compact-table">
+                                <thead><tr><th>Priority</th><th>What to look for</th></tr></thead>
+                                <tbody>
+                                    <tr><td>1</td><td><strong>Slicing Quarterstaff</strong> or better phys/crit/ele staff.</td></tr>
+                                    <tr><td>2</td><td><strong>Critical hit chance / damage</strong> on weapon and tree.</td></tr>
+                                    <tr><td>3</td><td><strong>Life + resists</strong> on armor and accessories.</td></tr>
+                                    <tr><td>4</td><td><strong>Elemental damage</strong> and Power Charge scaling.</td></tr>
+                                    <tr><td>5</td><td><strong>Accuracy</strong> if Siphoning Strike misses often.</td></tr>
+                                </tbody>
+                            </table>
+                        </article>
+                        <article class="card danger">
+                            <h3>Defense check</h3>
+                            <p>Damage spikes hard in Act 3, but Monk stays fragile. Stack stun threshold, life, and Wind Dancer if needed. Most deaths happen before burst lands, not because damage is too low.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="act4" class="section route-section amber">
+                <div class="section-head">
+                    <div class="section-kicker">Act 4</div>
+                    <div>
+                        <h2>Act 4 — Rush, crit scaling, Tawakai</h2>
+                        <p>Push exposure/crit tools, use shrines aggressively, and fight Tawakai at level 49+.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td class="time-cell">02:51:42</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Act 4 starts</strong><div class="tiny">Rush if overleveled; stay near zone level.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">02:59:31</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Crit shrine</strong><div class="tiny">Use 100% crit shrine windows hard.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">03:02:44</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Amulet instill</strong><div class="tiny">Envy / Paranoia for crit chance if amulet is worth keeping.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">03:27:42</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Exposure Cry</strong><div class="tiny">Level 4 support; pairs with crit vs exposed.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">03:30:58</td>
+                                    <td class="level-cell"><span class="level-chip">49+</span></td>
+                                    <td><strong>Tawakai prep</strong><div class="tiny">Minimum level 49; ideally 50.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">03:37:57</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Tawakai killed</strong><div class="tiny">Act 4 boss done.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">03:38:17</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Interludes begin</strong><div class="tiny">Move to post-campaign cleanup.</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Finish Act 4 efficiently. Add <strong>Exposure Cry</strong>, scale crit, and reach Tawakai at <strong>level 49 minimum</strong> (prefer 50). Do not fall too far below zone level even while rushing.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Do this session</h3>
+                            <ul>
+                                <li>Create <strong>Exposure Cry</strong> when support gem level 4 is available.</li>
+                                <li>Instill amulet with <strong>Envy / Paranoia</strong> if the base is worth keeping.</li>
+                                <li>Use crit shrines and trial rewards for burst windows.</li>
+                                <li>Keep shock uptime → Siphoning Strike as default boss loop.</li>
+                                <li>Fight Tawakai only when leveled; phased bosses limit one-shots.</li>
+                            </ul>
+                        </article>
+                        <article class="card">
+                            <h3>Act 4 gear rule</h3>
+                            <table class="compact-table">
+                                <thead><tr><th>Keep checking for</th><th>Ignore unless huge</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Crit chance / crit damage upgrades</td><td>Minor staff swaps</td></tr>
+                                    <tr><td>Life + resist armor pieces</td><td>Low-life luxury rares</td></tr>
+                                    <tr><td>Exposure / shock scaling</td><td>Clunky old Act 1 tools</td></tr>
+                                    <tr><td>Level-appropriate quarterstaff</td><td>Upgrading gear you cannot equip yet</td></tr>
+                                </tbody>
+                            </table>
+                        </article>
+                        <article class="card warn">
+                            <h3>Phased boss note</h3>
+                            <p>One-shots are less visible on multi-phase or protected bosses. That is mechanics, not missing damage. Stay on level curve if boss kills feel inconsistent.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="interlude" class="section route-section green">
+                <div class="section-head">
+                    <div class="section-kicker">Interlude</div>
+                    <div>
+                        <h2>Interlude — Life, passives, weapon upgrade</h2>
+                        <p>Start Act 2 interlude route for levels and passives; upgrade the Tawakai quarterstaff when equippable.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td class="time-cell">03:38:17</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Interludes start</strong><div class="tiny">Begin Act 2 interlude at Kar Pazar.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">03:41:34</td>
+                                    <td class="level-cell"><span class="level-chip">54</span></td>
+                                    <td><strong>Tawakai quarterstaff</strong><div class="tiny">Upgrade when you can equip it.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">03:52:05</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Skill book</strong><div class="tiny">Do not forget the book route.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">03:56:16</td>
+                                    <td class="level-cell"></td>
+                                    <td><strong>Crit with Power Charges</strong><div class="tiny">Useful anoint/passive direction.</div></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-cell">04:17:57</td>
+                                    <td class="level-cell"><span class="level-chip">57</span></td>
+                                    <td><strong>Campaign demo complete</strong><div class="tiny">Ready for King's March / maps.</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Do Act 2 interlude first for life bonus, passive points, and levels. Upgrade weapon when level requirements allow — do not craft too early on gear you cannot equip yet.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Do this session</h3>
+                            <ul>
+                                <li>Route Kar Pazar interlude for life, passives, and levels.</li>
+                                <li>Upgrade the level 54 quarterstaff from Tawakai when equippable.</li>
+                                <li>Grab the skill book; continue crit + Power Charge investment.</li>
+                                <li>Keep defense patched — still the biggest weakness late campaign.</li>
+                            </ul>
+                        </article>
+                        <article class="card highlight">
+                            <h3>End state</h3>
+                            <p>By ~<strong>04:17:57</strong>, the build demonstrates huge burst on strong content. Upgrade the quarterstaff further and the same shock → Siphoning Strike loop melts later progression.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="rotation" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Rotation</div>
+                    <div>
+                        <h2>Boss rotation</h2>
+                        <p>Use the final loop once Siphoning Strike is online. Early Act 1–2 combos are temporary bridges.</p>
+                    </div>
+                </div>
+                <div class="rotation">
+                    <div class="step"><strong>Shock first</strong><span>Apply shock before spending Siphoning Strike.</span></div>
+                    <div class="step"><strong>Mark / cry</strong><span>Sniper Mark, Exposure Cry, Infernal Cry when available.</span></div>
+                    <div class="step"><strong>Siphoning Strike</strong><span>Consume shock for the main burst hit.</span></div>
+                    <div class="step"><strong>Re-shock</strong><span>Shocked ground or repeated hits reapply shock.</span></div>
+                    <div class="step"><strong>Repeat</strong><span>Invoker makes the loop spammable on most bosses.</span></div>
+                </div>
+            </section>
+
+            <section id="checklists" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Checks</div>
+                    <div>
+                        <h2>Practical checklists</h2>
+                        <p>Quick checks before major transitions so the build does not break at the next boss.</p>
+                    </div>
+                </div>
+                <div class="two-col">
+                    <article class="card danger">
+                        <h3>Before Siphoning Strike switch</h3>
+                        <table class="compact-table">
+                            <thead><tr><th>Check</th><th>Required state</th></tr></thead>
+                            <tbody>
+                                <tr><td>Invoker</td><td>Shock magnitude + shocked ground taken.</td></tr>
+                                <tr><td>Weapon</td><td>Act 2 quarterstaff upgraded.</td></tr>
+                                <tr><td>Supports ready</td><td>Elemental Armament, Pinpoint Critical.</td></tr>
+                                <tr><td>Passives</td><td>Shock and crit investment started.</td></tr>
+                                <tr><td>Defense</td><td>Enough life to survive boss hits.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    <article class="card highlight">
+                        <h3>Before Tawakai</h3>
+                        <table class="compact-table">
+                            <thead><tr><th>Check</th><th>Required state</th></tr></thead>
+                            <tbody>
+                                <tr><td>Level</td><td>49 minimum; 50 preferred.</td></tr>
+                                <tr><td>Core skill</td><td>Siphoning Strike + shock loop working.</td></tr>
+                                <tr><td>Boss tools</td><td>Exposure Cry / crit scaling online.</td></tr>
+                                <tr><td>Defenses</td><td>Life and resists patched.</td></tr>
+                                <tr><td>Accuracy</td><td>Not missing key burst hits.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+            </section>
+
+            <section id="timesaves" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Save time</div>
+                    <div>
+                        <h2>Corrections to beat the video pace</h2>
+                        <p>Cleanest ways to match or improve the run without changing the build identity.</p>
+                    </div>
+                </div>
+                <article class="card warn">
+                    <h3>Biggest time-save corrections</h3>
+                    <table class="compact-table">
+                        <thead><tr><th>Problem in run</th><th>Correction</th></tr></thead>
+                        <tbody>
+                            <tr><td>Ignoring vendor quarterstaffs</td><td>Check town vendors every level; prefixes matter most.</td></tr>
+                            <tr><td>Overplaying early combos</td><td>Use bridge skills only until Siphoning Strike drops.</td></tr>
+                            <tr><td>Too squishy</td><td>Prioritize life and Wind Dancer over marginal damage.</td></tr>
+                            <tr><td>Early gear crafting</td><td>Do not upgrade weapons you cannot equip yet.</td></tr>
+                            <tr><td>Keeping Ice Strike too long</td><td>Drop it once Siphoning Strike is strong.</td></tr>
+                            <tr><td>Mantra of Destruction</td><td>Skip; treated as unreliable in this route.</td></tr>
+                            <tr><td>Missed accuracy</td><td>Fix accuracy if Siphoning Strike feels inconsistent.</td></tr>
+                            <tr><td>Underleveled Tawakai</td><td>Wait for 49–50 and crit tools before the fight.</td></tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+
+            <div class="footer">
+                Built as a static single-file HTML guide. No external assets, frameworks, or network calls.
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const links = Array.from(document.querySelectorAll('nav a'));
+        const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+        const onScroll = () => {
+            let current = sections[0];
+            for (const section of sections) {
+                if (section.getBoundingClientRect().top < 140) {
+                    current = section;
+                }
+            }
+            links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current.id));
+        };
+        document.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        const search = document.getElementById('search');
+        const searchable = Array.from(document.querySelectorAll('.card, .timeline-panel'));
+        search.addEventListener('input', () => {
+            const q = search.value.trim().toLowerCase();
+            searchable.forEach(el => {
+                el.classList.toggle('hidden-by-search', q && !el.innerText.toLowerCase().includes(q));
+            });
+        });
+    </script>
+</body>
+</html>
