@@ -460,6 +460,42 @@
             color: var(--muted);
         }
 
+        .resource-links {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 4px;
+        }
+
+        .resource-link {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 16px 18px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            background: rgba(0,0,0,.18);
+            color: inherit;
+            text-decoration: none;
+            transition: .16s ease;
+        }
+
+            .resource-link:hover {
+                transform: translateY(-2px);
+                border-color: rgba(251,191,36,.34);
+                background: rgba(251,191,36,.08);
+            }
+
+            .resource-link strong {
+                font-size: 15px;
+            }
+
+            .resource-link span {
+                color: var(--muted2);
+                font-size: 13px;
+                line-height: 1.45;
+            }
+
         .rotation {
             display: grid;
             grid-template-columns: repeat(5, minmax(0,1fr));
@@ -593,13 +629,13 @@
                 grid-template-columns: repeat(2, minmax(0,1fr));
             }
 
-            .rotation {
+            .rotation, .resource-links {
                 grid-template-columns: repeat(2, minmax(0,1fr));
             }
         }
 
         @media (max-width: 680px) {
-            .hero-grid, nav, .rotation {
+            .hero-grid, nav, .rotation, .resource-links {
                 grid-template-columns: 1fr;
             }
 
@@ -668,6 +704,7 @@
             </div>
             <nav>
                 <a href="#overview">Overview</a>
+                <a href="#sources">Sources</a>
                 <a href="#act1">Act 1</a>
                 <a href="#act2">Act 2</a>
                 <a href="#act3">Act 3</a>
@@ -696,6 +733,29 @@
                     <div class="stat"><strong>Lvl 49+</strong><span>Tawakai minimum</span></div>
                 </div>
             </header>
+
+            <section id="sources" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Links</div>
+                    <div>
+                        <h2>Build sources</h2>
+                        <p>Original video and planner for skills, passives, and gear reference while you follow the act guide.</p>
+                    </div>
+                </div>
+                <article class="card highlight">
+                    <h3>Reference links</h3>
+                    <div class="resource-links">
+                        <a class="resource-link" href="https://mobalytics.gg/poe-2/profile/spud-the-king-nksem3/builds/one-shot-monk-leveling-poe2-0-5-league-starter" target="_blank" rel="noopener noreferrer">
+                            <strong>Mobalytics planner</strong>
+                            <span>One-Shot Monk Leveling — full build, tree, and gear setup.</span>
+                        </a>
+                        <a class="resource-link" href="https://www.youtube.com/watch?v=s2LkL7ev27Y" target="_blank" rel="noopener noreferrer">
+                            <strong>YouTube video</strong>
+                            <span>Campaign run this guide is based on. Timelines match the video pace.</span>
+                        </a>
+                    </div>
+                </article>
+            </section>
 
             <section class="section">
                 <div class="overview-grid">
