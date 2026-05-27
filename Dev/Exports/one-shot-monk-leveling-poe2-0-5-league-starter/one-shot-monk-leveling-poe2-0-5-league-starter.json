@@ -1,0 +1,1312 @@
+{
+  "sourceUrl": "https://mobalytics.gg/poe-2/profile/spud-the-king-nksem3/builds/one-shot-monk-leveling-poe2-0-5-league-starter",
+  "buildName": "ONE SHOT Monk Leveling [PoE2 0.5 League Starter]",
+  "author": "spud-the-king-nksem3",
+  "slug": "one-shot-monk-leveling-poe2-0-5-league-starter",
+  "acts": [
+    {
+      "act": "Act 1",
+      "variantId": "99f518a1-93a2-4820-84c5-cb4305962b96",
+      "equipment": [
+        {
+          "name": "Erian's Cobble",
+          "slot": "helmet",
+          "slug": "armour-fouruniquehelmetstrdex2-erian's-cobble",
+          "modifiers": [
+            "+18 to Armour",
+            "+20 to Evasion Rating",
+            "+7 to maximum Energy Shield",
+            "+7 to Accuracy Rating",
+            "+1 to maximum Life",
+            "+11 to maximum Mana",
+            "17% increased Rarity of Items found",
+            "14% increased Critical Hit Chance",
+            "+9 to Strength",
+            "+6 to Dexterity",
+            "+10 to Intelligence",
+            "+5% to Fire Resistance",
+            "+7% to Cold Resistance",
+            "+10% to Lightning Resistance",
+            "2.8 Life Regeneration per second"
+          ]
+        },
+        {
+          "name": "Gothic Quarterstaff",
+          "slot": "mainHand",
+          "slug": "weapon-fourquarterstaff3",
+          "modifiers": [
+            "Adds 3 to 7 Physical Damage",
+            "Adds 4 to 6 Fire Damage",
+            "41% increased Elemental Damage with Attacks",
+            "+1.46% to Critical Hit Chance",
+            "+2 to Level of all Melee Skills",
+            "Gain 3 Mana per enemy killed"
+          ]
+        },
+        {
+          "name": "Changeling Talisman",
+          "slot": "mainHand",
+          "slug": "weapon-talisman1",
+          "modifiers": [
+            "+25 to Accuracy Rating",
+            "+2 to Level of all Melee Skills"
+          ]
+        },
+        {
+          "name": "Iron Ring",
+          "slot": "leftRing",
+          "slug": "ring-fourring1",
+          "modifiers": [
+            "Adds 1 to 12 Lightning damage to Attacks",
+            "+14 to maximum Life",
+            "+16 to maximum Mana",
+            "+7% to Fire Resistance",
+            "Gain 6 Life per enemy killed",
+            "8% increased Mana Regeneration Rate",
+            "5% increased Light Radius",
+            "Adds 1 to 4 Physical Damage to Attacks"
+          ]
+        },
+        {
+          "name": "Iron Ring",
+          "slot": "rightRing",
+          "slug": "ring-fourring1",
+          "modifiers": [
+            "Adds 1 to 12 Lightning damage to Attacks",
+            "+14 to maximum Life",
+            "+16 to maximum Mana",
+            "+7% to Fire Resistance",
+            "Gain 6 Life per enemy killed",
+            "8% increased Mana Regeneration Rate",
+            "5% increased Light Radius",
+            "Adds 1 to 4 Physical Damage to Attacks"
+          ]
+        },
+        {
+          "name": "Rusted Cuirass",
+          "slot": "body",
+          "slug": "armour-fourbodystr1",
+          "modifiers": [
+            "8% increased Armour",
+            "+9 to maximum Life",
+            "+12% to Fire Resistance",
+            "1.4 Life Regeneration per second",
+            "+7 to Stun Threshold"
+          ]
+        },
+        {
+          "name": "Torn Gloves",
+          "slot": "gloves",
+          "slug": "armour-fourglovesint1",
+          "modifiers": [
+            "+16 to maximum Energy Shield",
+            "23% increased Energy Shield",
+            "+9% to Cold Resistance",
+            "Gain 6 Life per enemy killed"
+          ]
+        },
+        {
+          "name": "Rawhide Belt",
+          "slot": "belt",
+          "slug": "armour-fourbelt1",
+          "modifiers": [
+            "+10 to maximum Life",
+            "+16 to maximum Mana",
+            "+12 to Strength",
+            "30% increased Life Recovery from Flasks",
+            "Has 1 Charm Slot"
+          ]
+        },
+        {
+          "name": "Luminous Pace",
+          "slot": "boots",
+          "slug": "armour-fouruniquebootsint1-luminous-pace",
+          "modifiers": [
+            "10% increased Movement Speed",
+            "+20 to maximum Energy Shield",
+            "+9 to Intelligence",
+            "20% reduced Energy Shield Recharge Rate",
+            "100% faster start of Energy Shield Recharge"
+          ]
+        }
+      ],
+      "skillGems": [
+        {
+          "name": "Falling Thunder (Level 4)",
+          "slug": "fallingthunderplayer",
+          "supports": [
+            "Lightning Attunement",
+            "Shock"
+          ]
+        },
+        {
+          "name": "Herald of Thunder (Level 4)",
+          "slug": "heraldofthunderplayer",
+          "supports": []
+        },
+        {
+          "name": "Tempest Bell (Level 3)",
+          "slug": "tempestbellplayer",
+          "supports": [
+            "Concentrated Area",
+            "Shock"
+          ]
+        },
+        {
+          "name": "Frost Bomb (Level 2)",
+          "slug": "frostbombplayer",
+          "supports": []
+        },
+        {
+          "name": "Ice Strike (Level 5)",
+          "slug": "icestrikeplayer",
+          "supports": [
+            "Rage I",
+            "Rapid Attacks I"
+          ]
+        },
+        {
+          "name": "Frozen Locus (Level 4)",
+          "slug": "frozenlocusplayer",
+          "supports": [
+            "Ice Bite I"
+          ]
+        },
+        {
+          "name": "Killing Palm (Level 3)",
+          "slug": "killingpalmplayer",
+          "supports": [
+            "Thrill of the Kill",
+            "Rage I"
+          ]
+        }
+      ],
+      "passiveTree": [
+        {
+          "name": "Flow Like Water",
+          "slug": "node-49220",
+          "tree": "main"
+        },
+        {
+          "name": "Essence of the Storm",
+          "slug": "node-36479",
+          "tree": "main"
+        },
+        {
+          "name": "Concussive Attack",
+          "slug": "node-36931",
+          "tree": "main"
+        }
+      ]
+    },
+    {
+      "act": "Act 2",
+      "variantId": "89d0032b-0362-4702-aeed-a563acb4fff2",
+      "equipment": [
+        {
+          "name": "Erian's Cobble",
+          "slot": "helmet",
+          "slug": "armour-fouruniquehelmetstrdex2-erian's-cobble",
+          "modifiers": [
+            "+18 to Armour",
+            "+20 to Evasion Rating",
+            "+7 to maximum Energy Shield",
+            "+7 to Accuracy Rating",
+            "+1 to maximum Life",
+            "+11 to maximum Mana",
+            "17% increased Rarity of Items found",
+            "14% increased Critical Hit Chance",
+            "+9 to Strength",
+            "+6 to Dexterity",
+            "+10 to Intelligence",
+            "+5% to Fire Resistance",
+            "+7% to Cold Resistance",
+            "+10% to Lightning Resistance",
+            "2.8 Life Regeneration per second"
+          ]
+        },
+        {
+          "name": "Crackling Quarterstaff",
+          "slot": "mainHand",
+          "slug": "weapon-fourquarterstaff4",
+          "modifiers": [
+            "Adds 9 to 16 Fire Damage",
+            "Adds 1 to 31 Lightning Damage",
+            "59% increased Elemental Damage with Attacks",
+            "+9 to Dexterity",
+            "Gain 3 Mana per enemy killed",
+            "Causes 25% increased Stun Buildup"
+          ]
+        },
+        {
+          "name": "Iron Ring",
+          "slot": "leftRing",
+          "slug": "ring-fourring1",
+          "modifiers": [
+            "Adds 1 to 12 Lightning damage to Attacks",
+            "+14 to maximum Life",
+            "+16 to maximum Mana",
+            "+7% to Fire Resistance",
+            "Gain 6 Life per enemy killed",
+            "8% increased Mana Regeneration Rate",
+            "5% increased Light Radius",
+            "Adds 1 to 4 Physical Damage to Attacks"
+          ]
+        },
+        {
+          "name": "Iron Ring",
+          "slot": "rightRing",
+          "slug": "ring-fourring1",
+          "modifiers": [
+            "Adds 1 to 12 Lightning damage to Attacks",
+            "+14 to maximum Life",
+            "+16 to maximum Mana",
+            "+7% to Fire Resistance",
+            "Gain 6 Life per enemy killed",
+            "8% increased Mana Regeneration Rate",
+            "5% increased Light Radius",
+            "Adds 1 to 4 Physical Damage to Attacks"
+          ]
+        },
+        {
+          "name": "Crimson Amulet",
+          "slot": "amulet",
+          "slug": "amulet-fouramulet1",
+          "modifiers": [
+            "+36 to maximum Life",
+            "+27 to maximum Mana",
+            "15% increased Rarity of Items found",
+            "+1 to Level of all Melee Skills",
+            "+14 to Strength",
+            "+11% to Lightning Resistance",
+            "2.3 Life Regeneration per second"
+          ]
+        },
+        {
+          "name": "Studded Vest",
+          "slot": "body",
+          "slug": "armour-fourbodydex6",
+          "modifiers": [
+            "+33 to maximum Life",
+            "+10 to Dexterity"
+          ]
+        },
+        {
+          "name": "Linen Wraps",
+          "slot": "gloves",
+          "slug": "armour-fourglovesdexint2",
+          "modifiers": [
+            "+9 to Evasion Rating",
+            "+5 to maximum Energy Shield",
+            "25% increased Evasion and Energy Shield",
+            "Adds 1 to 2 Cold damage to Attacks",
+            "8% increased Rarity of Items found",
+            "+12% to Cold Resistance",
+            "+11% to Lightning Resistance"
+          ]
+        },
+        {
+          "name": "Plate Belt",
+          "slot": "belt",
+          "slug": "armour-fourbelt5",
+          "modifiers": [
+            "+42 to maximum Life",
+            "+6 to Strength",
+            "+15% to Lightning Resistance",
+            "3.5 Life Regeneration per second",
+            "+134 to Armour",
+            "Has 1 Charm Slot"
+          ]
+        },
+        {
+          "name": "Briarpatch",
+          "slot": "boots",
+          "slug": "armour-fouruniquebootsdex2-briarpatch",
+          "modifiers": [
+            "19% increased Movement Speed",
+            "+58 to maximum Life",
+            "+71 to Stun Threshold",
+            "+25% to Thorns Critical Hit Chance",
+            "12 to 25 Physical Thorns damage"
+          ]
+        }
+      ],
+      "skillGems": [
+        {
+          "name": "Falling Thunder (Level 6)",
+          "slug": "fallingthunderplayer",
+          "supports": [
+            "Lightning Attunement",
+            "Elemental Armament II"
+          ]
+        },
+        {
+          "name": "Herald of Thunder (Level 8)",
+          "slug": "heraldofthunderplayer",
+          "supports": [
+            "Concentrated Area"
+          ]
+        },
+        {
+          "name": "Infernal Cry (Level 5)",
+          "slug": "infernalcryplayer",
+          "supports": []
+        },
+        {
+          "name": "Storm Wave (Level 7)",
+          "slug": "stormwaveplayer",
+          "supports": [
+            "Rage I",
+            "Shock"
+          ]
+        },
+        {
+          "name": "Frost Bomb (Level 2)",
+          "slug": "frostbombplayer",
+          "supports": [
+            "Freeze"
+          ]
+        },
+        {
+          "name": "Ice Strike (Level 6)",
+          "slug": "icestrikeplayer",
+          "supports": [
+            "Rage I",
+            "Rapid Attacks I"
+          ]
+        },
+        {
+          "name": "Siphoning Strike (Level 8)",
+          "slug": "siphoningstrikeplayer",
+          "supports": [
+            "Pinpoint Critical",
+            "Elemental Armament II"
+          ]
+        }
+      ],
+      "passiveTree": [
+        {
+          "name": "Flow Like Water",
+          "slug": "node-49220",
+          "tree": "main"
+        },
+        {
+          "name": "Essence of the Storm",
+          "slug": "node-36479",
+          "tree": "main"
+        },
+        {
+          "name": "Killer Instinct",
+          "slug": "node-56453",
+          "tree": "main"
+        },
+        {
+          "name": "Wild Storm",
+          "slug": "node-7809",
+          "tree": "main"
+        },
+        {
+          "name": "For the Jugular",
+          "slug": "node-20677",
+          "tree": "main"
+        },
+        {
+          "name": "Concussive Attack",
+          "slug": "node-36931",
+          "tree": "main"
+        },
+        {
+          "name": "I am the Thunder...",
+          "slug": "node-7621",
+          "tree": "ascendancy"
+        }
+      ]
+    },
+    {
+      "act": "Act 3",
+      "variantId": "46646f45-b6c8-4bb7-aad8-a93184ad3ad6",
+      "equipment": [
+        {
+          "name": "Shielded Helm",
+          "slot": "helmet",
+          "slug": "armour-fourhelmetstrdex5",
+          "modifiers": [
+            "26% increased Armour and Evasion",
+            "+86 to maximum Life",
+            "+10 to maximum Mana",
+            "20% reduced Attributes Requirements",
+            "14% increased Critical Hit Chance",
+            "+12% to Cold Resistance"
+          ]
+        },
+        {
+          "name": "Slicing Quarterstaff",
+          "slot": "mainHand",
+          "slug": "weapon-fourquarterstaff7",
+          "modifiers": [
+            "44% increased Physical Damage",
+            "+25 to Accuracy Rating",
+            "74% increased Elemental Damage with Attacks",
+            "14% increased Attack Speed",
+            "+2 to Level of all Melee Skills",
+            "Gain 11 Mana per enemy killed"
+          ]
+        },
+        {
+          "name": "Changeling Talisman",
+          "slot": "mainHand",
+          "slug": "weapon-talisman1",
+          "modifiers": [
+            "Adds 2 to 7 Fire Damage"
+          ]
+        },
+        {
+          "name": "Iron Ring",
+          "slot": "leftRing",
+          "slug": "ring-fourring1",
+          "modifiers": [
+            "Adds 1 to 12 Lightning damage to Attacks",
+            "+14 to maximum Life",
+            "+16 to maximum Mana",
+            "+7% to Fire Resistance",
+            "Gain 6 Life per enemy killed",
+            "8% increased Mana Regeneration Rate",
+            "5% increased Light Radius",
+            "Adds 1 to 4 Physical Damage to Attacks"
+          ]
+        },
+        {
+          "name": "Iron Ring",
+          "slot": "rightRing",
+          "slug": "ring-fourring1",
+          "modifiers": [
+            "Adds 1 to 12 Lightning damage to Attacks",
+            "+14 to maximum Life",
+            "+16 to maximum Mana",
+            "+7% to Fire Resistance",
+            "Gain 6 Life per enemy killed",
+            "8% increased Mana Regeneration Rate",
+            "5% increased Light Radius",
+            "Adds 1 to 4 Physical Damage to Attacks"
+          ]
+        },
+        {
+          "name": "Crimson Amulet",
+          "slot": "amulet",
+          "slug": "amulet-fouramulet1",
+          "modifiers": [
+            "+36 to maximum Life",
+            "+27 to maximum Mana",
+            "15% increased Rarity of Items found",
+            "+1 to Level of all Melee Skills",
+            "+14 to Strength",
+            "+11% to Lightning Resistance",
+            "2.3 Life Regeneration per second"
+          ]
+        },
+        {
+          "name": "Scalper's Jacket",
+          "slot": "body",
+          "slug": "armour-fourbodydexint6",
+          "modifiers": [
+            "64% increased Evasion and Energy Shield",
+            "+88 to maximum Life",
+            "+19% to Cold Resistance",
+            "29% faster start of Energy Shield Recharge",
+            "5.1 Life Regeneration per second"
+          ]
+        },
+        {
+          "name": "Sectioned Bracers",
+          "slot": "gloves",
+          "slug": "armour-fourglovesdex4",
+          "modifiers": [
+            "Adds 2 to 3 Physical Damage to Attacks",
+            "Adds 1 to 5 Lightning damage to Attacks",
+            "+14 to Accuracy Rating",
+            "+19% to Fire Resistance",
+            "Leech 4.34% of Physical Attack Damage as Mana",
+            "Gain 6 Mana per enemy killed"
+          ]
+        },
+        {
+          "name": "Plate Belt",
+          "slot": "belt",
+          "slug": "armour-fourbelt5",
+          "modifiers": [
+            "+42 to maximum Life",
+            "+6 to Strength",
+            "+15% to Lightning Resistance",
+            "3.5 Life Regeneration per second",
+            "+134 to Armour",
+            "Has 1 Charm Slot"
+          ]
+        },
+        {
+          "name": "Feathered Sandals",
+          "slot": "boots",
+          "slug": "armour-fourbootsint5",
+          "modifiers": [
+            "15% increased Movement Speed",
+            "16% increased Energy Shield",
+            "+27 to maximum Life",
+            "+11 to Intelligence",
+            "26% increased Energy Shield Recharge Rate",
+            "2.7 Life Regeneration per second"
+          ]
+        }
+      ],
+      "skillGems": [
+        {
+          "name": "Rend (Level 11)",
+          "slug": "wyvernrendplayer",
+          "supports": [
+            "Rapid Attacks II",
+            "Prolonged Duration II"
+          ]
+        },
+        {
+          "name": "Herald of Thunder (Level 8)",
+          "slug": "heraldofthunderplayer",
+          "supports": [
+            "Lightning Attunement"
+          ]
+        },
+        {
+          "name": "Infernal Cry (Level 5)",
+          "slug": "infernalcryplayer",
+          "supports": [
+            "Tireless"
+          ]
+        },
+        {
+          "name": "Storm Wave (Level 10)",
+          "slug": "stormwaveplayer",
+          "supports": [
+            "Rapid Attacks I",
+            "Rage I",
+            "Shock"
+          ]
+        },
+        {
+          "name": "Sniper's Mark (Level 9)",
+          "slug": "snipersmarkplayer",
+          "supports": [
+            "Mark of Siphoning"
+          ]
+        },
+        {
+          "name": "Wind Dancer (Level 10)",
+          "slug": "winddancerplayer",
+          "supports": [
+            "Blind I",
+            "Maim"
+          ]
+        },
+        {
+          "name": "Siphoning Strike (Level 10)",
+          "slug": "siphoningstrikeplayer",
+          "supports": [
+            "Pinpoint Critical",
+            "Elemental Armament II",
+            "Elemental Focus"
+          ]
+        },
+        {
+          "name": "Mantra of Destruction (Level 9)",
+          "slug": "mantraofdestructionplayer",
+          "supports": []
+        },
+        {
+          "name": "Falling Thunder (Level 10)",
+          "slug": "fallingthunderplayer",
+          "supports": [
+            "Concentrated Area",
+            "Elemental Armament II",
+            "Fist of War II"
+          ]
+        }
+      ],
+      "passiveTree": [
+        {
+          "name": "Flow Like Water",
+          "slug": "node-49220",
+          "tree": "main"
+        },
+        {
+          "name": "Crashing Wave",
+          "slug": "node-34168",
+          "tree": "main"
+        },
+        {
+          "name": "Blinding Strike",
+          "slug": "node-20916",
+          "tree": "main"
+        },
+        {
+          "name": "Harness the Elements",
+          "slug": "node-12611",
+          "tree": "main"
+        },
+        {
+          "name": "Killer Instinct",
+          "slug": "node-56453",
+          "tree": "main"
+        },
+        {
+          "name": "Endless Circuit",
+          "slug": "node-8273",
+          "tree": "main"
+        },
+        {
+          "name": "Wild Storm",
+          "slug": "node-7809",
+          "tree": "main"
+        },
+        {
+          "name": "True Strike",
+          "slug": "node-61601",
+          "tree": "main"
+        },
+        {
+          "name": "For the Jugular",
+          "slug": "node-20677",
+          "tree": "main"
+        },
+        {
+          "name": "Deadly Force",
+          "slug": "node-13724",
+          "tree": "main"
+        },
+        {
+          "name": "Concussive Attack",
+          "slug": "node-36931",
+          "tree": "main"
+        },
+        {
+          "name": "Essence of the Storm",
+          "slug": "node-36479",
+          "tree": "main"
+        },
+        {
+          "name": "Sunder my Enemies...",
+          "slug": "node-63713",
+          "tree": "ascendancy"
+        },
+        {
+          "name": "I am the Thunder...",
+          "slug": "node-7621",
+          "tree": "ascendancy"
+        }
+      ]
+    },
+    {
+      "act": "Act 4",
+      "variantId": "ed7752e0-e7f8-4b18-966a-f6138e2e4c84",
+      "equipment": [
+        {
+          "name": "Shielded Helm",
+          "slot": "helmet",
+          "slug": "armour-fourhelmetstrdex5",
+          "modifiers": [
+            "26% increased Armour and Evasion",
+            "+86 to maximum Life",
+            "+10 to maximum Mana",
+            "20% reduced Attributes Requirements",
+            "14% increased Critical Hit Chance",
+            "+12% to Cold Resistance"
+          ]
+        },
+        {
+          "name": "Slicing Quarterstaff",
+          "slot": "mainHand",
+          "slug": "weapon-fourquarterstaff7",
+          "modifiers": [
+            "44% increased Physical Damage",
+            "+25 to Accuracy Rating",
+            "74% increased Elemental Damage with Attacks",
+            "14% increased Attack Speed",
+            "+2 to Level of all Melee Skills",
+            "Gain 11 Mana per enemy killed"
+          ]
+        },
+        {
+          "name": "Changeling Talisman",
+          "slot": "mainHand",
+          "slug": "weapon-talisman1",
+          "modifiers": [
+            "Adds 2 to 7 Fire Damage"
+          ]
+        },
+        {
+          "name": "Iron Ring",
+          "slot": "leftRing",
+          "slug": "ring-fourring1",
+          "modifiers": [
+            "Adds 1 to 12 Lightning damage to Attacks",
+            "+14 to maximum Life",
+            "+16 to maximum Mana",
+            "+7% to Fire Resistance",
+            "Gain 6 Life per enemy killed",
+            "8% increased Mana Regeneration Rate",
+            "5% increased Light Radius",
+            "Adds 1 to 4 Physical Damage to Attacks"
+          ]
+        },
+        {
+          "name": "Iron Ring",
+          "slot": "rightRing",
+          "slug": "ring-fourring1",
+          "modifiers": [
+            "Adds 1 to 12 Lightning damage to Attacks",
+            "+14 to maximum Life",
+            "+16 to maximum Mana",
+            "+7% to Fire Resistance",
+            "Gain 6 Life per enemy killed",
+            "8% increased Mana Regeneration Rate",
+            "5% increased Light Radius",
+            "Adds 1 to 4 Physical Damage to Attacks"
+          ]
+        },
+        {
+          "name": "Crimson Amulet",
+          "slot": "amulet",
+          "slug": "amulet-fouramulet1",
+          "modifiers": [
+            "+36 to maximum Life",
+            "+27 to maximum Mana",
+            "15% increased Rarity of Items found",
+            "+1 to Level of all Melee Skills",
+            "+14 to Strength",
+            "+11% to Lightning Resistance",
+            "2.3 Life Regeneration per second"
+          ]
+        },
+        {
+          "name": "Scalper's Jacket",
+          "slot": "body",
+          "slug": "armour-fourbodydexint6",
+          "modifiers": [
+            "64% increased Evasion and Energy Shield",
+            "+88 to maximum Life",
+            "+19% to Cold Resistance",
+            "29% faster start of Energy Shield Recharge",
+            "5.1 Life Regeneration per second"
+          ]
+        },
+        {
+          "name": "Intricate Gloves",
+          "slot": "gloves",
+          "slug": "armour-fourglovesint5",
+          "modifiers": [
+            "+41 to maximum Energy Shield",
+            "31% increased Energy Shield",
+            "Adds 1 to 25 Lightning damage to Attacks",
+            "+14 to Dexterity",
+            "Gain 4 Life per Enemy Hit with Attacks",
+            "Gain 4 Mana per enemy killed"
+          ]
+        },
+        {
+          "name": "Plate Belt",
+          "slot": "belt",
+          "slug": "armour-fourbelt5",
+          "modifiers": [
+            "+42 to maximum Life",
+            "+6 to Strength",
+            "+15% to Lightning Resistance",
+            "3.5 Life Regeneration per second",
+            "+134 to Armour",
+            "Has 1 Charm Slot"
+          ]
+        },
+        {
+          "name": "Steelpoint Shoes",
+          "slot": "boots",
+          "slug": "armour-fourbootsdexint4",
+          "modifiers": [
+            "20% increased Movement Speed",
+            "+67 to maximum Life",
+            "+13% to Fire Resistance",
+            "+13% to Cold Resistance"
+          ]
+        }
+      ],
+      "skillGems": [
+        {
+          "name": "Rend (Level 12)",
+          "slug": "wyvernrendplayer",
+          "supports": [
+            "Rapid Attacks II",
+            "Prolonged Duration II"
+          ]
+        },
+        {
+          "name": "Herald of Thunder (Level 12)",
+          "slug": "heraldofthunderplayer",
+          "supports": [
+            "Lightning Attunement"
+          ]
+        },
+        {
+          "name": "Infernal Cry (Level 5)",
+          "slug": "infernalcryplayer",
+          "supports": [
+            "Tireless",
+            "Exposing Cry"
+          ]
+        },
+        {
+          "name": "Storm Wave (Level 12)",
+          "slug": "stormwaveplayer",
+          "supports": [
+            "Rapid Attacks I",
+            "Rage I",
+            "Shock"
+          ]
+        },
+        {
+          "name": "Sniper's Mark (Level 12)",
+          "slug": "snipersmarkplayer",
+          "supports": [
+            "Mark of Siphoning"
+          ]
+        },
+        {
+          "name": "Wind Dancer (Level 10)",
+          "slug": "winddancerplayer",
+          "supports": [
+            "Blind I",
+            "Maim"
+          ]
+        },
+        {
+          "name": "Siphoning Strike (Level 12)",
+          "slug": "siphoningstrikeplayer",
+          "supports": [
+            "Pinpoint Critical",
+            "Elemental Armament II",
+            "Elemental Focus"
+          ]
+        },
+        {
+          "name": "Mantra of Destruction (Level 9)",
+          "slug": "mantraofdestructionplayer",
+          "supports": []
+        },
+        {
+          "name": "Falling Thunder (Level 12)",
+          "slug": "fallingthunderplayer",
+          "supports": [
+            "Concentrated Area",
+            "Elemental Armament II",
+            "Fist of War II"
+          ]
+        }
+      ],
+      "passiveTree": [
+        {
+          "name": "Flow Like Water",
+          "slug": "node-49220",
+          "tree": "main"
+        },
+        {
+          "name": "Crashing Wave",
+          "slug": "node-34168",
+          "tree": "main"
+        },
+        {
+          "name": "Blinding Strike",
+          "slug": "node-20916",
+          "tree": "main"
+        },
+        {
+          "name": "Harness the Elements",
+          "slug": "node-12611",
+          "tree": "main"
+        },
+        {
+          "name": "Essence of the Mountain",
+          "slug": "node-32683",
+          "tree": "main"
+        },
+        {
+          "name": "Killer Instinct",
+          "slug": "node-56453",
+          "tree": "main"
+        },
+        {
+          "name": "Martial Artistry",
+          "slug": "node-2113",
+          "tree": "main"
+        },
+        {
+          "name": "One with the Storm",
+          "slug": "node-9444",
+          "tree": "main"
+        },
+        {
+          "name": "Endless Circuit",
+          "slug": "node-8273",
+          "tree": "main"
+        },
+        {
+          "name": "Wild Storm",
+          "slug": "node-7809",
+          "tree": "main"
+        },
+        {
+          "name": "True Strike",
+          "slug": "node-61601",
+          "tree": "main"
+        },
+        {
+          "name": "For the Jugular",
+          "slug": "node-20677",
+          "tree": "main"
+        },
+        {
+          "name": "Deadly Force",
+          "slug": "node-13724",
+          "tree": "main"
+        },
+        {
+          "name": "Concussive Attack",
+          "slug": "node-36931",
+          "tree": "main"
+        },
+        {
+          "name": "Essence of the Storm",
+          "slug": "node-36479",
+          "tree": "main"
+        },
+        {
+          "name": "Sunder my Enemies...",
+          "slug": "node-63713",
+          "tree": "ascendancy"
+        },
+        {
+          "name": "I am the Thunder...",
+          "slug": "node-7621",
+          "tree": "ascendancy"
+        }
+      ]
+    },
+    {
+      "act": "Interludes",
+      "variantId": "f4c6a231-308b-42f8-9e66-caa7eaa64ed1",
+      "equipment": [
+        {
+          "name": "Shielded Helm",
+          "slot": "helmet",
+          "slug": "armour-fourhelmetstrdex5",
+          "modifiers": [
+            "26% increased Armour and Evasion",
+            "+86 to maximum Life",
+            "+10 to maximum Mana",
+            "20% reduced Attributes Requirements",
+            "14% increased Critical Hit Chance",
+            "+12% to Cold Resistance"
+          ]
+        },
+        {
+          "name": "Waxing Quarterstaff",
+          "slot": "mainHand",
+          "slug": "weapon-fourquarterstaff5cruel",
+          "modifiers": [
+            "133% increased Physical Damage",
+            "Adds 26 to 46 Cold Damage",
+            "Adds 6 to 119 Lightning Damage",
+            "+3.2% to Critical Hit Chance",
+            "7% increased Attack Speed",
+            "Leeches 6.17% of Physical Damage as Mana"
+          ]
+        },
+        {
+          "name": "Changeling Talisman",
+          "slot": "mainHand",
+          "slug": "weapon-talisman1",
+          "modifiers": [
+            "Adds 2 to 7 Fire Damage"
+          ]
+        },
+        {
+          "name": "Iron Ring",
+          "slot": "leftRing",
+          "slug": "ring-fourring1",
+          "modifiers": [
+            "Adds 1 to 12 Lightning damage to Attacks",
+            "+14 to maximum Life",
+            "+16 to maximum Mana",
+            "+7% to Fire Resistance",
+            "Gain 6 Life per enemy killed",
+            "8% increased Mana Regeneration Rate",
+            "5% increased Light Radius",
+            "Adds 1 to 4 Physical Damage to Attacks"
+          ]
+        },
+        {
+          "name": "Iron Ring",
+          "slot": "rightRing",
+          "slug": "ring-fourring1",
+          "modifiers": [
+            "Adds 1 to 12 Lightning damage to Attacks",
+            "+14 to maximum Life",
+            "+16 to maximum Mana",
+            "+7% to Fire Resistance",
+            "Gain 6 Life per enemy killed",
+            "8% increased Mana Regeneration Rate",
+            "5% increased Light Radius",
+            "Adds 1 to 4 Physical Damage to Attacks"
+          ]
+        },
+        {
+          "name": "Crimson Amulet",
+          "slot": "amulet",
+          "slug": "amulet-fouramulet1",
+          "modifiers": [
+            "+36 to maximum Life",
+            "+27 to maximum Mana",
+            "15% increased Rarity of Items found",
+            "+1 to Level of all Melee Skills",
+            "+14 to Strength",
+            "+11% to Lightning Resistance",
+            "2.3 Life Regeneration per second"
+          ]
+        },
+        {
+          "name": "Itinerant Jacket",
+          "slot": "body",
+          "slug": "armour-fourbodydexint4cruel",
+          "modifiers": [
+            "+97 to maximum Life",
+            "+24% to Fire Resistance",
+            "+30% to Lightning Resistance",
+            "41% reduced Ignite Duration on you"
+          ]
+        },
+        {
+          "name": "Intricate Gloves",
+          "slot": "gloves",
+          "slug": "armour-fourglovesint5",
+          "modifiers": [
+            "+41 to maximum Energy Shield",
+            "31% increased Energy Shield",
+            "Adds 1 to 25 Lightning damage to Attacks",
+            "+14 to Dexterity",
+            "Gain 4 Life per Enemy Hit with Attacks",
+            "Gain 4 Mana per enemy killed"
+          ]
+        },
+        {
+          "name": "Plate Belt",
+          "slot": "belt",
+          "slug": "armour-fourbelt5",
+          "modifiers": [
+            "+42 to maximum Life",
+            "+6 to Strength",
+            "+15% to Lightning Resistance",
+            "3.5 Life Regeneration per second",
+            "+134 to Armour",
+            "Has 1 Charm Slot"
+          ]
+        },
+        {
+          "name": "Steelpoint Shoes",
+          "slot": "boots",
+          "slug": "armour-fourbootsdexint4",
+          "modifiers": [
+            "20% increased Movement Speed",
+            "+67 to maximum Life",
+            "+13% to Fire Resistance",
+            "+13% to Cold Resistance"
+          ]
+        }
+      ],
+      "skillGems": [
+        {
+          "name": "Rend (Level 13)",
+          "slug": "wyvernrendplayer",
+          "supports": [
+            "Rapid Attacks II",
+            "Prolonged Duration II"
+          ]
+        },
+        {
+          "name": "Herald of Thunder (Level 12)",
+          "slug": "heraldofthunderplayer",
+          "supports": [
+            "Lightning Attunement"
+          ]
+        },
+        {
+          "name": "Infernal Cry (Level 5)",
+          "slug": "infernalcryplayer",
+          "supports": [
+            "Tireless",
+            "Exposing Cry"
+          ]
+        },
+        {
+          "name": "Storm Wave (Level 12)",
+          "slug": "stormwaveplayer",
+          "supports": [
+            "Rapid Attacks I",
+            "Rage I",
+            "Shock"
+          ]
+        },
+        {
+          "name": "Sniper's Mark (Level 12)",
+          "slug": "snipersmarkplayer",
+          "supports": [
+            "Mark of Siphoning"
+          ]
+        },
+        {
+          "name": "Wind Dancer (Level 10)",
+          "slug": "winddancerplayer",
+          "supports": [
+            "Blind I",
+            "Maim"
+          ]
+        },
+        {
+          "name": "Siphoning Strike (Level 12)",
+          "slug": "siphoningstrikeplayer",
+          "supports": [
+            "Pinpoint Critical",
+            "Elemental Armament II",
+            "Elemental Focus"
+          ]
+        },
+        {
+          "name": "Mantra of Destruction (Level 9)",
+          "slug": "mantraofdestructionplayer",
+          "supports": []
+        },
+        {
+          "name": "Falling Thunder (Level 12)",
+          "slug": "fallingthunderplayer",
+          "supports": [
+            "Concentrated Area",
+            "Elemental Armament II",
+            "Fist of War II"
+          ]
+        }
+      ],
+      "passiveTree": [
+        {
+          "name": "Flow Like Water",
+          "slug": "node-49220",
+          "tree": "main"
+        },
+        {
+          "name": "Crashing Wave",
+          "slug": "node-34168",
+          "tree": "main"
+        },
+        {
+          "name": "Blinding Strike",
+          "slug": "node-20916",
+          "tree": "main"
+        },
+        {
+          "name": "Harness the Elements",
+          "slug": "node-12611",
+          "tree": "main"
+        },
+        {
+          "name": "Essence of the Mountain",
+          "slug": "node-32683",
+          "tree": "main"
+        },
+        {
+          "name": "Killer Instinct",
+          "slug": "node-56453",
+          "tree": "main"
+        },
+        {
+          "name": "Stupefy",
+          "slug": "node-38342",
+          "tree": "main"
+        },
+        {
+          "name": "Dizzying Hits",
+          "slug": "node-47514",
+          "tree": "main"
+        },
+        {
+          "name": "Whirling Assault",
+          "slug": "node-37514",
+          "tree": "main"
+        },
+        {
+          "name": "Martial Artistry",
+          "slug": "node-2113",
+          "tree": "main"
+        },
+        {
+          "name": "One with the Storm",
+          "slug": "node-9444",
+          "tree": "main"
+        },
+        {
+          "name": "Throatseeker",
+          "slug": "node-56265",
+          "tree": "main"
+        },
+        {
+          "name": "Endless Circuit",
+          "slug": "node-8273",
+          "tree": "main"
+        },
+        {
+          "name": "Wild Storm",
+          "slug": "node-7809",
+          "tree": "main"
+        },
+        {
+          "name": "Exposed to the Storm",
+          "slug": "node-40990",
+          "tree": "main"
+        },
+        {
+          "name": "True Strike",
+          "slug": "node-61601",
+          "tree": "main"
+        },
+        {
+          "name": "For the Jugular",
+          "slug": "node-20677",
+          "tree": "main"
+        },
+        {
+          "name": "Deadly Force",
+          "slug": "node-13724",
+          "tree": "main"
+        },
+        {
+          "name": "Concussive Attack",
+          "slug": "node-36931",
+          "tree": "main"
+        },
+        {
+          "name": "Essence of the Storm",
+          "slug": "node-36479",
+          "tree": "main"
+        },
+        {
+          "name": "Sunder my Enemies...",
+          "slug": "node-63713",
+          "tree": "ascendancy"
+        },
+        {
+          "name": "I am the Thunder...",
+          "slug": "node-7621",
+          "tree": "ascendancy"
+        }
+      ]
+    }
+  ]
+}
