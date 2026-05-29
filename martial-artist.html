@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Power Charge Martial Artist POE 2 — Detailed Act-by-Act Guide</title>
+    <style>
+        :root {
+            --bg: #07101f;
+            --bg2: #0d1730;
+            --panel: rgba(255,255,255,.075);
+            --panel2: rgba(255,255,255,.105);
+            --border: rgba(255,255,255,.15);
+            --text: #eef7ff;
+            --muted: #aebbd2;
+            --muted2: #7f8fa9;
+            --lightning: #fbbf24;
+            --blue: #60a5fa;
+            --violet: #a78bfa;
+            --amber: #fbbf24;
+            --green: #34d399;
+            --red: #fb7185;
+            --danger: #f43f5e;
+            --shadow: 0 24px 80px rgba(0,0,0,.38);
+            --radius: 24px;
+            --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            font-family: var(--sans);
+            line-height: 1.55;
+            background: radial-gradient(circle at 10% -10%, rgba(251,191,36,.2), transparent 30rem), radial-gradient(circle at 90% 0%, rgba(167,139,250,.18), transparent 34rem), radial-gradient(circle at 55% 25%, rgba(96,165,250,.12), transparent 34rem), linear-gradient(180deg, var(--bg), #050814 70%, #03050d);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 290px minmax(0, 1fr);
+            min-height: 100vh;
+        }
+
+        aside {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 28px 22px;
+            border-right: 1px solid var(--border);
+            background: rgba(3,7,18,.68);
+            backdrop-filter: blur(20px);
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .logo {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 17px;
+            color: #1a1000;
+            font-weight: 950;
+            background: linear-gradient(135deg, var(--lightning), var(--violet));
+            box-shadow: 0 12px 34px rgba(251,191,36,.26);
+        }
+
+        .brand h1 {
+            font-size: 15px;
+            line-height: 1.1;
+            margin: 0;
+            letter-spacing: -.01em;
+        }
+
+        .brand p {
+            margin: 5px 0 0;
+            color: var(--muted2);
+            font-size: 12px;
+        }
+
+        nav {
+            display: grid;
+            gap: 4px;
+        }
+
+            nav a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 12px;
+                border-radius: 13px;
+                color: var(--muted);
+                text-decoration: none;
+                font-size: 14px;
+                transition: .16s ease;
+            }
+
+                nav a::before {
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 99px;
+                    background: var(--lightning);
+                    opacity: .65;
+                }
+
+                nav a:hover, nav a.active {
+                    background: var(--panel);
+                    color: var(--text);
+                    transform: translateX(2px);
+                }
+
+        .side-note {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 18px;
+            background: rgba(255,255,255,.06);
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        main {
+            padding: 42px clamp(22px,4vw,62px) 88px;
+            max-width: 1540px;
+        }
+
+        .hero {
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--border);
+            border-radius: 34px;
+            padding: clamp(30px,5vw,62px);
+            background: linear-gradient(135deg, rgba(251,191,36,.14), rgba(167,139,250,.1)), rgba(255,255,255,.055);
+            box-shadow: var(--shadow);
+        }
+
+            .hero::after {
+                content: "";
+                position: absolute;
+                width: 460px;
+                height: 460px;
+                right: -210px;
+                top: -170px;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(251,191,36,.28), transparent 68%);
+                pointer-events: none;
+            }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            border-radius: 99px;
+            border: 1px solid rgba(251,191,36,.34);
+            background: rgba(251,191,36,.07);
+            color: var(--lightning);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .02em;
+        }
+
+        .hero h1 {
+            margin: 18px 0 18px;
+            max-width: 1020px;
+            font-size: clamp(40px,6.4vw,82px);
+            line-height: .94;
+            letter-spacing: -.06em;
+        }
+
+        .gradient {
+            background: linear-gradient(90deg, var(--lightning), var(--violet), var(--blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        p {
+            color: var(--muted);
+            margin: 0 0 14px;
+        }
+
+        .hero p {
+            max-width: 960px;
+            font-size: 18px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0,1fr));
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .stat {
+            padding: 17px;
+            border: 1px solid var(--border);
+            border-radius: 19px;
+            background: rgba(0,0,0,.18);
+        }
+
+            .stat strong {
+                display: block;
+                font-size: 22px;
+                line-height: 1.05;
+            }
+
+            .stat span {
+                color: var(--muted2);
+                font-size: 12px;
+            }
+
+        .section {
+            margin-top: 34px;
+            scroll-margin-top: 24px;
+        }
+
+        .section-head {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            margin: 48px 0 18px;
+        }
+
+        .section-kicker {
+            flex: 0 0 auto;
+            min-width: 78px;
+            text-align: center;
+            padding: 10px 12px;
+            border-radius: 16px;
+            font-weight: 950;
+            letter-spacing: -.02em;
+            background: rgba(251,191,36,.1);
+            color: var(--lightning);
+            border: 1px solid rgba(251,191,36,.24);
+        }
+
+        h2 {
+            margin: 0 0 8px;
+            font-size: clamp(28px,3.2vw,46px);
+            line-height: 1.04;
+            letter-spacing: -.035em;
+        }
+
+        h3 {
+            margin: 0 0 12px;
+            font-size: 20px;
+            letter-spacing: -.015em;
+        }
+
+        h4 {
+            margin: 18px 0 8px;
+            font-size: 15px;
+            color: var(--text);
+        }
+
+        .route-grid {
+            display: grid;
+            grid-template-columns: minmax(320px, 0.88fr) minmax(0, 1.52fr);
+            gap: 18px;
+            align-items: start;
+        }
+
+        .timeline-panel {
+            position: sticky;
+            top: 24px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: rgba(255,255,255,.063);
+            box-shadow: 0 18px 60px rgba(0,0,0,.22);
+            overflow: hidden;
+        }
+
+        .timeline-title {
+            padding: 15px 16px;
+            font-weight: 900;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(90deg, rgba(251,191,36,.14), transparent);
+        }
+
+        .timeline-table, .compact-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            color: var(--muted2);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            text-align: left;
+        }
+
+        .timeline-table th, .timeline-table td, .compact-table th, .compact-table td {
+            padding: 11px 12px;
+            border-bottom: 1px solid rgba(255,255,255,.09);
+            vertical-align: top;
+        }
+
+        .timeline-table tr:last-child td, .compact-table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .timeline-table tbody tr:hover, .compact-table tbody tr:hover {
+            background: rgba(255,255,255,.045);
+        }
+
+        .time-cell {
+            font-family: var(--mono);
+            color: var(--lightning);
+            white-space: nowrap;
+            font-weight: 800;
+            font-size: 12px;
+        }
+
+        .level-cell {
+            width: 62px;
+        }
+
+        .level-chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 38px;
+            padding: 4px 7px;
+            border-radius: 99px;
+            background: rgba(251,191,36,.12);
+            color: #fde68a;
+            border: 1px solid rgba(251,191,36,.24);
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        .tiny {
+            color: var(--muted2);
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+        .cards-stack {
+            display: grid;
+            gap: 14px;
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: rgba(255,255,255,.073);
+            padding: 20px;
+            box-shadow: 0 16px 54px rgba(0,0,0,.17);
+        }
+
+            .card.highlight {
+                border-color: rgba(251,191,36,.36);
+                background: linear-gradient(135deg, rgba(251,191,36,.12), rgba(255,255,255,.065));
+            }
+
+            .card.warn {
+                border-color: rgba(251,191,36,.38);
+                background: linear-gradient(135deg, rgba(251,191,36,.11), rgba(255,255,255,.06));
+            }
+
+            .card.danger {
+                border-color: rgba(251,113,133,.42);
+                background: linear-gradient(135deg, rgba(251,113,133,.12), rgba(255,255,255,.06));
+            }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--muted);
+        }
+
+        li {
+            margin: 7px 0;
+        }
+
+        strong {
+            color: var(--text);
+        }
+
+        .compact-table {
+            overflow: hidden;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,.09);
+        }
+
+            .compact-table th {
+                background: rgba(255,255,255,.055);
+            }
+
+            .compact-table td {
+                color: var(--muted);
+            }
+
+                .compact-table td:first-child {
+                    color: var(--text);
+                    font-weight: 800;
+                }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(255,255,255,.12);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+            .pill::before {
+                content: "";
+                width: 7px;
+                height: 7px;
+                border-radius: 99px;
+                background: var(--lightning);
+            }
+
+        .callout {
+            margin-top: 16px;
+            padding: 18px 20px;
+            border-radius: 22px;
+            border: 1px solid rgba(251,191,36,.28);
+            background: linear-gradient(135deg, rgba(251,191,36,.12), rgba(167,139,250,.08));
+            color: var(--muted);
+        }
+
+        .resource-links {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 4px;
+        }
+
+        .resource-link {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 16px 18px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            background: rgba(0,0,0,.18);
+            color: inherit;
+            text-decoration: none;
+            transition: .16s ease;
+        }
+
+            .resource-link:hover {
+                transform: translateY(-2px);
+                border-color: rgba(251,191,36,.34);
+                background: rgba(251,191,36,.08);
+            }
+
+            .resource-link strong {
+                font-size: 15px;
+            }
+
+            .resource-link span {
+                color: var(--muted2);
+                font-size: 13px;
+                line-height: 1.45;
+            }
+
+        .rotation {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0,1fr));
+            gap: 10px;
+            counter-reset: step;
+        }
+
+        .step {
+            position: relative;
+            padding: 16px;
+            min-height: 130px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(255,255,255,.07);
+        }
+
+            .step::before {
+                counter-increment: step;
+                content: counter(step);
+                display: grid;
+                place-items: center;
+                width: 28px;
+                height: 28px;
+                border-radius: 10px;
+                background: linear-gradient(135deg, var(--lightning), var(--violet));
+                color: #1a1000;
+                font-weight: 950;
+                margin-bottom: 12px;
+            }
+
+            .step strong {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .step span {
+                color: var(--muted2);
+                font-size: 13px;
+            }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .footer {
+            margin-top: 52px;
+            color: var(--muted2);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .searchbox {
+            width: 100%;
+            margin: 18px 0 0;
+            padding: 13px 14px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: rgba(0,0,0,.2);
+            color: var(--text);
+            outline: none;
+        }
+
+            .searchbox::placeholder {
+                color: var(--muted2);
+            }
+
+        .hidden-by-search {
+            display: none !important;
+        }
+
+        .tracker-toolbar {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .tracker-subtoolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .tracker-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            flex: 0 0 auto;
+        }
+
+        .tracker-btn {
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: rgba(0,0,0,.22);
+            color: var(--text);
+            font: inherit;
+            cursor: pointer;
+        }
+
+            .tracker-btn:hover {
+                background: rgba(255,255,255,.08);
+            }
+
+            .tracker-btn.danger {
+                border-color: rgba(251,113,133,.35);
+                color: #fecdd3;
+            }
+
+        .tracker-warning {
+            display: none;
+            margin: 0 0 16px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(251,191,36,.35);
+            background: rgba(251,191,36,.1);
+            color: #fde68a;
+            font-size: .92rem;
+        }
+
+            .tracker-warning.visible {
+                display: block;
+            }
+
+        .tracker-act-tabs,
+        .tracker-category-tabs {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .tracker-act-tab,
+        .tracker-category-tab {
+            flex: 0 0 auto;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: rgba(0,0,0,.18);
+            color: var(--muted);
+            font: inherit;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+            .tracker-act-tab.active {
+                color: var(--text);
+                border-color: rgba(251,191,36,.45);
+                background: rgba(251,191,36,.12);
+            }
+
+            .tracker-category-tab.active {
+                color: var(--text);
+                border-color: rgba(96,165,250,.45);
+                background: rgba(96,165,250,.12);
+            }
+
+        .tracker-category {
+            margin-bottom: 0;
+        }
+
+        .tracker-category-head {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 16px;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+
+            .tracker-category-head h3 {
+                margin: 0;
+                font-size: 1.15rem;
+            }
+
+        .tracker-progress {
+            color: var(--muted);
+            font-size: .92rem;
+            font-family: var(--mono);
+        }
+
+        .tracker-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .tracker-group {
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: rgba(0,0,0,.16);
+        }
+
+        .tracker-row {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+            .tracker-row input[type="checkbox"] {
+                width: 18px;
+                height: 18px;
+                margin-top: 2px;
+                flex: 0 0 auto;
+                accent-color: var(--lightning);
+                cursor: pointer;
+            }
+
+        .tracker-label {
+            flex: 1;
+            min-width: 0;
+        }
+
+            .tracker-label strong {
+                display: block;
+                font-weight: 600;
+            }
+
+            .tracker-label .tracker-slot {
+                display: block;
+                margin-top: 2px;
+                color: var(--muted2);
+                font-size: .82rem;
+            }
+
+        .tracker-children {
+            margin: 10px 0 0 28px;
+            display: grid;
+            gap: 8px;
+        }
+
+            .tracker-children .tracker-row {
+                font-size: .94rem;
+            }
+
+        .tracker-group.is-complete > .tracker-row .tracker-label strong,
+        .tracker-group.is-complete > .tracker-children .tracker-label {
+            color: var(--muted2);
+            text-decoration: line-through;
+            text-decoration-color: rgba(174,187,210,.55);
+        }
+
+        .tracker-empty {
+            color: var(--muted2);
+            font-size: .94rem;
+            padding: 8px 0;
+        }
+
+        .violet .section-kicker, .violet .timeline-title {
+            color: var(--violet);
+            border-color: rgba(167,139,250,.25);
+            background: linear-gradient(90deg, rgba(167,139,250,.14), transparent);
+        }
+
+        .blue .section-kicker, .blue .timeline-title {
+            color: var(--blue);
+            border-color: rgba(96,165,250,.25);
+            background: linear-gradient(90deg, rgba(96,165,250,.14), transparent);
+        }
+
+        .amber .section-kicker, .amber .timeline-title {
+            color: var(--amber);
+            border-color: rgba(251,191,36,.25);
+            background: linear-gradient(90deg, rgba(251,191,36,.13), transparent);
+        }
+
+        .green .section-kicker, .green .timeline-title {
+            color: var(--green);
+            border-color: rgba(52,211,153,.25);
+            background: linear-gradient(90deg, rgba(52,211,153,.13), transparent);
+        }
+
+        .red .section-kicker, .red .timeline-title {
+            color: var(--red);
+            border-color: rgba(251,113,133,.25);
+            background: linear-gradient(90deg, rgba(251,113,133,.13), transparent);
+        }
+
+        @media (max-width: 1180px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                position: relative;
+                height: auto;
+            }
+
+            nav {
+                grid-template-columns: repeat(2, minmax(0,1fr));
+            }
+
+            main {
+                padding-top: 28px;
+            }
+
+            .timeline-panel {
+                position: relative;
+                top: 0;
+            }
+
+            .route-grid, .overview-grid, .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid {
+                grid-template-columns: repeat(2, minmax(0,1fr));
+            }
+
+            .rotation, .resource-links {
+                grid-template-columns: repeat(2, minmax(0,1fr));
+            }
+        }
+
+        @media (max-width: 680px) {
+            .hero-grid, nav, .rotation, .resource-links {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 26px 20px;
+            }
+
+            main {
+                padding-inline: 16px;
+            }
+
+            .section-head {
+                flex-direction: column;
+            }
+
+            .timeline-table th:nth-child(2), .timeline-table td:nth-child(2) {
+                display: none;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: #111827;
+            }
+
+            aside, .searchbox {
+                display: none;
+            }
+
+            .layout {
+                display: block;
+            }
+
+            main {
+                padding: 0;
+                max-width: none;
+            }
+
+            .hero, .card, .timeline-panel {
+                box-shadow: none;
+                background: white;
+                color: #111827;
+                border-color: #d1d5db;
+            }
+
+            p, ul, .compact-table td, .tiny {
+                color: #374151;
+            }
+
+            .route-grid {
+                grid-template-columns: .9fr 1.5fr;
+            }
+
+            .tracker-row input[type="checkbox"] {
+                appearance: none;
+                width: auto;
+                height: auto;
+                margin: 0;
+            }
+
+            .tracker-row input[type="checkbox"]::after {
+                content: "[ ] ";
+            }
+
+            .tracker-row input[type="checkbox"]:checked::after {
+                content: "[x] ";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside>
+            <div class="brand">
+                <div class="logo">MA</div>
+                <div>
+                    <h1>Power Charge<br>Martial Artist</h1>
+                    <p>POE 2 route guide</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#overview">Overview</a>
+                <a href="#sources">Sources</a>
+                <a href="#act1">Act 1</a>
+                <a href="#act2">Act 2</a>
+                <a href="#act3">Act 3</a>
+                <a href="#act4">Act 4</a>
+                <a href="#interlude">Interlude</a>
+                <a href="#rotation">Boss Rotation</a>
+                <a href="#build-tracker">Build Tracker</a>
+                <a href="#transition-checks">Transition Checks</a>
+                <a href="#timesaves">Time Saves</a>
+            </nav>
+            <div class="side-note">
+                <strong>Focus rule:</strong><br>
+                Power Charges feed <strong>Falling Thunder</strong>. Save your first level-3 gem for <strong>Wing Blast</strong>. Stack full armor until Act 4, then pivot to Hollow Palm scaling.
+            </div>
+            <input class="searchbox" id="search" placeholder="Filter cards, timelines, tracker…">
+        </aside>
+
+        <main>
+            <header class="hero" id="overview">
+                <span class="eyebrow">Static route guide · act-by-act timelines</span>
+                <h1><span class="gradient">Power Charge Martial Artist</span><br>Falling Thunder → Hollow Palm</h1>
+                <p>Monk campaign route built around Power Charge bursts. Early game uses Wind Blast / Wing Blast stun tech; Act 2 switches to Storm Wave + Siphoning Strike shock extraction. Intended ascendancy is Martial Artist (0.5); demo uses Invoker.</p>
+                <div class="hero-grid">
+                    <div class="stat"><strong>4-phase build</strong><span>Staff bridge → stun engine → shock extract → Hollow Palm</span></div>
+                    <div class="stat"><strong>Lvl 3 gem</strong><span>Wing Blast (Druid) — not Monk first</span></div>
+                    <div class="stat"><strong>Act 2 tier 7</strong><span>Storm Wave + Siphoning Strike core</span></div>
+                    <div class="stat"><strong>Act 4+</strong><span>Carries to mapping / Arbitrator</span></div>
+                </div>
+            </header>
+
+            <section id="sources" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Links</div>
+                    <div>
+                        <h2>Build sources</h2>
+                        <p>Original video and Mobalytics planner for skills, passives, and gear targets.</p>
+                    </div>
+                </div>
+                <article class="card highlight">
+                    <h3>Reference links</h3>
+                    <div class="resource-links">
+                        <a class="resource-link" href="https://mobalytics.gg/poe-2/profile/p4wnyhof/builds/power-charge-martial-artist" target="_blank" rel="noopener noreferrer">
+                            <strong>Mobalytics planner</strong>
+                            <span>[0.5] Power Charge Martial Artist — gear, gems, and passive tree by act.</span>
+                        </a>
+                        <a class="resource-link" href="https://www.youtube.com/watch?v=UJrW6xEk52o" target="_blank" rel="noopener noreferrer">
+                            <strong>YouTube video</strong>
+                            <span>Build walkthrough this guide is based on. Timestamps mark skill transitions.</span>
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+            <section class="section">
+                <div class="overview-grid">
+                    <article class="card">
+                        <h3>Core route identity</h3>
+                        <p>Every phase exists to generate Power Charges faster for <strong>Falling Thunder</strong> bursts:</p>
+                        <div class="pill-row">
+                            <span class="pill">Act 1 early: Killing Palm + Frozen Locus bridge</span>
+                            <span class="pill">Act 1 late: Wing Blast + Wind Blast stun engine</span>
+                            <span class="pill">Act 2: Storm Wave + Siphoning Strike + Hollow Palm</span>
+                            <span class="pill">Act 3–4: Perpetual Charge nukes + ES/evasion pivot</span>
+                        </div>
+                    </article>
+                    <article class="card highlight">
+                        <h3>What makes or breaks the run</h3>
+                        <p>Hit the same power spikes, not every early experiment. Four constraints: <strong>talisman in weapon set 2</strong>, <strong>full armor Acts 1–3</strong>, <strong>shock before Falling Thunder</strong>, and do not pick Monk for first level-3 gem.</p>
+                        <div class="callout"><strong>Most important rule:</strong> Wing Blast + Wind Blast is a bridge — drop Frozen Locus once stun clear works, then replace zone clear with Storm Wave loop in Act 2.</div>
+                    </article>
+                </div>
+                <div class="two-col" style="margin-top:14px;">
+                    <article class="card">
+                        <h3>Skill progression summary</h3>
+                        <table class="compact-table">
+                            <thead><tr><th>Stage</th><th>Clear</th><th>Bossing</th><th>Notes</th></tr></thead>
+                            <tbody>
+                                <tr><td>Early Act 1</td><td>Staff + Killing Palm</td><td><strong>Falling Thunder</strong></td><td>Frozen Locus, Rage, optional Frost Bomb.</td></tr>
+                                <tr><td>Late Act 1</td><td><strong>Wind Blast → Wing Blast</strong></td><td>Stagger → Wing Blast → FT</td><td>Devour replaces palm; Herald of Thunder.</td></tr>
+                                <tr><td>Act 2</td><td><strong>Storm Wave → Siphoning Strike</strong></td><td>Extract shocks ×3 → FT</td><td>Hollow Palm; drop Frost Bomb.</td></tr>
+                                <tr><td>Act 3</td><td>Same shock loop</td><td>Perpetual Charge multi-FT</td><td>Living Lightning; Clarity + Cannibalism.</td></tr>
+                                <tr><td>Act 4</td><td>Shock loop</td><td>Same + optional Whirling Assault</td><td>Ghost Dance; ES/evasion body.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    <article class="card">
+                        <h3>Target pace splits</h3>
+                        <table class="compact-table">
+                            <thead><tr><th>Split</th><th>Your target</th></tr></thead>
+                            <tbody>
+                                <tr><td>Wing Blast + Wind Blast online</td><td>Act 1 mid (~lvl 10–12)</td></tr>
+                                <tr><td>Devour + Herald swap</td><td>Late Act 1</td></tr>
+                                <tr><td>Act 1 complete</td><td>Level 14–15</td></tr>
+                                <tr><td>Storm Wave + Siphoning Strike</td><td>Early Act 2</td></tr>
+                                <tr><td>Hollow Palm taken</td><td>Mid Act 2</td></tr>
+                                <tr><td>Act 3 support upgrades</td><td>Early Act 3</td></tr>
+                                <tr><td>Act 4 defensive pivot</td><td>Act 4 start</td></tr>
+                                <tr><td>Campaign / mapping carry</td><td>Act 4 end</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+            </section>
+
+            <section id="act1" class="section route-section amber">
+                <div class="section-head">
+                    <div class="section-kicker">Act 1</div>
+                    <div>
+                        <h2>Act 1 — Staff bridge to stun engine</h2>
+                        <p>Start with Falling Thunder + Killing Palm, add Frozen Locus, then cross-class Wing Blast revolutionizes clear and bossing.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr><td class="time-cell">00:00:46</td><td class="level-cell"><span class="level-chip">1</span></td><td><strong>Start</strong><div class="tiny">Falling Thunder + Killing Palm on staff.</div></td></tr>
+                                <tr><td class="time-cell">00:01:22</td><td class="level-cell"></td><td><strong>Frozen Locus</strong><div class="tiny">Clearfell camp gem; bridge clear.</div></td></tr>
+                                <tr><td class="time-cell">00:02:24</td><td class="level-cell"></td><td><strong>Rage</strong><div class="tiny">From Devourer drop.</div></td></tr>
+                                <tr><td class="time-cell">00:02:50</td><td class="level-cell"></td><td><strong>Frost Bomb</strong><div class="tiny">Optional from Grell wood witch.</div></td></tr>
+                                <tr><td class="time-cell">00:03:17</td><td class="level-cell"></td><td><strong>Rusted King</strong><div class="tiny">Pre-build Power Charges before fight.</div></td></tr>
+                                <tr><td class="time-cell">00:03:47</td><td class="level-cell"></td><td><strong>Wing Blast</strong><div class="tiny">First level-3 gem — Druid, not Monk.</div></td></tr>
+                                <tr><td class="time-cell">00:04:27</td><td class="level-cell"></td><td><strong>Talisman set 2</strong><div class="tiny">Required for Wing Blast.</div></td></tr>
+                                <tr><td class="time-cell">00:04:38</td><td class="level-cell"></td><td><strong>Wind Blast</strong><div class="tiny">Daze → stun primer combo online.</div></td></tr>
+                                <tr><td class="time-cell">00:05:45</td><td class="level-cell"></td><td><strong>Support reshuffle</strong><div class="tiny">Rage + Rapid Attacks → Wind Blast; Brink + Impact Shockwave.</div></td></tr>
+                                <tr><td class="time-cell">00:06:41</td><td class="level-cell"></td><td><strong>Drop Frozen Locus</strong><div class="tiny">Stun combo replaces locus clear.</div></td></tr>
+                                <tr><td class="time-cell">00:07:21</td><td class="level-cell"></td><td><strong>Herald of Thunder</strong><div class="tiny">After King of the Mist.</div></td></tr>
+                                <tr><td class="time-cell">00:08:03</td><td class="level-cell"></td><td><strong>Devour</strong><div class="tiny">Replaces Killing Palm + Thrill of the Kill.</div></td></tr>
+                                <tr><td class="time-cell">00:10:17</td><td class="level-cell"><span class="level-chip">14</span></td><td><strong>Act 1 complete</strong><div class="tiny">Count boss = stun → charges → FT.</div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Reach the Wing Blast / Wind Blast stun engine before mid Act 1 ends. Equip talisman in weapon set 2, swap to Devour + Herald, and finish around level 14–15 with full armor stacked.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Do this session</h3>
+                            <ul>
+                                <li>Grab <strong>Frozen Locus</strong> from Clearfell camp — drop it once stun combo works.</li>
+                                <li>Spend first level-3 gem on <strong>Wing Blast</strong> (Druid), not a Monk skill.</li>
+                                <li>Equip any <strong>talisman</strong> in weapon set 2 before casting Wing Blast.</li>
+                                <li>Move <strong>Rage</strong> + <strong>Rapid Attacks</strong> to <strong>Wind Blast</strong>; add <strong>Brink</strong> + <strong>Impact Shockwave</strong>.</li>
+                                <li>After Executioner, replace Killing Palm with <strong>Devour</strong>.</li>
+                                <li>Socket <strong>Herald of Thunder</strong> — everything from here stacks shock.</li>
+                            </ul>
+                        </article>
+                        <article class="card">
+                            <h3>Early gear priorities</h3>
+                            <table class="compact-table">
+                                <thead><tr><th>Priority</th><th>What to look for</th></tr></thead>
+                                <tbody>
+                                    <tr><td>1</td><td><strong>Full armor</strong> on every slot — ignore ES/evasion.</td></tr>
+                                    <tr><td>2</td><td><strong>Talisman</strong> in weapon set 2 (any power level).</td></tr>
+                                    <tr><td>3</td><td><strong>Life</strong> and resistances on drops.</td></tr>
+                                    <tr><td>4</td><td>Staff until Act 2 Hollow Palm — then unequip.</td></tr>
+                                </tbody>
+                            </table>
+                        </article>
+                        <article class="card warn">
+                            <h3>Failure point to avoid</h3>
+                            <p>Do not heavy-stun with Wind Blast — it primes stun but cannot over-stun, keeping enemies ready for Wing Blast. Do not pick a Monk level-3 gem before Wing Blast.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="act2" class="section route-section violet">
+                <div class="section-head">
+                    <div class="section-kicker">Act 2</div>
+                    <div>
+                        <h2>Act 2 — Storm Wave + Siphoning Strike core</h2>
+                        <p>Tier-7 gems define the real build. Rush Hollow Palm, take shock-reapply node before Jaman' Rai.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr><td class="time-cell">00:10:41</td><td class="level-cell"><span class="level-chip">14</span></td><td><strong>Act 2 start</strong><div class="tiny">Keep Devour + FT + stun combo for bosses.</div></td></tr>
+                                <tr><td class="time-cell">00:10:54</td><td class="level-cell"></td><td><strong>Storm Wave + Siphoning Strike</strong><div class="tiny">Tier 7 — permanent core switch.</div></td></tr>
+                                <tr><td class="time-cell">00:12:12</td><td class="level-cell"></td><td><strong>Support assignment</strong><div class="tiny">Rage + Shock on Storm Wave; Charge Profusion on Strike.</div></td></tr>
+                                <tr><td class="time-cell">00:12:42</td><td class="level-cell"></td><td><strong>Drop Frost Bomb</strong><div class="tiny">Move Wing Blast to Devour for speed.</div></td></tr>
+                                <tr><td class="time-cell">00:13:12</td><td class="level-cell"></td><td><strong>Hollow Palm path</strong><div class="tiny">Rush keystone — stronger than good staff.</div></td></tr>
+                                <tr><td class="time-cell">00:13:56</td><td class="level-cell"></td><td><strong>Shock reapply node</strong><div class="tiny">Before Jaman' Rai fight.</div></td></tr>
+                                <tr><td class="time-cell">00:14:28</td><td class="level-cell"></td><td><strong>Ascendancy</strong><div class="tiny">Martial Artist Way of the Mountain (demo: Invoker).</div></td></tr>
+                                <tr><td class="time-cell">00:15:27</td><td class="level-cell"></td><td><strong>Act 3 begins</strong><div class="tiny">Support slots expand.</div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Craft <strong>Storm Wave</strong> + <strong>Siphoning Strike</strong> at tier 7. Path to <strong>Hollow Palm Technique</strong>, unequip quarterstaff, and run shock extraction as default clear and boss loop.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Do this session</h3>
+                            <ul>
+                                <li><strong>Storm Wave</strong>: Rage + Shock to 100% (+ Living Lightning in Act 3).</li>
+                                <li><strong>Siphoning Strike</strong>: Rapid Attacks + Charge Profusion.</li>
+                                <li>Stop Frost Bomb; move Wing Blast to Devour for faster corpse dives.</li>
+                                <li>Take shock-reapply-on-consume passive before <strong>Jaman' Rai</strong>.</li>
+                                <li>Stack <strong>+melee skills</strong> on gloves/amulet after Hollow Palm.</li>
+                            </ul>
+                        </article>
+                        <article class="card highlight">
+                            <h3>The shock extraction switch</h3>
+                            <p>Storm Wave shocks → Siphoning Strike steals shock for Power Charges + shockwave → Falling Thunder burst. Repeat 2–3× per boss, or Wing Blast a stunned target for instant 3 charges.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Gear priorities</h3>
+                            <table class="compact-table">
+                                <thead><tr><th>Priority</th><th>What to look for</th></tr></thead>
+                                <tbody>
+                                    <tr><td>1</td><td>Still <strong>full armor</strong> every slot.</td></tr>
+                                    <tr><td>2</td><td><strong>+melee skills</strong> after Hollow Palm.</td></tr>
+                                    <tr><td>3</td><td>Talisman stays in weapon set 2.</td></tr>
+                                    <tr><td>4</td><td>Mana fixes: Mark of Siphoning optional on pawns.</td></tr>
+                                </tbody>
+                            </table>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="act3" class="section route-section blue">
+                <div class="section-head">
+                    <div class="section-kicker">Act 3</div>
+                    <div>
+                        <h2>Act 3 — Perpetual Charge nukes</h2>
+                        <p>Jeweler's orbs on Falling Thunder and Storm Wave. Clarity + Cannibalism sustain; nothing should stop you.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr><td class="time-cell">00:15:33</td><td class="level-cell"><span class="level-chip">28</span></td><td><strong>Perpetual Charge</strong><div class="tiny">1st Jeweler's Orb → Falling Thunder.</div></td></tr>
+                                <tr><td class="time-cell">00:15:58</td><td class="level-cell"></td><td><strong>Living Lightning</strong><div class="tiny">2nd Jeweler's Orb → Storm Wave.</div></td></tr>
+                                <tr><td class="time-cell">00:16:17</td><td class="level-cell"></td><td><strong>Ashen Bach</strong><div class="tiny">+30 spirit; skip Lingering Illusion.</div></td></tr>
+                                <tr><td class="time-cell">00:16:39</td><td class="level-cell"></td><td><strong>Clarity + Cannibalism</strong><div class="tiny">On Herald of Thunder.</div></td></tr>
+                                <tr><td class="time-cell">00:16:53</td><td class="level-cell"></td><td><strong>Gorge on Devour</strong><div class="tiny">Flask charges from corpses.</div></td></tr>
+                                <tr><td class="time-cell">00:17:09</td><td class="level-cell"></td><td><strong>2nd ascension</strong><div class="tiny">+2 Power Charges; lightning pen nodes.</div></td></tr>
+                                <tr><td class="time-cell">00:18:00</td><td class="level-cell"></td><td><strong>Shock magnitude</strong><div class="tiny">Top-tree passive node.</div></td></tr>
+                                <tr><td class="time-cell">00:18:24</td><td class="level-cell"></td><td><strong>Hollow Palm gear</strong><div class="tiny">No weapon; +melee skills on gear.</div></td></tr>
+                                <tr><td class="time-cell">00:18:39</td><td class="level-cell"></td><td><strong>Doryani</strong><div class="tiny">Trivial with maintained shock loop.</div></td></tr>
+                                <tr><td class="time-cell">00:19:22</td><td class="level-cell"></td><td><strong>Act 4 begins</strong><div class="tiny">Defensive pivot next.</div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Multi-cast <strong>Falling Thunder</strong> with Perpetual Charge. Confirm shock is on boss before bursting after Siphoning Strike extraction. Respec mana nodes after Clarity for lightning damage + penetration.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Do this session</h3>
+                            <ul>
+                                <li>Perpetual Charge on FT; Living Lightning on Storm Wave (not Branching Fissures).</li>
+                                <li>Gorge + Thrill of the Kill on Devour for flask/life sustain.</li>
+                                <li>Skip Lingering Illusion — charges are always available.</li>
+                                <li>Before FT on bosses: verify shock still applied; extra Storm Wave if not.</li>
+                            </ul>
+                        </article>
+                        <article class="card danger">
+                            <h3>Boss shock check</h3>
+                            <p>After extracting shock with Siphoning Strike, shock may not reapply. Do another Storm Wave before Falling Thunder — charges scale damage, shock multiplies it.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="act4" class="section route-section amber">
+                <div class="section-head">
+                    <div class="section-kicker">Act 4</div>
+                    <div>
+                        <h2>Act 4 — Defensive pivot + mapping carry</h2>
+                        <p>Shift to ES/evasion for Hollow Palm scaling. Ghost Dance replaces Clarity. Whirling Assault is optional.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr><td class="time-cell">00:19:26</td><td class="level-cell"><span class="level-chip">41</span></td><td><strong>ES/evasion pivot</strong><div class="tiny">Body armor for Hollow Palm bonuses.</div></td></tr>
+                                <tr><td class="time-cell">00:20:01</td><td class="level-cell"></td><td><strong>Ghost Dance</strong><div class="tiny">Replaces Clarity/Cannibalism.</div></td></tr>
+                                <tr><td class="time-cell">00:20:16</td><td class="level-cell"></td><td><strong>Herald upgrades</strong><div class="tiny">Elemental Armament + Elemental Focus.</div></td></tr>
+                                <tr><td class="time-cell">00:20:24</td><td class="level-cell"></td><td><strong>Whirling Assault</strong><div class="tiny">Optional boss tech — not required.</div></td></tr>
+                                <tr><td class="time-cell">00:20:48</td><td class="level-cell"></td><td><strong>Mapping carry</strong><div class="tiny">FT combo valid through Arbitrator of Ash.</div></td></tr>
+                                <tr><td class="time-cell">00:21:32</td><td class="level-cell"></td><td><strong>Guide endpoint</strong><div class="tiny">Interludes easy with Devour.</div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Begin ES/evasion gear on body armor. Swap sustain auras to Ghost Dance. The Falling Thunder shock loop carries through campaign end and into maps without mandatory Whirling Assault.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Do this session</h3>
+                            <ul>
+                                <li>Path passives toward ES, evasion, and tankiness.</li>
+                                <li>Elemental Focus + Elemental Armament on Herald of Thunder.</li>
+                                <li>Whirling Assault + Martial Artist ghosts — optional boss flair only.</li>
+                                <li>Mobalytics Act 4 tab shows optional Whirling swap — narrative route keeps FT core.</li>
+                            </ul>
+                        </article>
+                        <article class="card warn">
+                            <h3>Act 4 gear rule</h3>
+                            <p>Prioritize evasion/ES body for Hollow Palm attack speed and crit scaling. Do not drop talisman from weapon set 2.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="interlude" class="section route-section green">
+                <div class="section-head">
+                    <div class="section-kicker">Interlude</div>
+                    <div>
+                        <h2>Interlude — Devour through cleanup</h2>
+                        <p>Post-campaign zones are trivial with the Devour forward loop. Full 0.5 Martial Artist mapping guide pending patch.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr><td class="time-cell">00:21:32</td><td class="level-cell"></td><td><strong>Interludes</strong><div class="tiny">Easily cleared with Devour momentum.</div></td></tr>
+                                <tr><td class="time-cell">00:20:48</td><td class="level-cell"></td><td><strong>Mapping entry</strong><div class="tiny">Same FT shock loop to Arbitrator.</div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Use the same Storm Wave → Siphoning Strike → Falling Thunder loop. Upgrade gear toward planner Act 4 targets when equippable. No special interlude tech required.</p>
+                        </article>
+                        <article class="card highlight">
+                            <h3>End state</h3>
+                            <p>Shock everything, steal shocks for Power Charges, delete targets with chained Falling Thunder bursts. Martial Artist ascendancy details expand on 0.5 release.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="rotation" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Rotation</div>
+                    <div>
+                        <h2>Boss rotation</h2>
+                        <p>Final campaign boss loop after Act 2 tier-7 switch. Early Wind Blast / Wing Blast is a temporary bridge.</p>
+                    </div>
+                </div>
+                <div class="rotation">
+                    <div class="step"><strong>Storm Wave</strong><span>Apply shock at range (Living Lightning helps).</span></div>
+                    <div class="step"><strong>Siphoning Strike</strong><span>Extract shock → Power Charges + shockwave. Repeat 2–3×.</span></div>
+                    <div class="step"><strong>Verify shock</strong><span>Extra Storm Wave if shock did not reapply.</span></div>
+                    <div class="step"><strong>Falling Thunder</strong><span>Multi-cast burst with Perpetual Charge.</span></div>
+                    <div class="step"><strong>Charge refill</strong><span>Wing Blast stunned boss OR extract again.</span></div>
+                    <div class="step"><strong>Devour forward</strong><span>Between packs — corpses for charges + heal.</span></div>
+                </div>
+            </section>
+
+            <section id="build-tracker" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Tracker</div>
+                    <div>
+                        <h2>Build tracker</h2>
+                        <p>Pick an act, then switch between Equipment, Skill Gems, and Passive Tree tabs. Progress is saved in this browser only.</p>
+                    </div>
+                </div>
+
+                <div class="tracker-warning" id="tracker-storage-warning" role="status">
+                    Could not save progress (browser storage full or blocked). Your checks still work until you reload.
+                </div>
+
+                <div class="tracker-toolbar">
+                    <div class="tracker-act-tabs" id="tracker-act-tabs" role="tablist" aria-label="Build tracker acts"></div>
+                    <div class="tracker-subtoolbar">
+                        <div class="tracker-category-tabs" id="tracker-category-tabs" role="tablist" aria-label="Build tracker categories"></div>
+                        <div class="tracker-actions">
+                            <button type="button" class="tracker-btn" id="tracker-reset-act">Reset current act</button>
+                            <button type="button" class="tracker-btn danger" id="tracker-reset-all">Reset all acts</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tracker-categories"></div>
+            </section>
+
+            <section id="transition-checks" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Checks</div>
+                    <div>
+                        <h2>Transition checks</h2>
+                        <p>Quick checks before major build switches so the loop does not break at the next boss.</p>
+                    </div>
+                </div>
+                <div class="two-col">
+                    <article class="card danger">
+                        <h3>Before Storm Wave + Siphoning Strike (Act 2)</h3>
+                        <table class="compact-table">
+                            <thead><tr><th>Check</th><th>Required state</th></tr></thead>
+                            <tbody>
+                                <tr><td>Talisman</td><td>Equipped in weapon set 2.</td></tr>
+                                <tr><td>Herald</td><td>Herald of Thunder socketed.</td></tr>
+                                <tr><td>Supports ready</td><td>Rage, Shock, Charge Profusion, Rapid Attacks.</td></tr>
+                                <tr><td>Armor</td><td>Full armor still stacked on all slots.</td></tr>
+                                <tr><td>Boss backup</td><td>Wind Blast / Wing Blast still on bar for instant 3 charges.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    <article class="card highlight">
+                        <h3>Before Act 4 / mapping</h3>
+                        <table class="compact-table">
+                            <thead><tr><th>Check</th><th>Required state</th></tr></thead>
+                            <tbody>
+                                <tr><td>Hollow Palm</td><td>No weapon equipped; +melee skills on gear.</td></tr>
+                                <tr><td>Perpetual Charge</td><td>On Falling Thunder.</td></tr>
+                                <tr><td>Shock loop</td><td>Storm Wave → extract → verify shock → FT working.</td></tr>
+                                <tr><td>Act 4 pivot</td><td>ES/evasion body started; Ghost Dance planned.</td></tr>
+                                <tr><td>Shock magnitude</td><td>Top-tree node taken in Act 3.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+            </section>
+
+            <section id="timesaves" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Save time</div>
+                    <div>
+                        <h2>Corrections to beat the video pace</h2>
+                        <p>Cleanest ways to match the build walkthrough without losing power spikes.</p>
+                    </div>
+                </div>
+                <article class="card warn">
+                    <h3>Biggest time-save corrections</h3>
+                    <table class="compact-table">
+                        <thead><tr><th>Problem in run</th><th>Correction</th></tr></thead>
+                        <tbody>
+                            <tr><td>Monk level-3 before Wing Blast</td><td>Save first tier-3 gem for Druid Wing Blast.</td></tr>
+                            <tr><td>No talisman in set 2</td><td>Any talisman works — equip before Wing Blast.</td></tr>
+                            <tr><td>Keeping Frozen Locus too long</td><td>Drop once Wind Blast / Wing Blast clear is stable.</td></tr>
+                            <tr><td>FT without shock on boss</td><td>Storm Wave again after extract if shock missing.</td></tr>
+                            <tr><td>ES/evasion too early</td><td>Full armor Acts 1–3 only; pivot in Act 4.</td></tr>
+                            <tr><td>Branching Fissures on Storm Wave</td><td>Use Living Lightning instead.</td></tr>
+                            <tr><td>Mandatory Whirling Assault</td><td>Skip for campaign — FT combo carries.</td></tr>
+                            <tr><td>Over-stunning with Wind Blast</td><td>It primes only — keeps targets ready for Wing Blast.</td></tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+
+            <div class="footer">
+                Built as a static single-file HTML guide. No external assets, frameworks, or network calls.
+            </div>
+        </main>
+    </div>
+
+    <script id="build-tracker-data" type="application/json">{"sourceUrl":"https://mobalytics.gg/poe-2/profile/p4wnyhof/builds/power-charge-martial-artist","buildName":"[0.5] Power Charge Martial Artist","author":"p4wnyhof","slug":"power-charge-martial-artist","acts":[{"act":"Act 1 Lv1 to 14","variantId":"default-variant","equipment":[{"name":"Rusted Cuirass","slot":"body","slug":"armour-fourbodystr1","modifiers":[]},{"name":"Soldier Greathelm","slot":"helmet","slug":"armour-fourhelmetstr2","modifiers":[]},{"name":"Riveted Mitts","slot":"gloves","slug":"armour-fourglovesstr2","modifiers":[]},{"name":"Rough Greaves","slot":"boots","slug":"armour-fourbootsstr1","modifiers":[]},{"name":"Iron Ring","slot":"leftRing","slug":"ring-fourring1","modifiers":[]},{"name":"Iron Ring","slot":"rightRing","slug":"ring-fourring1","modifiers":[]},{"name":"Amber Amulet","slot":"amulet","slug":"amulet-fouramulet3","modifiers":[]},{"name":"Nettle Talisman","slot":"mainHand","slug":"weapon-talisman2","modifiers":[]}],"skillGems":[{"name":"Wind Blast","slug":"galestrikeplayer","supports":["Rage I","Brink I"]},{"name":"Killing Palm","slug":"killingpalmplayer","supports":["Thrill of the Kill"]},{"name":"Wing Blast","slug":"wingblastplayer","supports":["Impact Shockwave","Rapid Attacks I"]},{"name":"Falling Thunder","slug":"fallingthunderplayer","supports":["Elemental Armament I","Fist of War I"]},{"name":"Frost Bomb","slug":"frostbombplayer","supports":[]},{"name":"Frozen Locus","slug":"frozenlocusplayer","supports":[]},{"name":"Devour","slug":"wyverndevourplayer","supports":["Thrill of the Kill","Rapid Attacks I"]},{"name":"Herald of Thunder","slug":"heraldofthunderplayer","supports":[]},{"name":"Pounce","slug":"wolfpounceplayer","supports":[]}],"passiveTree":[{"name":"Flow Like Water","slug":"node-49220","tree":"main"},{"name":"Hollow Palm Technique","slug":"node-64601","tree":"main"},{"name":"Flow State","slug":"node-34233","tree":"main"}]},{"act":"Act 2 Lv14 to 28","variantId":"c8842fe4-f9df-4c96-80b8-b5f99f805154","equipment":[{"name":"Wrapped Greathelm","slot":"helmet","slug":"armour-fourhelmetstr3","modifiers":["+60 to Armour","14% increased Armour","+33 to maximum Life","+9 to maximum Mana","14% increased Critical Hit Chance"]},{"name":"Frenzied Talisman","slot":"mainHand","slug":"weapon-talisman5","modifiers":["Adds 9 to 21 Physical Damage"]},{"name":"Sapphire Ring","slot":"leftRing","slug":"ring-fourring4","modifiers":["Adds 1 to 3 Physical Damage to Attacks","Gain 2 Mana per enemy killed","+24% to Cold Resistance"]},{"name":"Topaz Ring","slot":"rightRing","slug":"ring-fourring5","modifiers":["Adds 5 to 7 Fire damage to Attacks","+35 to maximum Mana","+13 to Intelligence","Gain 4 Life per enemy killed","+28% to Lightning Resistance"]},{"name":"Revered Resin","slot":"amulet","slug":"amulet-fouruniqueamulet5-revered-resin","modifiers":["+44 to maximum Life","20% increased Flask Life Recovery rate","Life Flasks gain 0.18 charges per Second"]},{"name":"Raider Plate","slot":"body","slug":"armour-fourbodystr4","modifiers":["+65 to Armour","20% increased Armour","+35 to maximum Life","+15 to Strength","+43 to Stun Threshold"]},{"name":"Suede Bracers","slot":"gloves","slug":"armour-fourglovesdex1","modifiers":["+21 to Evasion Rating","24% increased Evasion Rating","Adds 2 to 6 Physical Damage to Attacks","+1 to Level of all Melee Skills"]},{"name":"Wide Belt","slot":"belt","slug":"armour-fourbelt3","modifiers":["+18 to Armour","+25 to maximum Life","+14 to Strength","7 to 8 Physical Thorns damage","Has 1 Charm Slot","20% increased Flask Charges gained"]},{"name":"Iron Greaves","slot":"boots","slug":"armour-fourbootsstr2","modifiers":["10% increased Movement Speed","+11 to maximum Mana","+8% to Cold Resistance","2.8 Life Regeneration per second"]}],"skillGems":[{"name":"Falling Thunder (Level 8)","slug":"fallingthunderplayer","supports":["Elemental Armament II","Perpetual Charge","Lightning Attunement"]},{"name":"Herald of Thunder (Level 4)","slug":"uniqueheraldofthunderplayer","supports":["Elemental Armament I"]},{"name":"Wing Blast (Level 5)","slug":"wingblastplayer","supports":["Impact Shockwave"]},{"name":"Siphoning Strike (Level 8)","slug":"siphoningstrikeplayer","supports":["Charge Profusion I","Rapid Attacks I"]},{"name":"Storm Wave (Level 8)","slug":"stormwaveplayer","supports":["Rage I","Shock"]},{"name":"Devour (Level 5)","slug":"wyverndevourplayer","supports":["Thrill of the Kill","Gorge"]},{"name":"Pounce (Level 3)","slug":"wolfpounceplayer","supports":[]}],"passiveTree":[{"name":"Flow Like Water","slug":"node-49220","tree":"main"},{"name":"Essence of the Storm","slug":"node-36479","tree":"main"},{"name":"Hollow Palm Technique","slug":"node-64601","tree":"main"},{"name":"Endless Circuit","slug":"node-8273","tree":"main"},{"name":"Overflowing Power","slug":"node-65204","tree":"main"},{"name":"Concussive Attack","slug":"node-36931","tree":"main"},{"name":"Flow State","slug":"node-34233","tree":"main"},{"name":"Killer Instinct","slug":"node-56453","tree":"main"},{"name":"I am the Thunder...","slug":"node-7621","tree":"ascendancy"}]},{"act":"Act 3 Lv 28 to 40","variantId":"35a3eff0-8182-4398-8c53-c8d9878243c0","equipment":[{"name":"Elite Greathelm","slot":"helmet","slug":"armour-fourhelmetstr5","modifiers":["+89 to Armour","+17 to maximum Mana","20% reduced Attributes Requirements","+17 to Strength","+17% to Lightning Resistance"]},{"name":"Rabid Talisman","slot":"mainHand","slug":"weapon-talisman7","modifiers":["56% increased Physical Damage","+5 to Intelligence","+10 to Maximum Rage"]},{"name":"Ruby Ring","slot":"leftRing","slug":"ring-fourring3","modifiers":["+41 to Accuracy Rating","+28 to maximum Life","6% increased Rarity of Items found","+5 to Dexterity","+22% to Fire Resistance"]},{"name":"Iron Ring","slot":"rightRing","slug":"ring-fourring1","modifiers":["+46 to Accuracy Rating","+9% to Fire Resistance","Adds 1 to 4 Physical Damage to Attacks"]},{"name":"Lapis Amulet","slot":"amulet","slug":"amulet-fouramulet5","modifiers":["+11 to maximum Mana","+8% to Fire Resistance","+10 to Intelligence"]},{"name":"Anchorite Garb","slot":"body","slug":"armour-fourbodydexint5","modifiers":["32% increased Evasion and Energy Shield","+18 to Intelligence"]},{"name":"Sombre Gloves","slot":"gloves","slug":"armour-fourglovesint2","modifiers":["Adds 3 to 8 Cold damage to Attacks","Adds 1 to 15 Lightning damage to Attacks","+23 to maximum Life","+8% to Cold Resistance"]},{"name":"Plate Belt","slot":"belt","slug":"armour-fourbelt5","modifiers":["+23 to Armour","+6% to Cold Resistance","+119 to Armour","Has 1 Charm Slot"]},{"name":"Hunting Shoes","slot":"boots","slug":"armour-fourbootsdexint3","modifiers":["+74 to maximum Life","+6 to Intelligence"]}],"skillGems":[{"name":"Falling Thunder (Level 10)","slug":"fallingthunderplayer","supports":["Elemental Armament II","Fist of War I","Perpetual Charge"]},{"name":"Storm Wave (Level 10)","slug":"stormwaveplayer","supports":["Rage I","Shock","Lightning Exposure"]},{"name":"Siphoning Strike (Level 10)","slug":"siphoningstrikeplayer","supports":["Rapid Attacks I","Charge Profusion I"]},{"name":"Devour (Level 5)","slug":"wyverndevourplayer","supports":["Gorge","Thrill of the Kill"]},{"name":"Pounce (Level 9)","slug":"wolfpounceplayer","supports":["Cooldown Recovery I"]},{"name":"Wing Blast (Level 3)","slug":"wingblastplayer","supports":["Impact Shockwave"]},{"name":"Hand of Chayula","slug":"handofchayulaplayer","supports":["Elemental Weakness","Heightened Curse"]},{"name":"Herald of Thunder (Level 5)","slug":"heraldofthunderplayer","supports":["Clarity I","Cannibalism I"]},{"name":"Wind Dancer","slug":"winddancerplayer","supports":["Maim"]}],"passiveTree":[{"name":"Flow Like Water","slug":"node-49220","tree":"main"},{"name":"Essence of the Storm","slug":"node-36479","tree":"main"},{"name":"Killer Instinct","slug":"node-56453","tree":"main"},{"name":"Hollow Palm Technique","slug":"node-64601","tree":"main"},{"name":"Endless Circuit","slug":"node-8273","tree":"main"},{"name":"Overflowing Power","slug":"node-65204","tree":"main"},{"name":"Concussive Attack","slug":"node-36931","tree":"main"},{"name":"Dizzying Sweep","slug":"node-1420","tree":"main"},{"name":"Serrated Edges","slug":"node-36085","tree":"main"},{"name":"Stupefy","slug":"node-38342","tree":"main"},{"name":"I am the Thunder...","slug":"node-7621","tree":"ascendancy"}]},{"act":"Act 4 - Lvl 41 - Whirling Swap","variantId":"23dfc383-e76c-4e3b-8d5b-becc6bb69fd5","equipment":[{"name":"Closed Helm","slot":"helmet","slug":"armour-fourhelmetstrdex6","modifiers":["70% increased Armour and Evasion","+60 to maximum Mana","+18 to Strength"]},{"name":"Voltfang Talisman","slot":"mainHand","slug":"weapon-talisman9","modifiers":["Adds 14 to 31 Physical Damage","+10% to Critical Damage Bonus","21% increased Magnitude of Shock you inflict"]},{"name":"Ruby Ring","slot":"leftRing","slug":"ring-fourring3","modifiers":["Adds 6 to 13 Fire damage to Attacks","5% increased Fire Damage","+56 to maximum Life","+16 to Intelligence","+33% to Fire Resistance","+17% to Cold Resistance","+29% to Fire Resistance"]},{"name":"Gold Ring","slot":"rightRing","slug":"ring-fourring10","modifiers":["22% increased Lightning Damage","+6 to all Attributes","+22 to Dexterity","+23% to Cold Resistance","10% increased Rarity of Items found"]},{"name":"Pearlescent Amulet","slot":"amulet","slug":"amulet-fouramulet11","modifiers":["23% increased Armour","24% increased Evasion Rating","+91 to maximum Life","+1 to Level of all Melee Skills","+7% to all Elemental Resistances"]},{"name":"Corsair Vest","slot":"body","slug":"armour-fourbodydex9","modifiers":["+103 to Evasion Rating","+74 to maximum Life","Gain Deflection Rating equal to 8% of Evasion Rating","+146 to Stun Threshold","44% reduced Duration of Bleeding on You","34 to 37 Physical Thorns damage"]},{"name":"Sombre Gloves","slot":"gloves","slug":"armour-fourglovesint2","modifiers":["Adds 3 to 8 Cold damage to Attacks","Adds 1 to 15 Lightning damage to Attacks","+23 to maximum Life","+8% to Cold Resistance"]},{"name":"Plate Belt","slot":"belt","slug":"armour-fourbelt5","modifiers":["+23 to Armour","+6% to Cold Resistance","+119 to Armour","Has 1 Charm Slot"]},{"name":"Hunting Shoes","slot":"boots","slug":"armour-fourbootsdexint3","modifiers":["+74 to maximum Life","+6 to Intelligence"]}],"skillGems":[{"name":"Whirling Assault","slug":"whirlingassaultplayer","supports":["Rage II","Heavy Swing","Magnified Area II"]},{"name":"Tempest Bell","slug":"tempestbellplayer","supports":["Heavy Swing","Magnified Area II"]},{"name":"Killing Palm","slug":"killingpalmplayer","supports":["Thrill of the Kill II","Charge Profusion I","Blazing Critical"]},{"name":"Falling Thunder (Level 12)","slug":"fallingthunderplayer","supports":["Elemental Armament II","Fist of War II","Perpetual Charge"]},{"name":"Staggering Palm","slug":"staggeringpalmplayer","supports":["Retreat II","Multishot II"]},{"name":"Wing Blast (Level 12)","slug":"wingblastplayer","supports":["Impact Shockwave"]},{"name":"Charged Staff","slug":"chargedstaffplayer","supports":["Prolonged Duration II","Innervate"]},{"name":"Pounce (Level 12)","slug":"wolfpounceplayer","supports":["Cooldown Recovery I"]},{"name":"Herald of Thunder (Level 11)","slug":"heraldofthunderplayer","supports":["Elemental Focus","Elemental Armament II"]},{"name":"Wind Dancer","slug":"winddancerplayer","supports":["Maim"]}],"passiveTree":[{"name":"Flow Like Water","slug":"node-49220","tree":"main"},{"name":"Killer Instinct","slug":"node-56453","tree":"main"},{"name":"Hollow Palm Technique","slug":"node-64601","tree":"main"},{"name":"Concussive Attack","slug":"node-36931","tree":"main"},{"name":"Tenfold Attacks","slug":"node-25971","tree":"main"},{"name":"Dizzying Sweep","slug":"node-1420","tree":"main"},{"name":"Reaching Strike","slug":"node-17372","tree":"main"},{"name":"Rapid Strike","slug":"node-7604","tree":"main"},{"name":"Serrated Edges","slug":"node-36085","tree":"main"},{"name":"Stupefy","slug":"node-38342","tree":"main"},{"name":"Chakra of Impact","slug":"node-25362","tree":"main"},{"name":"Flow State","slug":"node-34233","tree":"main"},{"name":"Blinding Strike","slug":"node-20916","tree":"main"},{"name":"Mindful Awareness","slug":"node-62984","tree":"main"},{"name":"Step Like Mist","slug":"node-48198","tree":"main"},{"name":"Subterfuge Mask","slug":"node-55193","tree":"main"},{"name":"I am the Thunder...","slug":"node-7621","tree":"ascendancy"}]}]}</script>
+    <script>
+        (function initBuildTracker() {
+            const pageSlug = 'martial-artist';
+            const storageKey = `poe2-guides:${pageSlug}:build-tracker:v1`;
+            const dataElement = document.getElementById('build-tracker-data');
+
+            if (!dataElement) {
+                return;
+            }
+
+            const buildData = JSON.parse(dataElement.textContent);
+            const categories = [
+                { key: 'equipment', label: 'Equipment', childPrefix: 'mod', childField: 'modifiers', showSlot: true },
+                { key: 'skillGems', label: 'Skill Gems', childPrefix: 'support', childField: 'supports', showSlot: false },
+                { key: 'passiveTree', label: 'Passive Tree', childPrefix: null, childField: null, showSlot: false }
+            ];
+
+            let activeActKey = buildData.acts[0] ? getActStorageKey(buildData.acts[0]) : 'act-1';
+            let activeCategory = 'equipment';
+            let trackerState = loadTrackerState();
+            let saveTimer = null;
+
+            const actTabsRoot = document.getElementById('tracker-act-tabs');
+            const categoryTabsRoot = document.getElementById('tracker-category-tabs');
+            const categoriesRoot = document.getElementById('tracker-categories');
+            const resetActButton = document.getElementById('tracker-reset-act');
+            const resetAllButton = document.getElementById('tracker-reset-all');
+            const storageWarning = document.getElementById('tracker-storage-warning');
+
+            function normalizeId(value) {
+                return String(value)
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, '-')
+                    .replace(/^-|-$/g, '');
+            }
+
+            function getItemId(item, index, categoryKey) {
+                const slugPart = item.slug ? normalizeId(item.slug) : normalizeId(item.name);
+                const slotPart = item.slot ? `--${normalizeId(item.slot)}` : '';
+
+                return `${categoryKey}--${slugPart}${slotPart}--${index}`;
+            }
+
+            function getChildId(prefix, index) {
+                return `${prefix}-${index}`;
+            }
+
+            function getActStorageKey(act) {
+                if (act.variantId) {
+                    return act.variantId;
+                }
+
+                return act.act;
+            }
+
+            function findActByStorageKey(storageKey) {
+                return buildData.acts.find(entry => getActStorageKey(entry) === storageKey);
+            }
+
+            function getActDisplayLabel(storageKey) {
+                const act = findActByStorageKey(storageKey);
+
+                if (act) {
+                    return act.act;
+                }
+
+                return storageKey;
+            }
+
+            function loadTrackerState() {
+                try {
+                    const raw = localStorage.getItem(storageKey);
+
+                    if (!raw) {
+                        return createEmptyState();
+                    }
+
+                    const parsed = JSON.parse(raw);
+
+                    return mergeWithActs(parsed);
+                }
+                catch {
+                    return createEmptyState();
+                }
+            }
+
+            function createEmptyState() {
+                const state = {
+                    equipment: {},
+                    skillGems: {},
+                    passiveTree: {}
+                };
+
+                for (const act of buildData.acts) {
+                    const actKey = getActStorageKey(act);
+                    state.equipment[actKey] = {};
+                    state.skillGems[actKey] = {};
+                    state.passiveTree[actKey] = {};
+                }
+
+                return state;
+            }
+
+            function mergeWithActs(saved) {
+                const state = createEmptyState();
+
+                for (const category of categories) {
+                    for (const act of buildData.acts) {
+                        const actKey = getActStorageKey(act);
+                        const savedAct = saved?.[category.key]?.[actKey] || {};
+
+                        state[category.key][actKey] = { ...savedAct };
+                    }
+                }
+
+                return state;
+            }
+
+            function saveTrackerState() {
+                clearTimeout(saveTimer);
+                saveTimer = setTimeout(() => {
+                    try {
+                        localStorage.setItem(storageKey, JSON.stringify(trackerState));
+                        storageWarning.classList.remove('visible');
+                    }
+                    catch {
+                        storageWarning.classList.add('visible');
+                    }
+                }, 80);
+            }
+
+            function ensureItemState(categoryKey, actLabel, itemId) {
+                if (!trackerState[categoryKey][actLabel][itemId]) {
+                    trackerState[categoryKey][actLabel][itemId] = {
+                        self: false,
+                        children: {}
+                    };
+                }
+
+                return trackerState[categoryKey][actLabel][itemId];
+            }
+
+            function getActItems(act, category) {
+                return act[category.key] || [];
+            }
+
+            function countProgress(actKey, category) {
+                const act = findActByStorageKey(actKey);
+
+                if (!act) {
+                    return { done: 0, total: 0 };
+                }
+
+                let done = 0;
+                let total = 0;
+
+                const items = getActItems(act, category);
+
+                for (let index = 0; index < items.length; index++) {
+                    const item = items[index];
+                    const itemId = getItemId(item, index, category.key);
+                    const children = category.childField ? (item[category.childField] || []) : [];
+                    const itemState = trackerState[category.key][actKey][itemId] || { self: false, children: {} };
+
+                    total += 1 + children.length;
+
+                    if (itemState.self) {
+                        done += 1;
+                    }
+
+                    for (let childIndex = 0; childIndex < children.length; childIndex++) {
+                        const childId = getChildId(category.childPrefix, childIndex);
+
+                        if (itemState.children[childId]) {
+                            done += 1;
+                        }
+                    }
+                }
+
+                return { done, total };
+            }
+
+            function updateGroupVisual(groupElement, parentCheckbox, childCheckboxes) {
+                const checkedChildren = childCheckboxes.filter(checkbox => checkbox.checked).length;
+                const allChildrenChecked = childCheckboxes.length > 0 && checkedChildren === childCheckboxes.length;
+                const someChildrenChecked = checkedChildren > 0;
+                const parentChecked = parentCheckbox.checked;
+
+                parentCheckbox.indeterminate = someChildrenChecked && !allChildrenChecked;
+
+                if (childCheckboxes.length > 0) {
+                    if (!parentCheckbox.indeterminate) {
+                        parentCheckbox.checked = allChildrenChecked;
+                    }
+                }
+
+                const isComplete = parentCheckbox.checked && (childCheckboxes.length === 0 || allChildrenChecked);
+                groupElement.classList.toggle('is-complete', isComplete);
+            }
+
+            function renderActTabs() {
+                actTabsRoot.innerHTML = '';
+
+                for (const act of buildData.acts) {
+                    const button = document.createElement('button');
+                    const actKey = getActStorageKey(act);
+                    const equipmentProgress = countProgress(actKey, categories[0]);
+                    const gemsProgress = countProgress(actKey, categories[1]);
+                    const passivesProgress = countProgress(actKey, categories[2]);
+                    const totalDone = equipmentProgress.done + gemsProgress.done + passivesProgress.done;
+                    const totalItems = equipmentProgress.total + gemsProgress.total + passivesProgress.total;
+                    const isActive = actKey === activeActKey;
+
+                    button.type = 'button';
+                    button.className = `tracker-act-tab${isActive ? ' active' : ''}`;
+                    button.setAttribute('role', 'tab');
+                    button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                    button.textContent = `${act.act} (${totalDone}/${totalItems})`;
+
+                    button.addEventListener('click', () => {
+                        activeActKey = actKey;
+                        renderActTabs();
+                        renderCategoryTabs();
+                        renderActiveCategory();
+                    });
+
+                    actTabsRoot.appendChild(button);
+                }
+            }
+
+            function getCategoryAnchorId(categoryKey) {
+                if (categoryKey === 'skillGems') {
+                    return 'gems';
+                }
+
+                if (categoryKey === 'passiveTree') {
+                    return 'passives';
+                }
+
+                return 'equipment';
+            }
+
+            function renderCategoryTabs() {
+                categoryTabsRoot.innerHTML = '';
+
+                for (const category of categories) {
+                    const progress = countProgress(activeActKey, category);
+                    const isActive = category.key === activeCategory;
+                    const button = document.createElement('button');
+
+                    button.type = 'button';
+                    button.className = `tracker-category-tab${isActive ? ' active' : ''}`;
+                    button.setAttribute('role', 'tab');
+                    button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                    button.setAttribute('aria-controls', `build-tracker-${getCategoryAnchorId(category.key)}`);
+                    button.textContent = `${category.label} (${progress.done}/${progress.total})`;
+
+                    button.addEventListener('click', () => {
+                        activeCategory = category.key;
+                        renderCategoryTabs();
+                        renderActiveCategory();
+                    });
+
+                    categoryTabsRoot.appendChild(button);
+                }
+            }
+
+            function refreshTrackerTabs() {
+                renderActTabs();
+                renderCategoryTabs();
+            }
+
+            function renderActiveCategory() {
+                categoriesRoot.innerHTML = '';
+
+                const category = categories.find(entry => entry.key === activeCategory);
+
+                if (!category) {
+                    return;
+                }
+
+                const act = findActByStorageKey(activeActKey);
+
+                if (!act) {
+                    return;
+                }
+
+                const progress = countProgress(activeActKey, category);
+                const block = document.createElement('article');
+                block.className = 'card tracker-category tracker-panel';
+                block.id = `build-tracker-${getCategoryAnchorId(category.key)}`;
+                block.setAttribute('role', 'tabpanel');
+
+                const head = document.createElement('div');
+                head.className = 'tracker-category-head';
+                head.innerHTML = `<h3>${category.label}</h3><span class="tracker-progress">${progress.done}/${progress.total}</span>`;
+
+                const list = document.createElement('div');
+                list.className = 'tracker-list';
+
+                const items = getActItems(act, category);
+
+                if (items.length === 0) {
+                    const empty = document.createElement('p');
+                    empty.className = 'tracker-empty';
+                    empty.textContent = 'No items for this act.';
+                    list.appendChild(empty);
+                }
+
+                for (let index = 0; index < items.length; index++) {
+                        const item = items[index];
+                        const itemId = getItemId(item, index, category.key);
+                        const itemState = ensureItemState(category.key, activeActKey, itemId);
+                        const children = category.childField ? (item[category.childField] || []) : [];
+                        const group = document.createElement('div');
+                        group.className = 'tracker-group tracker-panel';
+                        group.dataset.trackerItem = 'true';
+
+                        const parentRow = document.createElement('div');
+                        parentRow.className = 'tracker-row';
+
+                        const parentCheckbox = document.createElement('input');
+                        parentCheckbox.type = 'checkbox';
+                        parentCheckbox.checked = !!itemState.self;
+                        parentCheckbox.setAttribute('aria-label', item.name);
+
+                        const parentLabel = document.createElement('div');
+                        parentLabel.className = 'tracker-label';
+                        parentLabel.innerHTML = `<strong>${escapeHtml(item.name)}</strong>`;
+
+                        if (category.showSlot && item.slot) {
+                            parentLabel.innerHTML += `<span class="tracker-slot">${escapeHtml(item.slot)}</span>`;
+                        }
+
+                        parentRow.appendChild(parentCheckbox);
+                        parentRow.appendChild(parentLabel);
+                        group.appendChild(parentRow);
+
+                        const childCheckboxes = [];
+
+                        if (children.length > 0) {
+                            const childList = document.createElement('div');
+                            childList.className = 'tracker-children';
+
+                            for (let childIndex = 0; childIndex < children.length; childIndex++) {
+                                const childText = children[childIndex];
+                                const childId = getChildId(category.childPrefix, childIndex);
+                                const childRow = document.createElement('div');
+                                childRow.className = 'tracker-row';
+
+                                const childCheckbox = document.createElement('input');
+                                childCheckbox.type = 'checkbox';
+                                childCheckbox.checked = !!itemState.children[childId];
+                                childCheckbox.setAttribute('aria-label', childText);
+
+                                const childLabel = document.createElement('div');
+                                childLabel.className = 'tracker-label';
+                                childLabel.textContent = childText;
+
+                                childRow.appendChild(childCheckbox);
+                                childRow.appendChild(childLabel);
+                                childList.appendChild(childRow);
+                                childCheckboxes.push(childCheckbox);
+
+                                childCheckbox.addEventListener('change', () => {
+                                    itemState.children[childId] = childCheckbox.checked;
+
+                                    const allChecked = childCheckboxes.every(checkbox => checkbox.checked);
+                                    itemState.self = allChecked;
+                                    parentCheckbox.checked = allChecked;
+
+                                    updateGroupVisual(group, parentCheckbox, childCheckboxes);
+                                    saveTrackerState();
+                                    refreshTrackerTabs();
+                                    updateActiveCategoryProgress(head);
+                                });
+                            }
+
+                            group.appendChild(childList);
+                        }
+
+                        parentCheckbox.addEventListener('change', () => {
+                            const isChecked = parentCheckbox.checked;
+                            itemState.self = isChecked;
+
+                            for (const childCheckbox of childCheckboxes) {
+                                childCheckbox.checked = isChecked;
+                                const childId = childCheckbox.getAttribute('data-child-id');
+
+                                if (childId) {
+                                    itemState.children[childId] = isChecked;
+                                }
+                            }
+
+                            updateGroupVisual(group, parentCheckbox, childCheckboxes);
+                            saveTrackerState();
+                            refreshTrackerTabs();
+                            updateActiveCategoryProgress(head);
+                        });
+
+                        for (let childIndex = 0; childIndex < childCheckboxes.length; childIndex++) {
+                            childCheckboxes[childIndex].setAttribute('data-child-id', getChildId(category.childPrefix, childIndex));
+
+                            if (!itemState.children[getChildId(category.childPrefix, childIndex)]) {
+                                itemState.children[getChildId(category.childPrefix, childIndex)] = false;
+                            }
+                        }
+
+                        updateGroupVisual(group, parentCheckbox, childCheckboxes);
+                        list.appendChild(group);
+                }
+
+                block.appendChild(head);
+                block.appendChild(list);
+                categoriesRoot.appendChild(block);
+            }
+
+            function updateActiveCategoryProgress(headElement) {
+                const category = categories.find(entry => entry.key === activeCategory);
+
+                if (!category) {
+                    return;
+                }
+
+                const progress = countProgress(activeActKey, category);
+                const progressElement = headElement.querySelector('.tracker-progress');
+
+                if (progressElement) {
+                    progressElement.textContent = `${progress.done}/${progress.total}`;
+                }
+            }
+
+            function escapeHtml(value) {
+                return String(value)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;');
+            }
+
+            function resetAct(actLabel) {
+                for (const category of categories) {
+                    trackerState[category.key][actLabel] = {};
+                }
+
+                saveTrackerState();
+                refreshTrackerTabs();
+                renderActiveCategory();
+            }
+
+            function resetAllActs() {
+                trackerState = createEmptyState();
+                saveTrackerState();
+                refreshTrackerTabs();
+                renderActiveCategory();
+            }
+
+            resetActButton.addEventListener('click', () => {
+                const confirmed = confirm(`Reset all checklist progress for ${getActDisplayLabel(activeActKey)}?`);
+
+                if (confirmed) {
+                    resetAct(activeActKey);
+                }
+            });
+
+            resetAllButton.addEventListener('click', () => {
+                const confirmed = confirm('Reset build tracker progress for all acts?');
+
+                if (confirmed) {
+                    resetAllActs();
+                }
+            });
+
+            renderActTabs();
+            renderCategoryTabs();
+            renderActiveCategory();
+
+            window.buildTrackerRefresh = function() {
+                refreshTrackerTabs();
+                renderActiveCategory();
+            };
+        })();
+    </script>
+    <script>
+        const links = Array.from(document.querySelectorAll('nav a'));
+        const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+        const onScroll = () => {
+            let current = sections[0];
+            for (const section of sections) {
+                if (section.getBoundingClientRect().top < 140) {
+                    current = section;
+                }
+            }
+            links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current.id));
+        };
+        document.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        const search = document.getElementById('search');
+        const searchable = Array.from(document.querySelectorAll('.card, .timeline-panel, .tracker-panel'));
+        search.addEventListener('input', () => {
+            const q = search.value.trim().toLowerCase();
+            searchable.forEach(el => {
+                el.classList.toggle('hidden-by-search', q && !el.innerText.toLowerCase().includes(q));
+            });
+        
+    </script>
+</body>
+</html>
