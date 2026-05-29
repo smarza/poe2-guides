@@ -1728,7 +1728,7 @@
                     return;
                 }
 
-                const progress = countProgress(activeAct, category);
+                const progress = countProgress(activeActKey, category);
                 const block = document.createElement('article');
                 block.className = 'card tracker-category tracker-panel';
                 block.id = `build-tracker-${getCategoryAnchorId(category.key)}`;
@@ -1865,7 +1865,7 @@
                     return;
                 }
 
-                const progress = countProgress(activeAct, category);
+                const progress = countProgress(activeActKey, category);
                 const progressElement = headElement.querySelector('.tracker-progress');
 
                 if (progressElement) {
