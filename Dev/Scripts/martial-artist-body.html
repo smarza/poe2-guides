@@ -1,0 +1,482 @@
+    <div class="layout">
+        <aside>
+            <div class="brand">
+                <div class="logo">MA</div>
+                <div>
+                    <h1>Power Charge<br>Martial Artist</h1>
+                    <p>POE 2 route guide</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#overview">Overview</a>
+                <a href="#sources">Sources</a>
+                <a href="#act1">Act 1</a>
+                <a href="#act2">Act 2</a>
+                <a href="#act3">Act 3</a>
+                <a href="#act4">Act 4</a>
+                <a href="#interlude">Interlude</a>
+                <a href="#rotation">Boss Rotation</a>
+                <a href="#build-tracker">Build Tracker</a>
+                <a href="#transition-checks">Transition Checks</a>
+                <a href="#timesaves">Time Saves</a>
+            </nav>
+            <div class="side-note">
+                <strong>Focus rule:</strong><br>
+                Power Charges feed <strong>Falling Thunder</strong>. Save your first level-3 gem for <strong>Wing Blast</strong>. Stack full armor until Act 4, then pivot to Hollow Palm scaling.
+            </div>
+            <input class="searchbox" id="search" placeholder="Filter cards, timelines, tracker…">
+        </aside>
+
+        <main>
+            <header class="hero" id="overview">
+                <span class="eyebrow">Static route guide · act-by-act timelines</span>
+                <h1><span class="gradient">Power Charge Martial Artist</span><br>Falling Thunder → Hollow Palm</h1>
+                <p>Monk campaign route built around Power Charge bursts. Early game uses Wind Blast / Wing Blast stun tech; Act 2 switches to Storm Wave + Siphoning Strike shock extraction. Intended ascendancy is Martial Artist (0.5); demo uses Invoker.</p>
+                <div class="hero-grid">
+                    <div class="stat"><strong>4-phase build</strong><span>Staff bridge → stun engine → shock extract → Hollow Palm</span></div>
+                    <div class="stat"><strong>Lvl 3 gem</strong><span>Wing Blast (Druid) — not Monk first</span></div>
+                    <div class="stat"><strong>Act 2 tier 7</strong><span>Storm Wave + Siphoning Strike core</span></div>
+                    <div class="stat"><strong>Act 4+</strong><span>Carries to mapping / Arbitrator</span></div>
+                </div>
+            </header>
+
+            <section id="sources" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Links</div>
+                    <div>
+                        <h2>Build sources</h2>
+                        <p>Original video and Mobalytics planner for skills, passives, and gear targets.</p>
+                    </div>
+                </div>
+                <article class="card highlight">
+                    <h3>Reference links</h3>
+                    <div class="resource-links">
+                        <a class="resource-link" href="https://mobalytics.gg/poe-2/profile/p4wnyhof/builds/power-charge-martial-artist" target="_blank" rel="noopener noreferrer">
+                            <strong>Mobalytics planner</strong>
+                            <span>[0.5] Power Charge Martial Artist — gear, gems, and passive tree by act.</span>
+                        </a>
+                        <a class="resource-link" href="https://www.youtube.com/watch?v=UJrW6xEk52o" target="_blank" rel="noopener noreferrer">
+                            <strong>YouTube video</strong>
+                            <span>Build walkthrough this guide is based on. Timestamps mark skill transitions.</span>
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+            <section class="section">
+                <div class="overview-grid">
+                    <article class="card">
+                        <h3>Core route identity</h3>
+                        <p>Every phase exists to generate Power Charges faster for <strong>Falling Thunder</strong> bursts:</p>
+                        <div class="pill-row">
+                            <span class="pill">Act 1 early: Killing Palm + Frozen Locus bridge</span>
+                            <span class="pill">Act 1 late: Wing Blast + Wind Blast stun engine</span>
+                            <span class="pill">Act 2: Storm Wave + Siphoning Strike + Hollow Palm</span>
+                            <span class="pill">Act 3–4: Perpetual Charge nukes + ES/evasion pivot</span>
+                        </div>
+                    </article>
+                    <article class="card highlight">
+                        <h3>What makes or breaks the run</h3>
+                        <p>Hit the same power spikes, not every early experiment. Four constraints: <strong>talisman in weapon set 2</strong>, <strong>full armor Acts 1–3</strong>, <strong>shock before Falling Thunder</strong>, and do not pick Monk for first level-3 gem.</p>
+                        <div class="callout"><strong>Most important rule:</strong> Wing Blast + Wind Blast is a bridge — drop Frozen Locus once stun clear works, then replace zone clear with Storm Wave loop in Act 2.</div>
+                    </article>
+                </div>
+                <div class="two-col" style="margin-top:14px;">
+                    <article class="card">
+                        <h3>Skill progression summary</h3>
+                        <table class="compact-table">
+                            <thead><tr><th>Stage</th><th>Clear</th><th>Bossing</th><th>Notes</th></tr></thead>
+                            <tbody>
+                                <tr><td>Early Act 1</td><td>Staff + Killing Palm</td><td><strong>Falling Thunder</strong></td><td>Frozen Locus, Rage, optional Frost Bomb.</td></tr>
+                                <tr><td>Late Act 1</td><td><strong>Wind Blast → Wing Blast</strong></td><td>Stagger → Wing Blast → FT</td><td>Devour replaces palm; Herald of Thunder.</td></tr>
+                                <tr><td>Act 2</td><td><strong>Storm Wave → Siphoning Strike</strong></td><td>Extract shocks ×3 → FT</td><td>Hollow Palm; drop Frost Bomb.</td></tr>
+                                <tr><td>Act 3</td><td>Same shock loop</td><td>Perpetual Charge multi-FT</td><td>Living Lightning; Clarity + Cannibalism.</td></tr>
+                                <tr><td>Act 4</td><td>Shock loop</td><td>Same + optional Whirling Assault</td><td>Ghost Dance; ES/evasion body.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    <article class="card">
+                        <h3>Target pace splits</h3>
+                        <table class="compact-table">
+                            <thead><tr><th>Split</th><th>Your target</th></tr></thead>
+                            <tbody>
+                                <tr><td>Wing Blast + Wind Blast online</td><td>Act 1 mid (~lvl 10–12)</td></tr>
+                                <tr><td>Devour + Herald swap</td><td>Late Act 1</td></tr>
+                                <tr><td>Act 1 complete</td><td>Level 14–15</td></tr>
+                                <tr><td>Storm Wave + Siphoning Strike</td><td>Early Act 2</td></tr>
+                                <tr><td>Hollow Palm taken</td><td>Mid Act 2</td></tr>
+                                <tr><td>Act 3 support upgrades</td><td>Early Act 3</td></tr>
+                                <tr><td>Act 4 defensive pivot</td><td>Act 4 start</td></tr>
+                                <tr><td>Campaign / mapping carry</td><td>Act 4 end</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+            </section>
+
+            <section id="act1" class="section route-section amber">
+                <div class="section-head">
+                    <div class="section-kicker">Act 1</div>
+                    <div>
+                        <h2>Act 1 — Staff bridge to stun engine</h2>
+                        <p>Start with Falling Thunder + Killing Palm, add Frozen Locus, then cross-class Wing Blast revolutionizes clear and bossing.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr><td class="time-cell">00:00:46</td><td class="level-cell"><span class="level-chip">1</span></td><td><strong>Start</strong><div class="tiny">Falling Thunder + Killing Palm on staff.</div></td></tr>
+                                <tr><td class="time-cell">00:01:22</td><td class="level-cell"></td><td><strong>Frozen Locus</strong><div class="tiny">Clearfell camp gem; bridge clear.</div></td></tr>
+                                <tr><td class="time-cell">00:02:24</td><td class="level-cell"></td><td><strong>Rage</strong><div class="tiny">From Devourer drop.</div></td></tr>
+                                <tr><td class="time-cell">00:02:50</td><td class="level-cell"></td><td><strong>Frost Bomb</strong><div class="tiny">Optional from Grell wood witch.</div></td></tr>
+                                <tr><td class="time-cell">00:03:17</td><td class="level-cell"></td><td><strong>Rusted King</strong><div class="tiny">Pre-build Power Charges before fight.</div></td></tr>
+                                <tr><td class="time-cell">00:03:47</td><td class="level-cell"></td><td><strong>Wing Blast</strong><div class="tiny">First level-3 gem — Druid, not Monk.</div></td></tr>
+                                <tr><td class="time-cell">00:04:27</td><td class="level-cell"></td><td><strong>Talisman set 2</strong><div class="tiny">Required for Wing Blast.</div></td></tr>
+                                <tr><td class="time-cell">00:04:38</td><td class="level-cell"></td><td><strong>Wind Blast</strong><div class="tiny">Daze → stun primer combo online.</div></td></tr>
+                                <tr><td class="time-cell">00:05:45</td><td class="level-cell"></td><td><strong>Support reshuffle</strong><div class="tiny">Rage + Rapid Attacks → Wind Blast; Brink + Impact Shockwave.</div></td></tr>
+                                <tr><td class="time-cell">00:06:41</td><td class="level-cell"></td><td><strong>Drop Frozen Locus</strong><div class="tiny">Stun combo replaces locus clear.</div></td></tr>
+                                <tr><td class="time-cell">00:07:21</td><td class="level-cell"></td><td><strong>Herald of Thunder</strong><div class="tiny">After King of the Mist.</div></td></tr>
+                                <tr><td class="time-cell">00:08:03</td><td class="level-cell"></td><td><strong>Devour</strong><div class="tiny">Replaces Killing Palm + Thrill of the Kill.</div></td></tr>
+                                <tr><td class="time-cell">00:10:17</td><td class="level-cell"><span class="level-chip">14</span></td><td><strong>Act 1 complete</strong><div class="tiny">Count boss = stun → charges → FT.</div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Reach the Wing Blast / Wind Blast stun engine before mid Act 1 ends. Equip talisman in weapon set 2, swap to Devour + Herald, and finish around level 14–15 with full armor stacked.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Do this session</h3>
+                            <ul>
+                                <li>Grab <strong>Frozen Locus</strong> from Clearfell camp — drop it once stun combo works.</li>
+                                <li>Spend first level-3 gem on <strong>Wing Blast</strong> (Druid), not a Monk skill.</li>
+                                <li>Equip any <strong>talisman</strong> in weapon set 2 before casting Wing Blast.</li>
+                                <li>Move <strong>Rage</strong> + <strong>Rapid Attacks</strong> to <strong>Wind Blast</strong>; add <strong>Brink</strong> + <strong>Impact Shockwave</strong>.</li>
+                                <li>After Executioner, replace Killing Palm with <strong>Devour</strong>.</li>
+                                <li>Socket <strong>Herald of Thunder</strong> — everything from here stacks shock.</li>
+                            </ul>
+                        </article>
+                        <article class="card">
+                            <h3>Early gear priorities</h3>
+                            <table class="compact-table">
+                                <thead><tr><th>Priority</th><th>What to look for</th></tr></thead>
+                                <tbody>
+                                    <tr><td>1</td><td><strong>Full armor</strong> on every slot — ignore ES/evasion.</td></tr>
+                                    <tr><td>2</td><td><strong>Talisman</strong> in weapon set 2 (any power level).</td></tr>
+                                    <tr><td>3</td><td><strong>Life</strong> and resistances on drops.</td></tr>
+                                    <tr><td>4</td><td>Staff until Act 2 Hollow Palm — then unequip.</td></tr>
+                                </tbody>
+                            </table>
+                        </article>
+                        <article class="card warn">
+                            <h3>Failure point to avoid</h3>
+                            <p>Do not heavy-stun with Wind Blast — it primes stun but cannot over-stun, keeping enemies ready for Wing Blast. Do not pick a Monk level-3 gem before Wing Blast.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="act2" class="section route-section violet">
+                <div class="section-head">
+                    <div class="section-kicker">Act 2</div>
+                    <div>
+                        <h2>Act 2 — Storm Wave + Siphoning Strike core</h2>
+                        <p>Tier-7 gems define the real build. Rush Hollow Palm, take shock-reapply node before Jaman' Rai.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr><td class="time-cell">00:10:41</td><td class="level-cell"><span class="level-chip">14</span></td><td><strong>Act 2 start</strong><div class="tiny">Keep Devour + FT + stun combo for bosses.</div></td></tr>
+                                <tr><td class="time-cell">00:10:54</td><td class="level-cell"></td><td><strong>Storm Wave + Siphoning Strike</strong><div class="tiny">Tier 7 — permanent core switch.</div></td></tr>
+                                <tr><td class="time-cell">00:12:12</td><td class="level-cell"></td><td><strong>Support assignment</strong><div class="tiny">Rage + Shock on Storm Wave; Charge Profusion on Strike.</div></td></tr>
+                                <tr><td class="time-cell">00:12:42</td><td class="level-cell"></td><td><strong>Drop Frost Bomb</strong><div class="tiny">Move Wing Blast to Devour for speed.</div></td></tr>
+                                <tr><td class="time-cell">00:13:12</td><td class="level-cell"></td><td><strong>Hollow Palm path</strong><div class="tiny">Rush keystone — stronger than good staff.</div></td></tr>
+                                <tr><td class="time-cell">00:13:56</td><td class="level-cell"></td><td><strong>Shock reapply node</strong><div class="tiny">Before Jaman' Rai fight.</div></td></tr>
+                                <tr><td class="time-cell">00:14:28</td><td class="level-cell"></td><td><strong>Ascendancy</strong><div class="tiny">Martial Artist Way of the Mountain (demo: Invoker).</div></td></tr>
+                                <tr><td class="time-cell">00:15:27</td><td class="level-cell"></td><td><strong>Act 3 begins</strong><div class="tiny">Support slots expand.</div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Craft <strong>Storm Wave</strong> + <strong>Siphoning Strike</strong> at tier 7. Path to <strong>Hollow Palm Technique</strong>, unequip quarterstaff, and run shock extraction as default clear and boss loop.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Do this session</h3>
+                            <ul>
+                                <li><strong>Storm Wave</strong>: Rage + Shock to 100% (+ Living Lightning in Act 3).</li>
+                                <li><strong>Siphoning Strike</strong>: Rapid Attacks + Charge Profusion.</li>
+                                <li>Stop Frost Bomb; move Wing Blast to Devour for faster corpse dives.</li>
+                                <li>Take shock-reapply-on-consume passive before <strong>Jaman' Rai</strong>.</li>
+                                <li>Stack <strong>+melee skills</strong> on gloves/amulet after Hollow Palm.</li>
+                            </ul>
+                        </article>
+                        <article class="card highlight">
+                            <h3>The shock extraction switch</h3>
+                            <p>Storm Wave shocks → Siphoning Strike steals shock for Power Charges + shockwave → Falling Thunder burst. Repeat 2–3× per boss, or Wing Blast a stunned target for instant 3 charges.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Gear priorities</h3>
+                            <table class="compact-table">
+                                <thead><tr><th>Priority</th><th>What to look for</th></tr></thead>
+                                <tbody>
+                                    <tr><td>1</td><td>Still <strong>full armor</strong> every slot.</td></tr>
+                                    <tr><td>2</td><td><strong>+melee skills</strong> after Hollow Palm.</td></tr>
+                                    <tr><td>3</td><td>Talisman stays in weapon set 2.</td></tr>
+                                    <tr><td>4</td><td>Mana fixes: Mark of Siphoning optional on pawns.</td></tr>
+                                </tbody>
+                            </table>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="act3" class="section route-section blue">
+                <div class="section-head">
+                    <div class="section-kicker">Act 3</div>
+                    <div>
+                        <h2>Act 3 — Perpetual Charge nukes</h2>
+                        <p>Jeweler's orbs on Falling Thunder and Storm Wave. Clarity + Cannibalism sustain; nothing should stop you.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr><td class="time-cell">00:15:33</td><td class="level-cell"><span class="level-chip">28</span></td><td><strong>Perpetual Charge</strong><div class="tiny">1st Jeweler's Orb → Falling Thunder.</div></td></tr>
+                                <tr><td class="time-cell">00:15:58</td><td class="level-cell"></td><td><strong>Living Lightning</strong><div class="tiny">2nd Jeweler's Orb → Storm Wave.</div></td></tr>
+                                <tr><td class="time-cell">00:16:17</td><td class="level-cell"></td><td><strong>Ashen Bach</strong><div class="tiny">+30 spirit; skip Lingering Illusion.</div></td></tr>
+                                <tr><td class="time-cell">00:16:39</td><td class="level-cell"></td><td><strong>Clarity + Cannibalism</strong><div class="tiny">On Herald of Thunder.</div></td></tr>
+                                <tr><td class="time-cell">00:16:53</td><td class="level-cell"></td><td><strong>Gorge on Devour</strong><div class="tiny">Flask charges from corpses.</div></td></tr>
+                                <tr><td class="time-cell">00:17:09</td><td class="level-cell"></td><td><strong>2nd ascension</strong><div class="tiny">+2 Power Charges; lightning pen nodes.</div></td></tr>
+                                <tr><td class="time-cell">00:18:00</td><td class="level-cell"></td><td><strong>Shock magnitude</strong><div class="tiny">Top-tree passive node.</div></td></tr>
+                                <tr><td class="time-cell">00:18:24</td><td class="level-cell"></td><td><strong>Hollow Palm gear</strong><div class="tiny">No weapon; +melee skills on gear.</div></td></tr>
+                                <tr><td class="time-cell">00:18:39</td><td class="level-cell"></td><td><strong>Doryani</strong><div class="tiny">Trivial with maintained shock loop.</div></td></tr>
+                                <tr><td class="time-cell">00:19:22</td><td class="level-cell"></td><td><strong>Act 4 begins</strong><div class="tiny">Defensive pivot next.</div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Multi-cast <strong>Falling Thunder</strong> with Perpetual Charge. Confirm shock is on boss before bursting after Siphoning Strike extraction. Respec mana nodes after Clarity for lightning damage + penetration.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Do this session</h3>
+                            <ul>
+                                <li>Perpetual Charge on FT; Living Lightning on Storm Wave (not Branching Fissures).</li>
+                                <li>Gorge + Thrill of the Kill on Devour for flask/life sustain.</li>
+                                <li>Skip Lingering Illusion — charges are always available.</li>
+                                <li>Before FT on bosses: verify shock still applied; extra Storm Wave if not.</li>
+                            </ul>
+                        </article>
+                        <article class="card danger">
+                            <h3>Boss shock check</h3>
+                            <p>After extracting shock with Siphoning Strike, shock may not reapply. Do another Storm Wave before Falling Thunder — charges scale damage, shock multiplies it.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="act4" class="section route-section amber">
+                <div class="section-head">
+                    <div class="section-kicker">Act 4</div>
+                    <div>
+                        <h2>Act 4 — Defensive pivot + mapping carry</h2>
+                        <p>Shift to ES/evasion for Hollow Palm scaling. Ghost Dance replaces Clarity. Whirling Assault is optional.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr><td class="time-cell">00:19:26</td><td class="level-cell"><span class="level-chip">41</span></td><td><strong>ES/evasion pivot</strong><div class="tiny">Body armor for Hollow Palm bonuses.</div></td></tr>
+                                <tr><td class="time-cell">00:20:01</td><td class="level-cell"></td><td><strong>Ghost Dance</strong><div class="tiny">Replaces Clarity/Cannibalism.</div></td></tr>
+                                <tr><td class="time-cell">00:20:16</td><td class="level-cell"></td><td><strong>Herald upgrades</strong><div class="tiny">Elemental Armament + Elemental Focus.</div></td></tr>
+                                <tr><td class="time-cell">00:20:24</td><td class="level-cell"></td><td><strong>Whirling Assault</strong><div class="tiny">Optional boss tech — not required.</div></td></tr>
+                                <tr><td class="time-cell">00:20:48</td><td class="level-cell"></td><td><strong>Mapping carry</strong><div class="tiny">FT combo valid through Arbitrator of Ash.</div></td></tr>
+                                <tr><td class="time-cell">00:21:32</td><td class="level-cell"></td><td><strong>Guide endpoint</strong><div class="tiny">Interludes easy with Devour.</div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Begin ES/evasion gear on body armor. Swap sustain auras to Ghost Dance. The Falling Thunder shock loop carries through campaign end and into maps without mandatory Whirling Assault.</p>
+                        </article>
+                        <article class="card">
+                            <h3>Do this session</h3>
+                            <ul>
+                                <li>Path passives toward ES, evasion, and tankiness.</li>
+                                <li>Elemental Focus + Elemental Armament on Herald of Thunder.</li>
+                                <li>Whirling Assault + Martial Artist ghosts — optional boss flair only.</li>
+                                <li>Mobalytics Act 4 tab shows optional Whirling swap — narrative route keeps FT core.</li>
+                            </ul>
+                        </article>
+                        <article class="card warn">
+                            <h3>Act 4 gear rule</h3>
+                            <p>Prioritize evasion/ES body for Hollow Palm attack speed and crit scaling. Do not drop talisman from weapon set 2.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="interlude" class="section route-section green">
+                <div class="section-head">
+                    <div class="section-kicker">Interlude</div>
+                    <div>
+                        <h2>Interlude — Devour through cleanup</h2>
+                        <p>Post-campaign zones are trivial with the Devour forward loop. Full 0.5 Martial Artist mapping guide pending patch.</p>
+                    </div>
+                </div>
+                <div class="route-grid">
+                    <div class="timeline-panel">
+                        <div class="timeline-title">Section timeline</div>
+                        <table class="timeline-table">
+                            <thead><tr><th>Time</th><th>Lvl</th><th>Milestone</th></tr></thead>
+                            <tbody>
+                                <tr><td class="time-cell">00:21:32</td><td class="level-cell"></td><td><strong>Interludes</strong><div class="tiny">Easily cleared with Devour momentum.</div></td></tr>
+                                <tr><td class="time-cell">00:20:48</td><td class="level-cell"></td><td><strong>Mapping entry</strong><div class="tiny">Same FT shock loop to Arbitrator.</div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cards-stack">
+                        <article class="card">
+                            <h3>Primary objective</h3>
+                            <p>Use the same Storm Wave → Siphoning Strike → Falling Thunder loop. Upgrade gear toward planner Act 4 targets when equippable. No special interlude tech required.</p>
+                        </article>
+                        <article class="card highlight">
+                            <h3>End state</h3>
+                            <p>Shock everything, steal shocks for Power Charges, delete targets with chained Falling Thunder bursts. Martial Artist ascendancy details expand on 0.5 release.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="rotation" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Rotation</div>
+                    <div>
+                        <h2>Boss rotation</h2>
+                        <p>Final campaign boss loop after Act 2 tier-7 switch. Early Wind Blast / Wing Blast is a temporary bridge.</p>
+                    </div>
+                </div>
+                <div class="rotation">
+                    <div class="step"><strong>Storm Wave</strong><span>Apply shock at range (Living Lightning helps).</span></div>
+                    <div class="step"><strong>Siphoning Strike</strong><span>Extract shock → Power Charges + shockwave. Repeat 2–3×.</span></div>
+                    <div class="step"><strong>Verify shock</strong><span>Extra Storm Wave if shock did not reapply.</span></div>
+                    <div class="step"><strong>Falling Thunder</strong><span>Multi-cast burst with Perpetual Charge.</span></div>
+                    <div class="step"><strong>Charge refill</strong><span>Wing Blast stunned boss OR extract again.</span></div>
+                    <div class="step"><strong>Devour forward</strong><span>Between packs — corpses for charges + heal.</span></div>
+                </div>
+            </section>
+
+            <section id="build-tracker" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Tracker</div>
+                    <div>
+                        <h2>Build tracker</h2>
+                        <p>Pick an act, then switch between Equipment, Skill Gems, and Passive Tree tabs. Progress is saved in this browser only.</p>
+                    </div>
+                </div>
+
+                <div class="tracker-warning" id="tracker-storage-warning" role="status">
+                    Could not save progress (browser storage full or blocked). Your checks still work until you reload.
+                </div>
+
+                <div class="tracker-toolbar">
+                    <div class="tracker-act-tabs" id="tracker-act-tabs" role="tablist" aria-label="Build tracker acts"></div>
+                    <div class="tracker-subtoolbar">
+                        <div class="tracker-category-tabs" id="tracker-category-tabs" role="tablist" aria-label="Build tracker categories"></div>
+                        <div class="tracker-actions">
+                            <button type="button" class="tracker-btn" id="tracker-reset-act">Reset current act</button>
+                            <button type="button" class="tracker-btn danger" id="tracker-reset-all">Reset all acts</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tracker-categories"></div>
+            </section>
+
+            <section id="transition-checks" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Checks</div>
+                    <div>
+                        <h2>Transition checks</h2>
+                        <p>Quick checks before major build switches so the loop does not break at the next boss.</p>
+                    </div>
+                </div>
+                <div class="two-col">
+                    <article class="card danger">
+                        <h3>Before Storm Wave + Siphoning Strike (Act 2)</h3>
+                        <table class="compact-table">
+                            <thead><tr><th>Check</th><th>Required state</th></tr></thead>
+                            <tbody>
+                                <tr><td>Talisman</td><td>Equipped in weapon set 2.</td></tr>
+                                <tr><td>Herald</td><td>Herald of Thunder socketed.</td></tr>
+                                <tr><td>Supports ready</td><td>Rage, Shock, Charge Profusion, Rapid Attacks.</td></tr>
+                                <tr><td>Armor</td><td>Full armor still stacked on all slots.</td></tr>
+                                <tr><td>Boss backup</td><td>Wind Blast / Wing Blast still on bar for instant 3 charges.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    <article class="card highlight">
+                        <h3>Before Act 4 / mapping</h3>
+                        <table class="compact-table">
+                            <thead><tr><th>Check</th><th>Required state</th></tr></thead>
+                            <tbody>
+                                <tr><td>Hollow Palm</td><td>No weapon equipped; +melee skills on gear.</td></tr>
+                                <tr><td>Perpetual Charge</td><td>On Falling Thunder.</td></tr>
+                                <tr><td>Shock loop</td><td>Storm Wave → extract → verify shock → FT working.</td></tr>
+                                <tr><td>Act 4 pivot</td><td>ES/evasion body started; Ghost Dance planned.</td></tr>
+                                <tr><td>Shock magnitude</td><td>Top-tree node taken in Act 3.</td></tr>
+                            </tbody>
+                        </table>
+                    </article>
+                </div>
+            </section>
+
+            <section id="timesaves" class="section">
+                <div class="section-head">
+                    <div class="section-kicker">Save time</div>
+                    <div>
+                        <h2>Corrections to beat the video pace</h2>
+                        <p>Cleanest ways to match the build walkthrough without losing power spikes.</p>
+                    </div>
+                </div>
+                <article class="card warn">
+                    <h3>Biggest time-save corrections</h3>
+                    <table class="compact-table">
+                        <thead><tr><th>Problem in run</th><th>Correction</th></tr></thead>
+                        <tbody>
+                            <tr><td>Monk level-3 before Wing Blast</td><td>Save first tier-3 gem for Druid Wing Blast.</td></tr>
+                            <tr><td>No talisman in set 2</td><td>Any talisman works — equip before Wing Blast.</td></tr>
+                            <tr><td>Keeping Frozen Locus too long</td><td>Drop once Wind Blast / Wing Blast clear is stable.</td></tr>
+                            <tr><td>FT without shock on boss</td><td>Storm Wave again after extract if shock missing.</td></tr>
+                            <tr><td>ES/evasion too early</td><td>Full armor Acts 1–3 only; pivot in Act 4.</td></tr>
+                            <tr><td>Branching Fissures on Storm Wave</td><td>Use Living Lightning instead.</td></tr>
+                            <tr><td>Mandatory Whirling Assault</td><td>Skip for campaign — FT combo carries.</td></tr>
+                            <tr><td>Over-stunning with Wind Blast</td><td>It primes only — keeps targets ready for Wing Blast.</td></tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+
+            <div class="footer">
+                Built as a static single-file HTML guide. No external assets, frameworks, or network calls.
+            </div>
+        </main>
+    </div>
